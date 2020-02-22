@@ -1,4 +1,4 @@
-export default interface Argument<Value> {
+export default interface Argument<Value extends any[]> {
 
     argument : Value
 }

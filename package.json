@@ -1,8 +1,9 @@
 {
   "name": "@dikac/t-function",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Typescript function",
   "dependencies": {
+    "@dikac/t-message": "^0.2.0",
     "@dikac/t-array": "^0.14.0",
     "@dikac/t-object": "^0.13.0",
     "@types/is-function": "^1.0.0",
