@@ -1,6 +1,6 @@
 import Argument from "./argument/argument";
 import Returns from "./returns/returns";
-import Functions from "./function";
+import Functions from "./functions";
 import { DynamicMemoizeContainer } from "./object/dynamic-memoize-container";
 export default function DynamicMemoize<Fn extends Functions>(callable: Fn, compareArguments?: Functions<[Parameters<Fn>, Parameters<Fn>], boolean>): Fn & DynamicMemoizeContainer<Fn>;
 export declare class Container<Fn extends (...argument: Arg) => Return, Arg extends any[], Return> {

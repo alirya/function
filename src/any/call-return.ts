@@ -1,7 +1,6 @@
 import Argument from "../argument/argument";
-import InferArgument from "../argument/infer/argument";
 import Returns from "../returns/returns";
-import Functions from "../function";
+import Functions from "../functions";
 import Value from "@dikac/t-value/value";
 import Call from "./call";
 

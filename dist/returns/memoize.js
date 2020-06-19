@@ -9,25 +9,32 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * Wrap {@link Returns} and cache its value
+     *
+     * suitable to cached value from heave operation
+     */
     class Memoize {
-        constructor(functions, argument) {
-            this.functions = functions;
-            this.argument = argument;
+        constructor(subject) {
+            this.subject = subject;
             this.clear();
-        }
-        clear() {
-            this.memoized = undefined;
         }
         get valid() {
             return this.memoized !== undefined;
         }
-        get value() {
+        /**
+         * clear cached value
+         */
+        clear() {
+            this.memoized = undefined;
+        }
+        get return() {
             if (!this.valid) {
                 this.memoized = {
-                    value: this.functions(...this.argument)
+                    return: this.subject.return
                 };
             }
-            return this.memoized.value;
+            return this.memoized.return;
         }
     }
     exports.default = Memoize;

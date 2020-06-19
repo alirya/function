@@ -1,8 +1,6 @@
-import Equal from "@dikac/t-array/boolean/equal";
 import Argument from "../argument/argument";
-import InferArgument from "../argument/infer/argument";
 import Returns from "../returns/returns";
-import Functions from "../function";
+import Functions from "../functions";
 import Find from "../argument/find";
 
 

@@ -1,4 +1,4 @@
-import Functions from "../function";
+import Functions from "../functions";
 /**
  * Throw exception from {@param errorFactory}if given {@param value} is not valid accoding
  * to {@param validation}

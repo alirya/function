@@ -10,4 +10,4 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
 });
-//# sourceMappingURL=function.js.map
+//# sourceMappingURL=functions.js.map

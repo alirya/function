@@ -1,4 +1,4 @@
-import Functions from "./function";
+import Functions from "./functions";
 import Type from "./assert/type";
 import ThrowableType from "./throwable/type";
 

@@ -1,7 +1,7 @@
 import FunctionType from "../boolean/type";
 import ThrowableType from "../throwable/type";
 import Assertion from "./assertion";
-import Functions from "../function";
+import Functions from "../functions";
 
 /**
  * Throw exception from {@param errorFactory} if given {@param value} is no callable type
