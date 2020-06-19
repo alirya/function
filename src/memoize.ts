@@ -2,22 +2,23 @@ import Functions from "./functions";
 import Merge from "@dikac/t-object/merge";
 import ReturnMemoize from "./return/memoize";
 import Callback from "./return/callback";
+import Argument from "./argument/argument";
+import Value from "@dikac/t-value/value";
 
 /**
- * wrap given {@param callable} to new function and cache its return
+ * wrap given {@param data} {@link Value} to new function and cache its return
  *
- * {@param argument} is used if cached return is not exits
+ * {@param data} {@link Argument} is used if cached return is not exits
  */
 export default function Memoize<
     Fn extends Functions,
 >(
-    callable : Fn,
-    ...argument : Parameters<Fn>
+    data : Argument<Parameters<Fn>> & Value<Fn>,
 ) : Functions<[], ReturnType<Fn>> & ReturnMemoize<Callback<Fn>> {
 
     let merged : Functions<[], ReturnType<Fn>> & ReturnMemoize<Callback<Fn>>;
 
-    let callback = new Callback(callable, argument)
+    let callback = new Callback(data)
     let memoize = new ReturnMemoize(callback)
 
     let fn = function () : ReturnType<Fn> {

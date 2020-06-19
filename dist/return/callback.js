@@ -14,12 +14,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     Object.defineProperty(exports, "__esModule", { value: true });
     const call_1 = __importDefault(require("../any/call"));
     class Callback {
-        constructor(value, argument) {
-            this.value = value;
-            this.argument = argument;
+        constructor(subject) {
+            this.subject = subject;
         }
         get return() {
             return call_1.default(this);
+        }
+        get argument() {
+            return this.subject.argument;
+        }
+        get value() {
+            return this.subject.value;
         }
     }
     exports.default = Callback;

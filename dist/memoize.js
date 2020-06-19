@@ -16,13 +16,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     const memoize_1 = __importDefault(require("./return/memoize"));
     const callback_1 = __importDefault(require("./return/callback"));
     /**
-     * wrap given {@param callable} to new function and cache its return
+     * wrap given {@param data} {@link Value} to new function and cache its return
      *
-     * {@param argument} is used if cached return is not exits
+     * {@param data} {@link Argument} is used if cached return is not exits
      */
-    function Memoize(callable, ...argument) {
+    function Memoize(data) {
         let merged;
-        let callback = new callback_1.default(callable, argument);
+        let callback = new callback_1.default(data);
         let memoize = new memoize_1.default(callback);
         let fn = function () {
             return merged.return;

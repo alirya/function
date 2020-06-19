@@ -12,11 +12,11 @@ describe("basic", function() {
 
 
     let called = 0;
-    let memoize = Memoize(function (number : number) : number {
+    let memoize = Memoize({value:function (number : number) : number {
 
         called++;
         return number + number;
-    }, 1);
+    }, argument:[1]});
 
 
     it("check initial data", () => {
@@ -49,7 +49,7 @@ describe("basic", function() {
         it("change argument", () => {
 
 
-            memoize.subject.argument = [2];
+            memoize.subject.subject.argument = [2];
             expect(memoize()).toBe(2)
         });
 
