@@ -3,6 +3,7 @@
   "version": "0.3.0",
   "description": "Typescript function",
   "dependencies": {
+    "@dikac/deployer": "^0.1.5",
     "@dikac/t-array": "^0.14.0",
     "@dikac/t-message": "git+file:///b:/t-message",
     "@dikac/t-object": "git+file:///b:/t-object",
@@ -37,7 +38,8 @@
     "release": "remove-json-properties dist/package.json private",
     "postrelease": "npm publish dist",
     "prerelease": "cpy     package.json package-lock.json LICENSE Readme.md .npmignore dist",
-    "postpublish": "rimraf package.json package-lock.json LICENSE Readme.md .npmignore"
+    "postpublish": "rimraf package.json package-lock.json LICENSE Readme.md .npmignore",
+    "deploy": "deployer /.git /dist /"
   },
   "author": "",
   "private": true,
