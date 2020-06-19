@@ -1,7 +1,7 @@
 import Functions from "./functions";
 import Merge from "@dikac/t-object/merge";
-import ReturnMemoize from "./returns/memoize";
-import Callback from "./returns/callback";
+import ReturnMemoize from "./return/memoize";
+import Callback from "./return/callback";
 
 /**
  * wrap given {@param callable} to new function and cache its return

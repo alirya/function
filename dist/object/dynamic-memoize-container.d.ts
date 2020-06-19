@@ -1,5 +1,5 @@
 import Argument from "../argument/argument";
-import Returns from "../returns/returns";
+import Returns from "../return/returns";
 import Functions from "../functions";
 export declare class DynamicMemoizeContainer<Fn extends Functions> {
     functions: Fn;

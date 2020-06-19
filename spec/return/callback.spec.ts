@@ -1,4 +1,4 @@
-import Callback from "../../dist/returns/callback";
+import Callback from "../../dist/return/callback";
 
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});

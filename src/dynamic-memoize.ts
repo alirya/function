@@ -1,7 +1,7 @@
 import Equal from "@dikac/t-array/boolean/equal";
 
 import Argument from "./argument/argument";
-import Returns from "./returns/returns";
+import Returns from "./return/returns";
 import Functions from "./functions";
 import Find from "./argument/find";
 import {DynamicMemoizeContainer} from "./object/dynamic-memoize-container";

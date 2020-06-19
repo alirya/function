@@ -7,14 +7,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-object/merge", "./returns/memoize", "./returns/callback"], factory);
+        define(["require", "exports", "@dikac/t-object/merge", "./return/memoize", "./return/callback"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const merge_1 = __importDefault(require("@dikac/t-object/merge"));
-    const memoize_1 = __importDefault(require("./returns/memoize"));
-    const callback_1 = __importDefault(require("./returns/callback"));
+    const memoize_1 = __importDefault(require("./return/memoize"));
+    const callback_1 = __importDefault(require("./return/callback"));
     /**
      * wrap given {@param callable} to new function and cache its return
      *

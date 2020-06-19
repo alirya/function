@@ -1,5 +1,5 @@
 import Argument from "./argument/argument";
-import Returns from "./returns/returns";
+import Returns from "./return/returns";
 import Functions from "./functions";
 import { DynamicMemoizeContainer } from "./object/dynamic-memoize-container";
 export default function DynamicMemoize<Fn extends Functions>(callable: Fn, compareArguments?: Functions<[Parameters<Fn>, Parameters<Fn>], boolean>): Fn & DynamicMemoizeContainer<Fn>;
