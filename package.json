@@ -4,9 +4,12 @@
   "description": "Typescript function",
   "dependencies": {
     "@dikac/t-array": "^0.14.0",
-    "@dikac/t-message": "^0.2.1",
-    "@dikac/t-object": "^0.13.0",
-    "@dikac/t-validatable": "^0.9.0",
+    "@dikac/t-message": "git+file:///b:/t-message",
+    "@dikac/t-object": "git+file:///b:/t-object",
+    "@dikac/t-type": "git+file:///b:/t-type",
+    "@dikac/t-validatable": "git+file:///b:/t-validatable",
+    "@dikac/t-value": "git+file:///b:/t-value",
+    "@dikac/t-iterable": "git+file:///b:/t-iterable",
     "@types/is-function": "^1.0.0",
     "is-function": "^1.0.1"
   },
@@ -19,10 +22,11 @@
     "move-cli": "^1.2.1",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.4",
+    "jasmine-ts-console-reporter": "^3.1.1"
   },
   "scripts": {
-    "spec-run": "jasmine --config=./jasmine.json",
+    "spec-run": "jasmine --reporter=jasmine-ts-console-reporter --config=./jasmine.json",
     "spec": "npm-run-all spec-compile spec-run",
     "spec-compile": "npm-run-all --parallel spec-compile-script ",
     "spec-compile-watch": "npm-run-all --parallel spec-compile-watch-script",

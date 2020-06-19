@@ -14,7 +14,7 @@ describe("memoize", function() {
 
     describe("not call", function() {
 
-        it("check container length", () => expect(memoize.ios.length).toBe(0));
+        it("check container length", () => expect(memoize.memoized.length).toBe(0));
         it("check call count", () => expect(called).toBe(0));
     });
 
@@ -24,18 +24,18 @@ describe("memoize", function() {
 
         it("return valid", () => expect(memoize(firstArgument)).toBe(2));
         it("check call count", () => expect(called).toBe(1));
-        it("check container length", () => expect(memoize.ios.length).toBe(1));
-        it("check container return", () => expect(memoize.ios[0].return).toBe(2));
-        it("check container argument", () => expect(memoize.ios[0].argument).toEqual([1]));
+        it("check container length", () => expect(memoize.memoized.length).toBe(1));
+        it("check container return", () => expect(memoize.memoized[0].return).toBe(2));
+        it("check container argument", () => expect(memoize.memoized[0].argument).toEqual([1]));
     });
 
     describe("2st call argument equal as 1st call", function() {
 
         it("return valid", () => expect(memoize(firstArgument)).toBe(2));
         it("check call count", () => expect(called).toBe(1));
-        it("check container length", () => expect(memoize.ios.length).toBe(1));
-        it("check container return", () => expect(memoize.ios[0].return).toBe(2));
-        it("check container argument", () => expect(memoize.ios[0].argument).toEqual([1]));
+        it("check container length", () => expect(memoize.memoized.length).toBe(1));
+        it("check container return", () => expect(memoize.memoized[0].return).toBe(2));
+        it("check container argument", () => expect(memoize.memoized[0].argument).toEqual([1]));
     });
 
     let secondArgument = 10;
@@ -44,9 +44,9 @@ describe("memoize", function() {
 
         it("return valid", () => expect(memoize(secondArgument)).toBe(20));
         it("check call count", () => expect(called).toBe(2));
-        it("check container length", () => expect(memoize.ios.length).toBe(2));
-        it("check container return", () => expect(memoize.ios[1].return).toBe(20));
-        it("check container argument", () => expect(memoize.ios[1].argument).toEqual([10]));
+        it("check container length", () => expect(memoize.memoized.length).toBe(2));
+        it("check container return", () => expect(memoize.memoized[1].return).toBe(20));
+        it("check container argument", () => expect(memoize.memoized[1].argument).toEqual([10]));
     });
 });
 

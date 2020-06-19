@@ -5,32 +5,67 @@ import Type from "../dist/boolean/type";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
-describe("memoize", function() {
+
+
+
+describe("basic", function() {
+
 
     let called = 0;
-    let memoize = Memoize(function (number : number) {
+    let memoize = Memoize(function (number : number) : number {
 
         called++;
         return number + number;
     }, 1);
 
 
-    describe("1st call", function() {
+    it("check initial data", () => {
 
-        it("return valid", () => expect(memoize()).toBe(2));
-        it("check call count", () => expect(called).toBe(1));
+        expect(called).toBe(0)
+        expect(memoize.argument).toEqual([1])
+        expect(memoize.valid).toBeFalse();
+
     });
 
-    describe("2st call argument equal as 1st call", function() {
+    it("call", () => {
 
-        it("return valid", () => expect(memoize()).toBe(2));
-        it("check call count", () => expect(called).toBe(1));
+        expect(memoize()).toBe(2)
+        expect(memoize.value).toBe(2)
+
+        expect(called).toBe(1)
+        expect(memoize.valid).toBeTrue();
+    });
+
+    it("2nd call", function() {
+
+        expect(memoize()).toBe(2)
+        expect(memoize.value).toBe(2)
+        expect(called).toBe(1)
+        expect(memoize.valid).toBeTrue();
+    });
+
+    describe("modify", function() {
+
+        it("change argument", () => {
+
+
+            memoize.argument = [2];
+            expect(memoize()).toBe(2)
+        });
+
+        it("reset", () => {
+            memoize.clear();
+
+            expect(called).toBe(1)
+            expect(memoize()).toBe(4)
+            expect(memoize.value).toBe(4)
+            expect(called).toBe(2)
+        });
+
     });
 
 });
 
 
 
-// describe("invalid", function() {
-//
-// });
+

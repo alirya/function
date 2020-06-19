@@ -7,18 +7,28 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-array/boolean/equal"], factory);
+        define(["require", "exports", "@dikac/t-array/boolean/equal", "./argument/find", "./object/dynamic-memoize-container", "@dikac/t-object/merge"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const equal_1 = __importDefault(require("@dikac/t-array/boolean/equal"));
+    const find_1 = __importDefault(require("./argument/find"));
+    const dynamic_memoize_container_1 = require("./object/dynamic-memoize-container");
+    const merge_1 = __importDefault(require("@dikac/t-object/merge"));
     function DynamicMemoize(callable, compareArguments = equal_1.default) {
-        let container = new Container(compareArguments);
+        let container = new dynamic_memoize_container_1.DynamicMemoizeContainer(callable, compareArguments);
+        let merged;
         let fn = function (...argument) {
-            return container.call(callable, argument).return;
+            let object = merged.get(argument);
+            if (!object) {
+                object = merged.call(argument);
+                merged.memoized.push(object);
+            }
+            return object.return;
         };
-        return Object.assign(fn, container, { call: container.call, get: container.get });
+        merged = merge_1.default(fn, container);
+        return merged;
     }
     exports.default = DynamicMemoize;
     class Container {
@@ -38,12 +48,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
             return io;
         }
         get(argument) {
-            for (let io of this.ios) {
-                if (this.compare(io.argument, argument)) {
-                    return io;
-                }
-            }
-            return null;
+            return find_1.default(this.ios, argument, this.compare, null);
+            //
+            // for(let io of this.ios) {
+            //
+            //     if(this.compare(io.argument, argument)) {
+            //
+            //         return io;
+            //     }
+            // }
+            //
+            // return null;
         }
     }
     exports.Container = Container;

@@ -1,1 +1,3 @@
-export default function Memoize<Fn extends (...argument: Arg) => Return, Arg extends any[], Return>(callable: Fn, ...argument: Arg): () => Return;
+import Functions from "./function";
+import MemoizeCallable from "./value/memoize";
+export default function Memoize<Fn extends Functions>(callable: Fn, ...argument: Parameters<Fn>): Functions<[], ReturnType<Fn>> & MemoizeCallable<Fn>;

@@ -1,28 +1,29 @@
-import Io from "./io/io";
+
 import Equal from "@dikac/t-array/boolean/equal";
-import Mixin from "@dikac/t-object/mixin";
+import Functions from "./function";
+import MemoizeCallable from "./value/memoize";
+import Merge from "@dikac/t-object/merge";
+
 
 export default function Memoize<
-    Fn extends (...argument : Arg) => Return,
-    Arg extends any[],
-    Return
+    Fn extends Functions,
 >(
     callable : Fn,
-    ...argument : Arg
-) : () => Return {
+    ...argument : Parameters<Fn>
+) : Functions<[], ReturnType<Fn>> & MemoizeCallable<Fn> {
 
-    let data : undefined|{return: Return};
+    let merged : Functions<[], ReturnType<Fn>> & MemoizeCallable<Fn>;
 
-    return function () {
+    let memoize = new MemoizeCallable(callable, argument)
 
-        if(data === undefined) {
+    let fn = function () : ReturnType<Fn> {
 
-            data = {return:callable(...argument)}
-        }
-
-        return data.return;
-
+        return merged.value;
     }
+
+    merged = Merge(fn, memoize);
+
+    return merged;
 
 }
 
