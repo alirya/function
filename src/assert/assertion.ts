@@ -1,7 +1,7 @@
 import Functions from "../functions";
 
 /**
- * Throw exception from {@param errorFactory}if given {@param value} is not valid accoding
+ * Throw exception from {@param errorFactory} if given {@param value} is not valid according
  * to {@param validation}
  *
  * This can be use to create type assertion

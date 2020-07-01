@@ -9,6 +9,9 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    /**
+     * Use {@link Argument} as argument to call function form {@link Value}
+     */
     function Call(object) {
         return object.value(...object.argument);
     }

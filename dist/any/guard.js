@@ -7,18 +7,20 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "is-function"], factory);
+        define(["require", "exports", "../assert/assertion"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const is_function_1 = __importDefault(require("is-function"));
+    const assertion_1 = __importDefault(require("../assert/assertion"));
     /**
-     * check if {@param value} type is function
+     * return {@param value} if type is valid according to {@param validation} or
+     * throw error from {@param error}
      */
-    function Type(value) {
-        return is_function_1.default(value);
+    function Guard(value, validation, error) {
+        assertion_1.default(value, validation, error);
+        return value;
     }
-    exports.default = Type;
+    exports.default = Guard;
 });
-//# sourceMappingURL=type.js.map
+//# sourceMappingURL=guard.js.map
