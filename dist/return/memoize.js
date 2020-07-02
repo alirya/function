@@ -19,22 +19,22 @@
             this.subject = subject;
             this.clear();
         }
-        get valid() {
-            return this.memoized !== undefined;
+        get memoized() {
+            return this.memoize !== undefined;
         }
         /**
          * clear cached value
          */
         clear() {
-            this.memoized = undefined;
+            this.memoize = undefined;
         }
         get return() {
-            if (!this.valid) {
-                this.memoized = {
+            if (!this.memoized) {
+                this.memoize = {
                     return: this.subject.return
                 };
             }
-            return this.memoized.return;
+            return this.memoize.return;
         }
     }
     exports.default = Memoize;

@@ -8,7 +8,6 @@
     "@dikac/t-message": "git+file:///b:/t-message",
     "@dikac/t-object": "git+file:///b:/t-object",
     "@dikac/t-type": "git+file:///b:/t-type",
-    "@dikac/t-validatable": "git+file:///b:/t-validatable",
     "@dikac/t-value": "git+file:///b:/t-value",
     "@dikac/t-iterable": "git+file:///b:/t-iterable",
     "@types/is-function": "^1.0.0",

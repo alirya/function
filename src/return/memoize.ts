@@ -1,6 +1,5 @@
 import Returns from "./returns";
 import Infer from "./infer/returns";
-import Validatable from "@dikac/t-validatable/validatable";
 
 /**
  * Wrap {@link Returns} and cache its value
@@ -10,10 +9,9 @@ import Validatable from "@dikac/t-validatable/validatable";
 export default class Memoize<
     Container extends Returns = Returns
 > implements
-    Readonly<Returns<Infer<Container>>>,
-    Readonly<Validatable<boolean>>
+    Readonly<Returns<Infer<Container>>>
 {
-    protected memoized : Returns<Infer<Container>>|undefined;
+    protected memoize : Returns<Infer<Container>>|undefined;
 
     constructor(
         public subject : Container
@@ -21,9 +19,9 @@ export default class Memoize<
         this.clear();
     }
 
-    get valid () : boolean {
+    get memoized () : boolean {
 
-        return this.memoized !== undefined;
+        return this.memoize !== undefined;
     }
 
     /**
@@ -31,19 +29,19 @@ export default class Memoize<
      */
     clear () {
 
-        this.memoized = undefined;
+        this.memoize = undefined;
     }
 
     get return () : Infer<Container> {
 
-        if(!this.valid) {
+        if(!this.memoized) {
 
-            this.memoized = {
+            this.memoize = {
                 return : <Infer<Container>>this.subject.return
             };
         }
 
-        return (<Returns<Infer<Container>>> this.memoized).return;
+        return (<Returns<Infer<Container>>> this.memoize).return;
     }
 
 }
