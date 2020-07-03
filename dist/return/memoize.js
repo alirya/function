@@ -1,40 +1,32 @@
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
+        define(["require", "exports", "@dikac/t-value/object-property", "@dikac/t-value/memoize"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
+    const object_property_1 = __importDefault(require("@dikac/t-value/object-property"));
+    const memoize_1 = __importDefault(require("@dikac/t-value/memoize"));
     /**
-     * Wrap {@link Returns} and cache its value
+     * Wrap {@link Return} and cache its value
      *
      * suitable to cached value from heave operation
      */
     class Memoize {
         constructor(subject) {
             this.subject = subject;
-            this.clear();
-        }
-        get memoized() {
-            return this.memoize !== undefined;
-        }
-        /**
-         * clear cached value
-         */
-        clear() {
-            this.memoize = undefined;
+            let value = new object_property_1.default(subject, 'return');
+            this.memoize = new memoize_1.default(value);
         }
         get return() {
-            if (!this.memoized) {
-                this.memoize = {
-                    return: this.subject.return
-                };
-            }
-            return this.memoize.return;
+            return this.memoize.value;
         }
     }
     exports.default = Memoize;
