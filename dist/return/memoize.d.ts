@@ -1,6 +1,6 @@
 import Return from "./returns";
 import Infer from "./infer/returns";
-import ObjectProperty from "@dikac/t-value/object-property";
+import ObjectProperty from "@dikac/t-object/value/property";
 import ValueMemoize from "@dikac/t-value/memoize";
 /**
  * Wrap {@link Return} and cache its value
