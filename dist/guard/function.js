@@ -16,9 +16,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     /**
      * check if {@param value} type is function
      */
-    function Type(value) {
+    function Function(value) {
         return is_function_1.default(value);
     }
-    exports.default = Type;
+    exports.default = Function;
 });
-//# sourceMappingURL=type.js.map
+//# sourceMappingURL=function.js.map
