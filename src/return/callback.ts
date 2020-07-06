@@ -1,11 +1,11 @@
-import Functions from "../functions";
 import Argument from "../argument/argument";
 import Returns from "./returns";
 import Call from "../any/call";
 import Value from "@dikac/t-value/value";
+import Function from "../function";
 
 export default class Callback<
-    Fn extends Functions
+    Fn extends Function
 > implements
     Readonly<Argument<Parameters<Fn>>>,
     Readonly<Returns<ReturnType<Fn>>>

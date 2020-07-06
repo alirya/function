@@ -1,4 +1,4 @@
-import Functions from "./functions";
+import Functions from "./function";
 import ReturnMemoize from "./return/memoize";
 import Callback from "./return/callback";
 import Argument from "./argument/argument";

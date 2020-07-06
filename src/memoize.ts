@@ -1,4 +1,4 @@
-import Functions from "./functions";
+import Functions from "./function";
 import Merge from "@dikac/t-object/merge";
 import ReturnMemoize from "./return/memoize";
 import Callback from "./return/callback";

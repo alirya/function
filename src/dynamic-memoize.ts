@@ -1,5 +1,5 @@
 import Equal from "@dikac/t-array/boolean/equal";
-import Functions from "./functions";
+import Functions from "./function";
 import {DynamicMemoizeContainer} from "./object/dynamic-memoize-container";
 import Merge from "@dikac/t-object/merge";
 

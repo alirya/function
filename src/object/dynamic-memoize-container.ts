@@ -1,18 +1,18 @@
 import Argument from "../argument/argument";
 import Returns from "../return/returns";
-import Functions from "../functions";
 import Find from "../argument/find";
+import Function from "../function";
 
 
 export class DynamicMemoizeContainer<
-    Fn extends Functions,
+    Fn extends Function,
 > {
 
     readonly memoized : (Argument<Parameters<Fn>> & Returns<ReturnType<Fn>>)[] = [];
 
     constructor(
         public functions : Fn,
-        public compare : Functions<[Parameters<Fn>, Parameters<Fn>], boolean>,
+        public compare : Function<[Parameters<Fn>, Parameters<Fn>], boolean>,
     ) {
 
     }

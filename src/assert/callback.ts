@@ -1,5 +1,5 @@
-import Functions from "../functions";
 import Guard from "../guard/guard";
+import Function from "../function";
 
 /**
  * Throw exception from {@param error} if given {@param value} is not valid according
@@ -11,7 +11,7 @@ import Guard from "../guard/guard";
 export default function Callback<T>(
     value : any,
     validation : Guard<any, T>,
-    error : Functions<[any], Error>,
+    error : Function<[any], Error>,
 ) : asserts value is T
 {
     if(!validation(value)) {

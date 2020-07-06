@@ -1,6 +1,6 @@
-import Functions from "../functions";
 import AssertCallback from "../assert/callback";
 import Guard from "../guard/guard";
+import Function from "../function";
 
 /**
  * Throw exception from {@param error} if given {@param value} is not valid according
@@ -12,7 +12,7 @@ import Guard from "../guard/guard";
 export default function Callback<T>(
     value : any,
     validation : Guard<any, T>,
-    error : Functions<[any], Error>,
+    error : Function<[any], Error>,
 ) : T
 {
     AssertCallback(value, validation, error);

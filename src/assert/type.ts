@@ -1,19 +1,19 @@
-import FunctionType from "../guard/type";
+import GuardType from "../guard/type";
 import ThrowableType from "../throwable/type";
 import Callback from "./callback";
-import Functions from "../functions";
+import Function from "../function";
 
 /**
  * Throw exception from {@param errorFactory} if given {@param value} is no callable type
  */
 
 export default function Type<
-    Assumption extends Functions
+    Assumption extends Function
 >(
     value : any,
-    errorFactory : Functions<[any], Error> = ThrowableType
+    errorFactory : Function<[any], Error> = ThrowableType
 ) : asserts value is Assumption {
 
-    Callback(value, FunctionType, errorFactory);
+    Callback(value, GuardType, errorFactory);
 
 }
