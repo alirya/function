@@ -15,11 +15,11 @@
      *
      * This can be use to create type assertion
      */
-    function Assertion(value, validation, error) {
+    function Callback(value, validation, error) {
         if (!validation(value)) {
             throw error(value);
         }
     }
-    exports.default = Assertion;
+    exports.default = Callback;
 });
-//# sourceMappingURL=assertion.js.map
+//# sourceMappingURL=callback.js.map

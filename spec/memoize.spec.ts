@@ -1,11 +1,7 @@
-import * as Util from "util";
 import Memoize from "../dist/memoize";
-import Type from "../dist/boolean/type";
 
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
-
-
 
 
 describe("basic", function() {

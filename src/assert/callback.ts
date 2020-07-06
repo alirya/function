@@ -1,4 +1,5 @@
 import Functions from "../functions";
+import Guard from "../guard/guard";
 
 /**
  * Throw exception from {@param error} if given {@param value} is not valid according
@@ -7,9 +8,9 @@ import Functions from "../functions";
  * This can be use to create type assertion
  */
 
-export default function Assertion<T>(
+export default function Callback<T>(
     value : any,
-    validation : Functions<[any],T>,
+    validation : Guard<any, T>,
     error : Functions<[any], Error>,
 ) : asserts value is T
 {

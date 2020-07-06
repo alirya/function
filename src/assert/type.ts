@@ -1,6 +1,6 @@
-import FunctionType from "../boolean/type";
+import FunctionType from "../guard/type";
 import ThrowableType from "../throwable/type";
-import Assertion from "./assertion";
+import Callback from "./callback";
 import Functions from "../functions";
 
 /**
@@ -14,6 +14,6 @@ export default function Type<
     errorFactory : Functions<[any], Error> = ThrowableType
 ) : asserts value is Assumption {
 
-    Assertion(value, FunctionType, errorFactory);
+    Callback(value, FunctionType, errorFactory);
 
 }

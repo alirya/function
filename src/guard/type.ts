@@ -1,20 +1,14 @@
+import IsFunction from "is-function"
 import Functions from "../functions";
-import TypeAssert from "../assert/type";
-import ThrowableType from "../throwable/type";
-import GuardFunction from "../any/guard";
 
 /**
- * return {@param value} if type is function or
- * throw error from {@param error}
+ * check if {@param value} type is function
  */
 export default function Type<
     Assumption extends Functions
 >(
-    value : any,
-    error : Functions<[any], Error> = ThrowableType
-) : Assumption {
+    value : any
+) : value is Assumption {
 
-    GuardFunction(value, TypeAssert, error)
-
-    return value;
+    return IsFunction(value);
 }

@@ -1,5 +1,4 @@
-import Type from "../../dist/boolean/type";
-import CallReturn from "../../dist/any/call-return";
+import CallReturn from "../../dist/return/call";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -19,7 +18,7 @@ describe("basic", function() {
 
         let returns = CallReturn(object);
 
-        expect(returns).toBe(2)
+        expect(returns.return).toBe(2)
         expect(object.return).toBe(2)
     });
 

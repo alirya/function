@@ -1,4 +1,3 @@
-import Type from "../../dist/boolean/type";
 import Call from "../../dist/any/call";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
