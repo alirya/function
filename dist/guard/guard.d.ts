@@ -1,2 +1,2 @@
-declare type Guard<Argument, Return extends Argument, Extras extends any[] = []> = (argument: Argument, ...extras: Extras) => argument is Return;
+declare type Guard<Value, Return extends Value, Extras extends any[] = []> = (argument: Value, ...extras: Extras) => argument is Return;
 export default Guard;

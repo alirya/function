@@ -30,7 +30,7 @@ export default function DynamicMemoize<
         return object.return;
     };
 
-    merged = <DynamicMemoizeContainer<Fn> & Fn> Merge(fn, container);
+    merged = <DynamicMemoizeContainer<Fn> & Fn> <unknown> Merge(fn, container);
 
     return merged;
 }
