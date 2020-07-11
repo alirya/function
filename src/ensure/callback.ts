@@ -9,11 +9,11 @@ import Function from "../function";
  * This can be use to create type assertion
  */
 
-export default function Callback<T>(
-    value : any,
-    validation : Guard<any, T>,
-    error : Function<[any], Error>,
-) : T
+export default function Callback<Return  extends Value, Value>(
+    value : Value,
+    validation : Guard<Value, Return>,
+    error : Function<[Value], Error>,
+) : Return
 {
     AssertCallback(value, validation, error);
 

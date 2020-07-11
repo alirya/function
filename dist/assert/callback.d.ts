@@ -6,4 +6,4 @@ import Function from "../function";
  *
  * This can be use to create type assertion
  */
-export default function Callback<T>(value: any, validation: Guard<any, T>, error: Function<[any], Error>): asserts value is T;
+export default function Callback<Asserted extends Argument, Argument>(value: Argument, validation: Guard<Argument, Asserted>, error: Function<[Argument], Error>): asserts value is Asserted;
