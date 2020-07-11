@@ -11,7 +11,7 @@ import Function from "../function";
 
 export default function Callback<Return  extends Value, Value>(
     value : Value,
-    validation : Guard<Value, Return>,
+    validation : Function<[Value], Return>,
     error : Function<[Value], Error>,
 ) : Return
 {

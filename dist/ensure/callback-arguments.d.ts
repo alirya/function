@@ -1,4 +1,3 @@
-import Guard from "../guard/guard";
 import Function from "../function";
 import { List } from "ts-toolbelt";
 /**
@@ -7,4 +6,4 @@ import { List } from "ts-toolbelt";
  *
  * This can be use to create type assertion
  */
-export default function CallbackArguments<Return extends Value, Value, Extras extends any[] = any[]>(value: Value, validation: Guard<Value, Return, Extras>, error: Function<List.Prepend<Extras, Value>, Error>, extras: Extras): Return;
+export default function CallbackArguments<Return extends Value, Value, Extras extends any[] = any[]>(value: Value, validation: Function<List.Prepend<Extras, Value>, Return>, error: Function<List.Prepend<Extras, Value>, Error>, extras: Extras): Return;

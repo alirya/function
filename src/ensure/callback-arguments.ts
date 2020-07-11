@@ -12,7 +12,7 @@ import {List} from "ts-toolbelt";
 
 export default function CallbackArguments<Return  extends Value, Value, Extras extends any[] = any[]>(
     value : Value,
-    validation : Guard<Value, Return, Extras>,
+    validation : Function<List.Prepend<Extras, Value>, Return>,
     error : Function<List.Prepend<Extras, Value>, Error>,
     extras : Extras
 ) : Return

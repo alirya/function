@@ -9,16 +9,17 @@ import {List} from "ts-toolbelt";
  * This can be use to create type assertion
  */
 
-export default function CallbackArguments<Asserted extends Value, Value, Extras extends any[] = any[]>(
+export default function CallbackArguments<Asserted extends Value, Value, Extras extends List = List>(
     value : Value,
-    validation : Guard<Value, Asserted, Extras>,
+    validation : Function<List.Prepend<Extras, Value>, Asserted>,
     error : Function<List.Prepend<Extras, Value>, Error>,
     extras : Extras
 ) : asserts value is Asserted
 {
+    let argument : List.Prepend<Extras, Value> = [value, ...extras];
+
     if(!validation(value, ...extras)) {
 
-        // @ts-ignore
         throw error(value, ...extras);
     }
 }

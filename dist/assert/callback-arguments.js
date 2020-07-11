@@ -16,8 +16,8 @@
      * This can be use to create type assertion
      */
     function CallbackArguments(value, validation, error, extras) {
+        let argument = [value, ...extras];
         if (!validation(value, ...extras)) {
-            // @ts-ignore
             throw error(value, ...extras);
         }
     }
