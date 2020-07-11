@@ -12,12 +12,12 @@ import {List} from "ts-toolbelt";
 
 export default function CallbackArguments<Return  extends Value, Value, Extras extends any[] = any[]>(
     value : Value,
-    validation : Function<List.Prepend<Extras, Value>, Return>,
+    validation : Function<List.Prepend<Extras, Value>, boolean>,
     error : Function<List.Prepend<Extras, Value>, Error>,
     extras : Extras
 ) : Return
 {
     AssertCallback(value, validation, error, extras);
 
-    return value;
+    return <Return> value;
 }
