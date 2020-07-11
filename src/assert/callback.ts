@@ -10,7 +10,7 @@ import Function from "../function";
 
 export default function Callback<Asserted extends Argument, Argument>(
     value : Argument,
-    validation : Function<[Argument], Asserted>,
+    validation : Function<[Argument], boolean>,
     error : Function<[Argument], Error>,
 ) : asserts value is Asserted
 {

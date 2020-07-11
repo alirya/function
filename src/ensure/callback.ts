@@ -11,11 +11,11 @@ import Function from "../function";
 
 export default function Callback<Return  extends Value, Value>(
     value : Value,
-    validation : Function<[Value], Return>,
+    validation : Function<[Value], boolean>,
     error : Function<[Value], Error>,
 ) : Return
 {
     AssertCallback(value, validation, error);
 
-    return value;
+    return <Return>value;
 }

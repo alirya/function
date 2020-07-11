@@ -5,4 +5,4 @@ import Function from "../function";
  *
  * This can be use to create type assertion
  */
-export default function Callback<Return extends Value, Value>(value: Value, validation: Function<[Value], Return>, error: Function<[Value], Error>): Return;
+export default function Callback<Return extends Value, Value>(value: Value, validation: Function<[Value], boolean>, error: Function<[Value], Error>): Return;
