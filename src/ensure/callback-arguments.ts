@@ -1,5 +1,4 @@
 import AssertCallback from "../assert/callback-arguments";
-import Guard from "../guard/guard";
 import Function from "../function";
 import {List} from "ts-toolbelt";
 

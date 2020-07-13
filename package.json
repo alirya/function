@@ -5,8 +5,6 @@
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
     "@dikac/t-array": "^0.14.0",
-    "@dikac/t-iterable": "git+file:///b:/t-iterable",
-    "@dikac/t-message": "git+file:///b:/t-message",
     "@dikac/t-object": "git+file:///b:/t-object",
     "@dikac/t-type": "git+file:///b:/t-type",
     "@dikac/t-value": "git+file:///b:/t-value",

@@ -1,5 +1,4 @@
 import AssertCallback from "../assert/callback";
-import Guard from "../guard/guard";
 import Function from "../function";
 
 /**

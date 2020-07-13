@@ -1,4 +1,4 @@
-import Call from "../../dist/any/call";
+import Call from "../../../dist/argument/any/call";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
@@ -19,7 +19,7 @@ describe("basic", function() {
         let returns = Call(object);
 
         expect(returns).toBe(2)
-        expect(object.return).toBeUndefined(0)
+        expect(object.return).toBe(0)
     });
 
 });

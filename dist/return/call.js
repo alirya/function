@@ -7,12 +7,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../any/call"], factory);
+        define(["require", "exports", "../argument/any/call"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const call_1 = __importDefault(require("../any/call"));
+    const call_1 = __importDefault(require("../argument/any/call"));
     /**
      * Use {@link Argument} as argument to call function form {@link Value}
      * and set return value to {@link Returns}

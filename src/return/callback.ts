@@ -1,6 +1,6 @@
 import Argument from "../argument/argument";
 import Returns from "./returns";
-import Call from "../any/call";
+import Call from "../argument/any/call";
 import Value from "@dikac/t-value/value";
 import Function from "../function";
 

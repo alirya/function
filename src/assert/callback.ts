@@ -1,4 +1,3 @@
-import Guard from "../guard/guard";
 import Function from "../function";
 
 /**

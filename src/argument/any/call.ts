@@ -1,6 +1,6 @@
-import Argument from "../argument/argument";
+import Argument from "../argument";
 import Value from "@dikac/t-value/value";
-import Function from "../function";
+import Function from "../../function";
 
 /**
  * Use {@link Argument} as argument to call function form {@link Value}
