@@ -1,5 +1,5 @@
 import GuardType from "../guard/function";
-import ThrowableType from "../throwable/type";
+import ThrowableType from "../assert/throwable/function";
 import Callback from "./callback";
 import FunctionType from "../function";
 

@@ -4,9 +4,8 @@
   "description": "Typescript function",
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
-    "@dikac/t-array": "^0.14.0",
+    "@dikac/t-array": "git+file:///b:/t-array",
     "@dikac/t-object": "git+file:///b:/t-object",
-    "@dikac/t-type": "git+file:///b:/t-type",
     "@dikac/t-value": "git+file:///b:/t-value",
     "@types/is-function": "^1.0.0",
     "is-function": "^1.0.2",

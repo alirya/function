@@ -7,18 +7,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "./argument"], factory);
+        define(["require", "exports", "../string/function"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const argument_1 = __importDefault(require("./argument"));
-    /**
-     * create string message suitable for function argument, including given value
-     */
-    function ArgumentGiven(info) {
-        return argument_1.default(info) + `given '${info.value}'`;
+    const function_1 = __importDefault(require("../string/function"));
+    function Function(value) {
+        return new Error(function_1.default(value, false));
     }
-    exports.default = ArgumentGiven;
+    exports.default = Function;
 });
-//# sourceMappingURL=argument-given.js.map
+//# sourceMappingURL=function.js.map

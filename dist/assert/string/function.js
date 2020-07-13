@@ -9,9 +9,15 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function Argument(info) {
-        return `argument '${info.parameter}' expect '${info.type}'`;
+    function Function(value, valid) {
+        let string = value.toString();
+        if (valid) {
+            return `value "${string}" is function`;
+        }
+        else {
+            return `value "${string}" is not function`;
+        }
     }
-    exports.default = Argument;
+    exports.default = Function;
 });
-//# sourceMappingURL=argument.js.map
+//# sourceMappingURL=function.js.map
