@@ -1,4 +1,4 @@
-import Function from "../../dist/guard/function";
+import Function from "../../dist/boolean/function";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

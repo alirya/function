@@ -7,12 +7,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../guard/function", "../assert/throwable/function", "./callback"], factory);
+        define(["require", "exports", "../boolean/function", "../assert/throwable/function", "./callback"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const function_1 = __importDefault(require("../guard/function"));
+    const function_1 = __importDefault(require("../boolean/function"));
     const function_2 = __importDefault(require("../assert/throwable/function"));
     const callback_1 = __importDefault(require("./callback"));
     /**
