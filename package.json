@@ -1,12 +1,12 @@
 {
   "name": "@dikac/t-function",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Typescript function",
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
-    "@dikac/t-array": "git+file:///b:/t-array",
-    "@dikac/t-object": "git+file:///b:/t-object",
-    "@dikac/t-value": "git+file:///b:/t-value",
+    "@dikac/t-array": "^0.15.1",
+    "@dikac/t-object": "^0.17.0",
+    "@dikac/t-value": "^0.7.0",
     "@types/is-function": "^1.0.0",
     "is-function": "^1.0.2",
     "ts-toolbelt": "^6.12.1"
