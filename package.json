@@ -1,15 +1,15 @@
 {
   "name": "@dikac/t-function",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Typescript function",
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
     "@dikac/t-array": "^0.15.1",
-    "@dikac/t-object": "^0.17.0",
+    "@dikac/t-object": "^0.17.2",
     "@dikac/t-value": "^0.8.0",
     "@types/is-function": "^1.0.0",
     "is-function": "^1.0.2",
-    "ts-toolbelt": "^6.12.1"
+    "ts-toolbelt": "^6.12.2"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.11",
@@ -32,7 +32,7 @@
     "spec-compile-watch-script": "tsc -w -p tsconfig-spec.json",
     "compile": "tsc",
     "compile-watch": "tsc -w",
-    "release": "remove-json-properties dist/package.json private",
+    "release": "remove-json-properties dist/package.json private scripts.postinstall scripts.deploy dependencies.@dikac/deployer",
     "postrelease": "npm publish dist",
     "prerelease": "cpy     package.json package-lock.json LICENSE Readme.md .npmignore dist",
     "postpublish": "rimraf package.json package-lock.json LICENSE Readme.md .npmignore",
