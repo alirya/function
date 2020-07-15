@@ -1,4 +1,4 @@
-import AssertCallback from "../assert/callback";
+import AssertCallback from "../assert/parameter";
 import Function from "../function";
 
 /**

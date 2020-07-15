@@ -1,4 +1,4 @@
-import New from "../src/new";
+import New from "../dist/new";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 

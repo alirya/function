@@ -1,5 +1,5 @@
 import Argument from "../argument/argument";
-import Returns from "../return/returns";
+import Return from "../return/return";
 import Find from "../argument/find";
 import Function from "../function";
 
@@ -8,7 +8,7 @@ export class DynamicMemoizeContainer<
     Fn extends Function,
 > {
 
-    readonly memoized : (Argument<Parameters<Fn>> & Returns<ReturnType<Fn>>)[] = [];
+    readonly memoized : (Argument<Parameters<Fn>> & Return<ReturnType<Fn>>)[] = [];
 
     constructor(
         public functions : Fn,
@@ -17,7 +17,7 @@ export class DynamicMemoizeContainer<
 
     }
 
-    call(argument : Parameters<Fn>) : Argument<Parameters<Fn>> & Returns<ReturnType<Fn>> {
+    call(argument : Parameters<Fn>) : Argument<Parameters<Fn>> & Return<ReturnType<Fn>> {
 
         return {
             argument : argument,
@@ -25,7 +25,7 @@ export class DynamicMemoizeContainer<
         };
     }
 
-    get(argument : Parameters<Fn>) : (Argument<Parameters<Fn>> & Returns<ReturnType<Fn>>)|null {
+    get(argument : Parameters<Fn>) : (Argument<Parameters<Fn>> & Return<ReturnType<Fn>>)|null {
 
         return Find(this.memoized, argument, this.compare, null);
     }

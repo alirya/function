@@ -7,22 +7,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../assert/parameter"], factory);
+        define(["require", "exports", "./callback"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const parameter_1 = __importDefault(require("../assert/parameter"));
+    const callback_1 = __importDefault(require("./callback"));
     /**
+     * Assert if {@param value} and {@param extras} valid according to
+     *
      * Throw exception from {@param error} if given {@param value} is not valid according
      * to {@param validation}
      *
      * This can be use to create type assertion
      */
-    function Callback(value, validation, error) {
-        parameter_1.default(value, validation, error);
-        return value;
+    function ParameterArguments(value, validation, error, extras) {
+        callback_1.default([value, ...extras], validation, error);
     }
-    exports.default = Callback;
+    exports.default = ParameterArguments;
 });
-//# sourceMappingURL=callback.js.map
+//# sourceMappingURL=parameter-arguments.js.map

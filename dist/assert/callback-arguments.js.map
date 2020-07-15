@@ -1,1 +1,0 @@
-{"version":3,"file":"callback-arguments.js","sourceRoot":"","sources":["../../src/assert/callback-arguments.ts"],"names":[],"mappings":";;;;;;;;;;;IAGA;;;;;OAKG;IAEH,SAAwB,iBAAiB,CACrC,KAAa,EACb,UAA2D,EAC3D,KAAoD,EACpD,MAAe;QAGf,aAAa;QACb,IAAG,CAAC,UAAU,CAAC,KAAK,EAAE,GAAG,MAAM,CAAC,EAAE;YAE9B,aAAa;YACb,MAAM,KAAK,CAAC,KAAK,EAAE,GAAG,MAAM,CAAC,CAAC;SACjC;IACL,CAAC;IAbD,oCAaC"}

@@ -1,5 +1,5 @@
-import Return from "./returns";
-import Infer from "./infer/returns";
+import Return from "./return";
+import Infer from "./infer/return";
 import ObjectProperty from "@dikac/t-object/value/property";
 import ValueMemoize from "@dikac/t-value/memoize";
 

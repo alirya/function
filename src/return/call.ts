@@ -1,22 +1,22 @@
-import Argument from "../argument/argument";
-import Returns from "./returns";
+import ArgumentInterface from "../argument/argument";
+import ReturnInterface from "./return";
 import Value from "@dikac/t-value/value";
 import FunctionCall from "../argument/any/call";
 import Function from "../function";
 
 /**
- * Use {@link Argument} as argument to call function form {@link Value}
- * and set return value to {@link Returns}
+ * Use {@link ArgumentInterface} as argument to call function form {@link Value}
+ * and set return value to {@link Return}
  */
 export default function Call<
-    Return = any,
-    Arg extends any[] = any[]
+    Return = unknown,
+    Argument extends unknown[] = unknown[]
 >(
-    object : Argument<Arg> & Value<Function<Arg, Return>> & Partial<Returns<Return>>
-) : Argument<Arg> & Value<Function<Arg, Return>> & Returns<Return> {
+    object : ArgumentInterface<Argument> & Value<Function<Argument, Return>> & Partial<ReturnInterface<Return>>
+) : ArgumentInterface<Argument> & Value<Function<Argument, Return>> & ReturnInterface<Return> {
 
     object.return = FunctionCall(object);
 
-    return <Argument<Arg> & Value<Function<Arg, Return>> & Returns<Return>> object;
+    return <ArgumentInterface<Argument> & Value<Function<Argument, Return>> & ReturnInterface<Return>> object;
 
 }

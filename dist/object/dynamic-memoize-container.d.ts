@@ -1,11 +1,11 @@
 import Argument from "../argument/argument";
-import Returns from "../return/returns";
+import Return from "../return/return";
 import Function from "../function";
 export declare class DynamicMemoizeContainer<Fn extends Function> {
     functions: Fn;
     compare: Function<[Parameters<Fn>, Parameters<Fn>], boolean>;
-    readonly memoized: (Argument<Parameters<Fn>> & Returns<ReturnType<Fn>>)[];
+    readonly memoized: (Argument<Parameters<Fn>> & Return<ReturnType<Fn>>)[];
     constructor(functions: Fn, compare: Function<[Parameters<Fn>, Parameters<Fn>], boolean>);
-    call(argument: Parameters<Fn>): Argument<Parameters<Fn>> & Returns<ReturnType<Fn>>;
-    get(argument: Parameters<Fn>): (Argument<Parameters<Fn>> & Returns<ReturnType<Fn>>) | null;
+    call(argument: Parameters<Fn>): Argument<Parameters<Fn>> & Return<ReturnType<Fn>>;
+    get(argument: Parameters<Fn>): (Argument<Parameters<Fn>> & Return<ReturnType<Fn>>) | null;
 }

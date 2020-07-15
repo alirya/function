@@ -7,19 +7,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../boolean/function", "../assert/throwable/function", "./callback"], factory);
+        define(["require", "exports", "../boolean/function", "../assert/throwable/function", "./parameter"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     const function_1 = __importDefault(require("../boolean/function"));
     const function_2 = __importDefault(require("../assert/throwable/function"));
-    const callback_1 = __importDefault(require("./callback"));
+    const parameter_1 = __importDefault(require("./parameter"));
     /**
      * Throw exception from {@param error} if given {@param value} is no callable type
      */
     function Function(value, error = function_2.default) {
-        callback_1.default(value, function_1.default, error);
+        parameter_1.default(value, function_1.default, error);
     }
     exports.default = Function;
 });

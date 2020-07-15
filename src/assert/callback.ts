@@ -1,20 +1,21 @@
 import Function from "../function";
 
 /**
- * Throw exception from {@param error} if given {@param value} is not valid according
- * to {@param validation}
+ * Assert if {@param argument} valid according to {@param validation}
  *
- * This can be use to create type assertion
+ * Throw exception from {@param error} if not valid
  */
 
-export default function Callback<Asserted extends Argument, Argument>(
-    value : Argument,
-    validation : Function<[Argument], boolean>,
-    error : Function<[Argument], Error>,
-) : asserts value is Asserted
+export default function Callback<Argument extends unknown[]>(
+    argument : Argument,
+    validation : Function<Argument, boolean>,
+    error : Function<Argument, Error>,
+) : void
 {
-    if(!validation(value)) {
 
-        throw error(value);
+    if(!validation(...argument)) {
+
+        throw error(...argument);
     }
 }
+

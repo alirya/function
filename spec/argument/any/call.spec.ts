@@ -2,7 +2,6 @@ import Call from "../../../dist/argument/any/call";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
-
 describe("basic", function() {
 
     let object = {

@@ -1,7 +1,7 @@
 /**
  * Intended to be used for functions return value
  */
-export default interface Returns<Type = any> {
+export default interface Return<Type = any> {
 
     return : Type
 }

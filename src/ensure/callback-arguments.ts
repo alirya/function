@@ -1,4 +1,4 @@
-import AssertCallback from "../assert/callback-arguments";
+import AssertCallback from "../assert/parameter-arguments";
 import Function from "../function";
 import {List} from "ts-toolbelt";
 

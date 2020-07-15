@@ -10,14 +10,13 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-     * Throw exception from {@param error} if given {@param value} is not valid according
-     * to {@param validation}
+     * Assert if {@param argument} valid according to {@param validation}
      *
-     * This can be use to create type assertion
+     * Throw exception from {@param error} if not valid
      */
-    function Callback(value, validation, error) {
-        if (!validation(value)) {
-            throw error(value);
+    function Callback(argument, validation, error) {
+        if (!validation(...argument)) {
+            throw error(...argument);
         }
     }
     exports.default = Callback;
