@@ -13,9 +13,9 @@
      * container for function argument & function
      */
     class Value {
-        constructor(argument, value) {
+        constructor(argument, callback) {
             this.argument = argument;
-            this.value = value;
+            this.callback = callback;
         }
     }
     exports.default = Value;

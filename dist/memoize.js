@@ -20,8 +20,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
      */
     function Memoize(callback, ...argument) {
         return memoize_from_object_1.default({
-            value: callback,
-            argument: argument
+            callback: callback,
+            argument: argument,
         });
     }
     exports.default = Memoize;

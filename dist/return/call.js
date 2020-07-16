@@ -14,7 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     Object.defineProperty(exports, "__esModule", { value: true });
     const call_1 = __importDefault(require("../argument/any/call"));
     /**
-     * Use {@link ArgumentInterface} as argument to call function form {@link Value}
+     * Use {@link ArgumentInterface} as argument to call function form {@link Callback}
      * and set return value to {@link Return}
      */
     function Call(object) {

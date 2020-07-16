@@ -7,7 +7,7 @@ import FunctionType from "../function";
 export default function Function<
     Assumption extends FunctionType
 >(
-    value : any
+    value : unknown
 ) : value is Assumption {
 
     return IsFunction(value);

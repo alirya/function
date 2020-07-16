@@ -1,7 +1,7 @@
 import Argument from "../argument";
-import Value from "@dikac/t-value/value";
 import Function from "../../function";
+import Callback from "../../callback/callback";
 /**
- * Use {@link Argument} as argument to call function form {@link Value}
+ * Use {@link Argument} as argument to call function form {@link Callback}
  */
-export default function Call<Return = any, Arg extends any[] = any[]>(object: Argument<Arg> & Value<Function<Arg, Return>>): Return;
+export default function Call<Fn extends Function>(object: Argument<Parameters<Fn>> & Callback<Fn>): ReturnType<Fn>;

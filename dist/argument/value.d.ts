@@ -1,11 +1,11 @@
-import ValueInterface from "@dikac/t-value/value";
 import Argument from "./argument";
 import Function from "../function";
+import Callback from "../callback/callback";
 /**
  * container for function argument & function
  */
-export default class Value<Return, Arguments extends any[]> implements Readonly<ValueInterface<Function<Arguments, Return>>>, Argument<Arguments> {
+export default class Value<Return, Arguments extends unknown[]> implements Readonly<Callback<Function<Arguments, Return>>>, Argument<Arguments> {
     argument: Arguments;
-    value: (...argument: Arguments) => Return;
-    constructor(argument: Arguments, value: (...argument: Arguments) => Return);
+    callback: (...argument: Arguments) => Return;
+    constructor(argument: Arguments, callback: (...argument: Arguments) => Return);
 }

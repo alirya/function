@@ -1,31 +1,45 @@
 import Return from "./return";
 import Infer from "./infer/return";
-import ObjectProperty from "@dikac/t-object/value/property";
-import ValueMemoize from "@dikac/t-value/memoize";
 
 /**
  * Wrap {@link Return} and cache its value
- *
- * suitable to cached value from heave operation
  */
 export default class MemoizeFromObject<
-    Container extends Return
-> implements
+    Container extends Return = Return
+    > implements
     Readonly<Return<Infer<Container>>>
 {
-    public memoize : ValueMemoize<ObjectProperty<'return', Container>>;
+    protected memoize : Return<Infer<Container>>|undefined;
 
     constructor(
         public subject : Container
     ) {
+        this.clear();
+    }
 
-        let value = new ObjectProperty(subject, 'return');
-        this.memoize = new ValueMemoize(value);
+    get memoized () : boolean {
+
+        return this.memoize !== undefined;
+    }
+
+    /**
+     * clear cached return
+     */
+    clear () {
+
+        this.memoize = undefined;
     }
 
     get return () : Infer<Container> {
 
-        return this.memoize.value;
+        if(!this.memoized) {
+
+            this.memoize = {
+                return : <Infer<Container>> this.subject.return
+            };
+        }
+
+        return (<Return<Infer<Container>>> this.memoize).return;
     }
 
 }

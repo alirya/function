@@ -9,7 +9,7 @@ import {List} from "ts-toolbelt";
  * This can be use to create type assertion
  */
 
-export default function CallbackArguments<Return  extends Value, Value, Extras extends any[] = any[]>(
+export default function CallbackArguments<Return  extends Value, Value, Extras extends unknown[] = unknown[]>(
     value : Value,
     validation : Function<List.Prepend<Extras, Value>, boolean>,
     error : Function<List.Prepend<Extras, Value>, Error>,

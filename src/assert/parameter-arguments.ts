@@ -11,7 +11,7 @@ import Callback from "./callback";
  * This can be use to create type assertion
  */
 
-export default function ParameterArguments<Asserted extends Value, Value, Extras extends any[] = any[]>(
+export default function ParameterArguments<Asserted extends Value, Value, Extras extends unknown[] = unknown[]>(
     value : Value,
     validation : Function<List.Prepend<Extras, Value>, boolean>,
     error : Function<List.Prepend<Extras, Value>, Error>,

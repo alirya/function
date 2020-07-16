@@ -11,12 +11,12 @@ describe("basic", function() {
         return number + number;
     };
 
-    let callback = new Callback({value:fn, argument:[1]});
+    let callback = new Callback({callback:fn, argument:[1]});
 
     it('validate initial data', function () {
 
         expect(callback.argument).toEqual([1]);
-        expect(callback.value).toEqual(fn);
+        expect(callback.callback).toEqual(fn);
 
     });
 

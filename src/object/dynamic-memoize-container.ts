@@ -21,7 +21,7 @@ export class DynamicMemoizeContainer<
 
         return {
             argument : argument,
-            return : this.functions(...argument)
+            return : <ReturnType<Fn>>this.functions(...argument)
         };
     }
 

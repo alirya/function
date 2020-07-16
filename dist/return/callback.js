@@ -23,8 +23,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         get argument() {
             return this.subject.argument;
         }
-        get value() {
-            return this.subject.value;
+        get callback() {
+            return this.subject.callback;
         }
     }
     exports.default = Callback;

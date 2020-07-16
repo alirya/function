@@ -1,9 +1,6 @@
 import Functions from "./function";
-import Merge from "@dikac/t-object/merge";
 import ReturnMemoize from "./return/memoize-from-object";
 import Callback from "./return/callback";
-import Argument from "./argument/argument";
-import Value from "@dikac/t-value/value";
 import MemoizeFromObject from "./memoize-from-object";
 
 /**
@@ -19,8 +16,8 @@ export default function Memoize<
 ) : Functions<[], ReturnType<Fn>> & ReturnMemoize<Callback<Fn>> {
 
     return MemoizeFromObject({
-        value : callback,
-        argument : argument
+        callback : callback,
+        argument : argument,
     });
 
 }

@@ -4,14 +4,17 @@ it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
 describe("basic", function() {
 
-    let object = {
+    let object : {
+        argument : [number],
+        callback : (number : number) => number,
+        return : number
+    } = {
         argument : [1],
-        value : (number : number) => {
+        callback : (number : number) => {
             return number + number;
         },
         return : 0
     };
-
 
     it("call", () => {
 

@@ -19,7 +19,7 @@ describe("basic", function() {
 
         expect(called).toBe(0)
         expect(memoize.subject.argument).toEqual([1])
-        expect(memoize.memoize.memoized).toBeFalse();
+        expect(memoize.memoized).toBeFalse();
 
     });
 
@@ -29,7 +29,7 @@ describe("basic", function() {
         expect(memoize.return).toBe(2)
 
         expect(called).toBe(1)
-        expect(memoize.memoize.memoized).toBeTrue();
+        expect(memoize.memoized).toBeTrue();
     });
 
     it("2nd call", function() {
@@ -37,7 +37,7 @@ describe("basic", function() {
         expect(memoize()).toBe(2)
         expect(memoize.return).toBe(2)
         expect(called).toBe(1)
-        expect(memoize.memoize.memoized).toBeTrue();
+        expect(memoize.memoized).toBeTrue();
     });
 
     describe("modify", function() {
@@ -50,7 +50,7 @@ describe("basic", function() {
         });
 
         it("reset", () => {
-            memoize.memoize.clear();
+            memoize.clear();
 
             expect(called).toBe(1)
             expect(memoize()).toBe(4)

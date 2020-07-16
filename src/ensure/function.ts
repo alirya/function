@@ -10,11 +10,11 @@ import FunctionType from "../function";
 export default function Function<
     Assumption extends FunctionType
 >(
-    value : any,
-    error : FunctionType<[any], Error> = ThrowableType
+    value : unknown,
+    error : FunctionType<[unknown], Error> = ThrowableType
 ) : Assumption {
 
     GuardFunction(value, TypeGuard, error)
 
-    return value;
+    return <Assumption>value;
 }

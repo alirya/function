@@ -1,24 +1,24 @@
 import Functions from "./function";
 import Merge from "@dikac/t-object/merge";
 import ReturnMemoize from "./return/memoize-from-object";
-import Callback from "./return/callback";
+import ReturnCallback from "./return/callback";
 import Argument from "./argument/argument";
-import Value from "@dikac/t-value/value";
+import Callback from "./callback/callback";
 
 /**
- * wrap given {@param data} {@link Value} to new function and cache its return
+ * wrap given {@param data} {@link Callback} to new function and cache its return
  *
  * {@param data} {@link Argument} is used if cached return is not exits
  */
 export default function MemoizeFromObject<
     Fn extends Functions,
 >(
-    data : Argument<Parameters<Fn>> & Value<Fn>,
-) : Functions<[], ReturnType<Fn>> & ReturnMemoize<Callback<Fn>> {
+    data : Argument<Parameters<Fn>> & Callback<Fn>,
+) : Functions<[], ReturnType<Fn>> & ReturnMemoize<ReturnCallback<Fn>> {
 
-    let merged : Functions<[], ReturnType<Fn>> & ReturnMemoize<Callback<Fn>>;
+    let merged : Functions<[], ReturnType<Fn>> & ReturnMemoize<ReturnCallback<Fn>>;
 
-    let callback = new Callback(data);
+    let callback = new ReturnCallback(data);
     let memoize = new ReturnMemoize(callback);
 
     let fn = function () : ReturnType<Fn> {

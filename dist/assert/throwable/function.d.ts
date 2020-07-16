@@ -1,1 +1,1 @@
-export default function Function(value: any): Error;
+export default function Function(value: unknown): Error;

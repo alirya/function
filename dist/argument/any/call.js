@@ -10,10 +10,10 @@
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     /**
-     * Use {@link Argument} as argument to call function form {@link Value}
+     * Use {@link Argument} as argument to call function form {@link Callback}
      */
     function Call(object) {
-        return object.value(...object.argument);
+        return object.callback(...object.argument);
     }
     exports.default = Call;
 });

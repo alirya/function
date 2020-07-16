@@ -1,2 +1,2 @@
-declare type Function<Arguments extends any[] = any[], Return = any> = (...argument: Arguments) => Return;
+declare type Function<Arguments extends unknown[] = unknown[], Return = unknown> = (...argument: Arguments) => Return;
 export default Function;

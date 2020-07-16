@@ -8,4 +8,4 @@ import { List } from "ts-toolbelt";
  *
  * This can be use to create type assertion
  */
-export default function ParameterArguments<Asserted extends Value, Value, Extras extends any[] = any[]>(value: Value, validation: Function<List.Prepend<Extras, Value>, boolean>, error: Function<List.Prepend<Extras, Value>, Error>, extras: Extras): asserts value is Asserted;
+export default function ParameterArguments<Asserted extends Value, Value, Extras extends unknown[] = unknown[]>(value: Value, validation: Function<List.Prepend<Extras, Value>, boolean>, error: Function<List.Prepend<Extras, Value>, Error>, extras: Extras): asserts value is Asserted;

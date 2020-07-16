@@ -1,1 +1,1 @@
-{"version":3,"file":"memoize.js","sourceRoot":"","sources":["../src/memoize.ts"],"names":[],"mappings":";;;;;;;;;;;;;;IAMA,gFAAsD;IAEtD;;;;OAIG;IACH,SAAwB,OAAO,CAG3B,QAAa,EACb,GAAG,QAAyB;QAG5B,OAAO,6BAAiB,CAAC;YACrB,KAAK,EAAG,QAAQ;YAChB,QAAQ,EAAG,QAAQ;SACtB,CAAC,CAAC;IAEP,CAAC;IAZD,0BAYC"}
+{"version":3,"file":"memoize.js","sourceRoot":"","sources":["../src/memoize.ts"],"names":[],"mappings":";;;;;;;;;;;;;;IAGA,gFAAsD;IAEtD;;;;OAIG;IACH,SAAwB,OAAO,CAG3B,QAAa,EACb,GAAG,QAAyB;QAG5B,OAAO,6BAAiB,CAAC;YACrB,QAAQ,EAAG,QAAQ;YACnB,QAAQ,EAAG,QAAQ;SACtB,CAAC,CAAC;IAEP,CAAC;IAZD,0BAYC"}
