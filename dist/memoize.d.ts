@@ -1,11 +1,9 @@
 import Functions from "./function";
-import ReturnMemoize from "./return/memoize";
+import ReturnMemoize from "./return/memoize-from-object";
 import Callback from "./return/callback";
-import Argument from "./argument/argument";
-import Value from "@dikac/t-value/value";
 /**
- * wrap given {@param data} {@link Value} to new function and cache its return
+ * wrap given {@param callback} to new function and cache its return
  *
- * {@param data} {@link Argument} is used if cached return is not exits
+ * {@param argument} is used if cached return is not exits
  */
-export default function Memoize<Fn extends Functions>(data: Argument<Parameters<Fn>> & Value<Fn>): Functions<[], ReturnType<Fn>> & ReturnMemoize<Callback<Fn>>;
+export default function Memoize<Fn extends Functions>(callback: Fn, ...argument: Parameters<Fn>): Functions<[], ReturnType<Fn>> & ReturnMemoize<Callback<Fn>>;

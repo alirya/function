@@ -1,4 +1,4 @@
-import Memoize from "../dist/memoize";
+import Memoize from "../dist/memoize-from-object";
 
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
@@ -8,11 +8,11 @@ describe("basic", function() {
 
 
     let called = 0;
-    let memoize = Memoize(function (number : number) : number {
+    let memoize = Memoize({value:function (number : number) : number {
 
         called++;
         return number + number;
-    },1);
+    }, argument:[1]});
 
 
     it("check initial data", () => {

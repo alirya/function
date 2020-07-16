@@ -19,7 +19,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
      *
      * suitable to cached value from heave operation
      */
-    class Memoize {
+    class MemoizeFromObject {
         constructor(subject) {
             this.subject = subject;
             let value = new property_1.default(subject, 'return');
@@ -29,6 +29,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
             return this.memoize.value;
         }
     }
-    exports.default = Memoize;
+    exports.default = MemoizeFromObject;
 });
-//# sourceMappingURL=memoize.js.map
+//# sourceMappingURL=memoize-from-object.js.map

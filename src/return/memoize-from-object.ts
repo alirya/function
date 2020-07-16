@@ -8,7 +8,7 @@ import ValueMemoize from "@dikac/t-value/memoize";
  *
  * suitable to cached value from heave operation
  */
-export default class Memoize<
+export default class MemoizeFromObject<
     Container extends Return
 > implements
     Readonly<Return<Infer<Container>>>
@@ -22,7 +22,6 @@ export default class Memoize<
         let value = new ObjectProperty(subject, 'return');
         this.memoize = new ValueMemoize(value);
     }
-
 
     get return () : Infer<Container> {
 

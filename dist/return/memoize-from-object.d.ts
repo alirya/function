@@ -7,7 +7,7 @@ import ValueMemoize from "@dikac/t-value/memoize";
  *
  * suitable to cached value from heave operation
  */
-export default class Memoize<Container extends Return> implements Readonly<Return<Infer<Container>>> {
+export default class MemoizeFromObject<Container extends Return> implements Readonly<Return<Infer<Container>>> {
     subject: Container;
     memoize: ValueMemoize<ObjectProperty<'return', Container>>;
     constructor(subject: Container);
