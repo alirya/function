@@ -1,5 +1,5 @@
 import Argument from "./argument";
-import InferArgument from "./infer/argument";
+import InferArgument from "./value/value";
 import Function from "../function";
 /**
  * Find match {@param argument} in {@param list} value according
