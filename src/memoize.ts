@@ -13,7 +13,7 @@ export default function Memoize<
 >(
     callback : Fn,
     ...argument : Parameters<Fn>
-) : Functions<[], ReturnType<Fn>> & ReturnMemoize<Callback<Fn>> {
+) : Functions<[], ReturnType<Fn>> & {container:ReturnMemoize<Callback<Fn>>} {
 
     return MemoizeFromObject({
         callback : callback,

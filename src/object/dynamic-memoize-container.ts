@@ -4,7 +4,7 @@ import Find from "../argument/find";
 import Function from "../function";
 
 
-export class DynamicMemoizeContainer<
+export default class DynamicMemoizeContainer<
     Fn extends Function,
 > {
 
@@ -30,4 +30,3 @@ export class DynamicMemoizeContainer<
         return Find(this.memoized, argument, this.compare, null);
     }
 }
-

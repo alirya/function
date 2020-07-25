@@ -7,12 +7,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "@dikac/t-object/merge", "./return/memoize-from-object", "./return/callback"], factory);
+        define(["require", "exports", "./return/memoize-from-object", "./return/callback"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const merge_1 = __importDefault(require("@dikac/t-object/merge"));
     const memoize_from_object_1 = __importDefault(require("./return/memoize-from-object"));
     const callback_1 = __importDefault(require("./return/callback"));
     /**
@@ -25,9 +24,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
         let callback = new callback_1.default(data);
         let memoize = new memoize_from_object_1.default(callback);
         let fn = function () {
-            return merged.return;
+            return memoize.return;
         };
-        merged = merge_1.default(fn, memoize);
+        merged = fn;
+        merged.container = memoize;
         return merged;
     }
     exports.default = MemoizeFromObject;

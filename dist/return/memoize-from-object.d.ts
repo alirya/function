@@ -1,7 +1,7 @@
 import Return from "./return";
 import Infer from "./value/value";
-import ObjectProperty from "@dikac/t-object/value/property";
 import ValueMemoize from "@dikac/t-value/memoize";
+import Value from "@dikac/t-value/value";
 /**
  * Wrap {@link Return} and cache its value
  *
@@ -9,7 +9,7 @@ import ValueMemoize from "@dikac/t-value/memoize";
  */
 export default class MemoizeFromObject<Container extends Return> implements Readonly<Return<Infer<Container>>> {
     subject: Container;
-    memoize: ValueMemoize<ObjectProperty<'return', Container>>;
+    memoize: ValueMemoize<Readonly<Value<Infer<Container>>>>;
     constructor(subject: Container);
     get return(): Infer<Container>;
 }

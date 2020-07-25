@@ -6,4 +6,6 @@ import Callback from "./return/callback";
  *
  * {@param argument} is used if cached return is not exits
  */
-export default function Memoize<Fn extends Functions>(callback: Fn, ...argument: Parameters<Fn>): Functions<[], ReturnType<Fn>> & ReturnMemoize<Callback<Fn>>;
+export default function Memoize<Fn extends Functions>(callback: Fn, ...argument: Parameters<Fn>): Functions<[], ReturnType<Fn>> & {
+    container: ReturnMemoize<Callback<Fn>>;
+};

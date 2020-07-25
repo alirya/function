@@ -1,7 +1,7 @@
 import Argument from "../argument/argument";
 import Return from "../return/return";
 import Function from "../function";
-export declare class DynamicMemoizeContainer<Fn extends Function> {
+export default class DynamicMemoizeContainer<Fn extends Function> {
     functions: Fn;
     compare: Function<[Parameters<Fn>, Parameters<Fn>], boolean>;
     readonly memoized: (Argument<Parameters<Fn>> & Return<ReturnType<Fn>>)[];

@@ -1,37 +1,38 @@
 import Equal from "@dikac/t-array/boolean/equal";
 import Functions from "./function";
-import {DynamicMemoizeContainer} from "./object/dynamic-memoize-container";
-import Merge from "@dikac/t-object/merge";
+import DynamicMemoizeContainer from "./object/dynamic-memoize-container";
+
 
 export default function DynamicMemoize<
     Fn extends Functions,
 >(
     callable : Fn,
     compareArguments : Functions<[Parameters<Fn>, Parameters<Fn>], boolean> = Equal
-) : Fn & DynamicMemoizeContainer<Fn> {
+) : Fn & {container:DynamicMemoizeContainer<Fn>} {
 
     let container = new DynamicMemoizeContainer<Fn>(callable, compareArguments);
 
-    let merged : DynamicMemoizeContainer<Fn> & Fn ;
+    let merged : {container:DynamicMemoizeContainer<Fn>} & Fn ;
+
 
     let fn : Fn = <Fn> function (... argument : Parameters<Fn>) : ReturnType<Fn> {
 
-        let object = merged.get(argument);
+        let object = container.get(argument);
 
         if(!object) {
 
-            object = merged.call(argument);
+            object = container.call(argument);
 
-            merged.memoized.push(object);
+            container.memoized.push(object);
 
         }
-
 
         return object.return;
     };
 
-    merged = <DynamicMemoizeContainer<Fn> & Fn> <unknown> Merge(fn, container);
+    merged = <{container:DynamicMemoizeContainer<Fn>} & Fn>fn;
+    merged.container = container;
+    return  merged;
 
-    return merged;
 }
 

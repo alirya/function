@@ -12,7 +12,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    exports.DynamicMemoizeContainer = void 0;
     const find_1 = __importDefault(require("../argument/find"));
     class DynamicMemoizeContainer {
         constructor(functions, compare) {
@@ -30,6 +29,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
             return find_1.default(this.memoized, argument, this.compare, null);
         }
     }
-    exports.DynamicMemoizeContainer = DynamicMemoizeContainer;
+    exports.default = DynamicMemoizeContainer;
 });
 //# sourceMappingURL=dynamic-memoize-container.js.map
