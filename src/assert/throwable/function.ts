@@ -1,6 +1,7 @@
-import Message from "../string/function";
+import Message from "../../boolean/string/function";
+import Callback from "./callback";
 
 export default function Function(value : unknown) : Error {
 
-    return new Error(Message(value, false))
+    return Callback(value, Message);
 }

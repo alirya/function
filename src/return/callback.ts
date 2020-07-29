@@ -1,6 +1,6 @@
 import Argument from "../argument/argument";
 import Return from "./return";
-import Call from "../argument/any/call";
+import Call from "../argument/value/call";
 import Function from "../function";
 import CallbackInterface from "../callback/callback";
 

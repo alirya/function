@@ -9,15 +9,9 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function Function(value, valid) {
-        let string = value.toString();
-        if (valid) {
-            return `value "${string}" is function`;
-        }
-        else {
-            return `value "${string}" is not function`;
-        }
+    function Callback(value, message, error = (string) => new Error(string)) {
+        return error(message(false, value));
     }
-    exports.default = Function;
+    exports.default = Callback;
 });
-//# sourceMappingURL=function.js.map
+//# sourceMappingURL=callback.js.map

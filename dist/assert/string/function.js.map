@@ -1,1 +1,0 @@
-{"version":3,"file":"function.js","sourceRoot":"","sources":["../../../src/assert/string/function.ts"],"names":[],"mappings":";;;;;;;;;;;IAAA,SAAwB,QAAQ,CAAC,KAAe,EAAE,KAAe;QAE7D,IAAI,MAAM,GAAS,KAAM,CAAC,QAAQ,EAAE,CAAC;QAErC,IAAG,KAAK,EAAE;YAEN,OAAO,UAAU,MAAM,eAAe,CAAC;SAE1C;aAAM;YAEH,OAAO,UAAU,MAAM,mBAAmB,CAAC;SAC9C;IACL,CAAC;IAZD,2BAYC"}
