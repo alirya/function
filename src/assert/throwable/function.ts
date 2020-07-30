@@ -3,5 +3,5 @@ import Callback from "./callback";
 
 export default function Function(value : unknown) : Error {
 
-    return Callback(value, Message);
+    return Callback([value], Message);
 }

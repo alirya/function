@@ -1,6 +1,4 @@
-import Fn from "../function";
+export default interface Callback<FunctionT extends Function> {
 
-export default interface Callback<Function extends Fn> {
-
-    callback : Function
+    callback : FunctionT
 }

@@ -15,7 +15,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     const function_1 = __importDefault(require("../../boolean/string/function"));
     const callback_1 = __importDefault(require("./callback"));
     function Function(value) {
-        return callback_1.default(value, function_1.default);
+        return callback_1.default([value], function_1.default);
     }
     exports.default = Function;
 });

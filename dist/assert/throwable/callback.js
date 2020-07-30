@@ -9,8 +9,8 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    function Callback(value, message, error = (string) => new Error(string)) {
-        return error(message(false, value));
+    function Callback(argument, message, error = (string) => new Error(string)) {
+        return error(message(false, ...argument));
     }
     exports.default = Callback;
 });

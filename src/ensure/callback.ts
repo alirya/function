@@ -1,5 +1,5 @@
-import AssertCallback from "../assert/parameter";
-import Function from "../function";
+import AssertCallback from "../assert/callback";
+import FunctionSingle from "../function-single";
 
 /**
  * Throw exception from {@param error} if given {@param value} is not valid according
@@ -8,13 +8,14 @@ import Function from "../function";
  * This can be use to create type assertion
  */
 
-export default function Callback<Return  extends Value, Value>(
+export default function Callback<Return  extends Value, Value, Extras extends unknown[] = unknown[]>(
     value : Value,
-    validation : Function<[Value], boolean>,
-    error : Function<[Value], Error>,
+    validation : FunctionSingle<Value, boolean, Extras>,
+    error : FunctionSingle<Value, Error, Extras>,
+    ...extras : Extras
 ) : Return
 {
-    AssertCallback(value, validation, error);
+    AssertCallback(value, validation, error, ...extras);
 
-    return <Return>value;
+    return <Return> value;
 }
