@@ -6,4 +6,4 @@ import Callback from "../callback/callback";
  * Use {@link ArgumentInterface} as argument to call function form {@link Callback}
  * and set return value to {@link Return}
  */
-export default function Call<Fn extends Function>(object: ArgumentInterface<Parameters<Fn>> & Callback<Fn> & ReturnInterface<ReturnType<Fn>>): ArgumentInterface<Parameters<Fn>> & Callback<Fn> & ReturnInterface<ReturnType<Fn>>;
+export default function Call<FunctionT extends Function>(object: ArgumentInterface<Parameters<FunctionT>> & Callback<FunctionT> & ReturnInterface<ReturnType<FunctionT>>): ArgumentInterface<Parameters<FunctionT>> & Callback<FunctionT> & ReturnInterface<ReturnType<FunctionT>>;

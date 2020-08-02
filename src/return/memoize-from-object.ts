@@ -9,26 +9,26 @@ import Value from "@dikac/t-value/value";
  * suitable to cached value from heave operation
  */
 export default class MemoizeFromObject<
-    Container extends Return
+    ReturnT extends Return
     > implements
-    Readonly<Return<Infer<Container>>>
+    Readonly<Return<Infer<ReturnT>>>
 {
-    public memoize : ValueMemoize<Readonly<Value<Infer<Container>>>>;
+    public memoize : ValueMemoize<Readonly<Value<Infer<ReturnT>>>>;
 
     constructor(
-        public subject : Container
+        public subject : ReturnT
     ) {
 
-        this.memoize = new ValueMemoize(<Value<Infer<Container>>>{
+        this.memoize = new ValueMemoize(<Value<Infer<ReturnT>>>{
             get value()  {
                 return subject.return;
             }
         });
     }
 
-    get return () : Infer<Container> {
+    get return () : Infer<ReturnT> {
 
-        return <Infer<Container>>this.memoize.value;
+        return <Infer<ReturnT>>this.memoize.value;
     }
 
 }

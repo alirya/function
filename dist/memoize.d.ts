@@ -1,4 +1,4 @@
-import Functions from "./function";
+import Function from "./function";
 import ReturnMemoize from "./return/memoize-from-object";
 import Callback from "./return/callback";
 /**
@@ -6,6 +6,6 @@ import Callback from "./return/callback";
  *
  * {@param argument} is used if cached return is not exits
  */
-export default function Memoize<Fn extends Functions>(callback: Fn, ...argument: Parameters<Fn>): Functions<[], ReturnType<Fn>> & {
-    container: ReturnMemoize<Callback<Fn>>;
+export default function Memoize<FunctionT extends Function>(callback: FunctionT, ...argument: Parameters<FunctionT>): Function<[], ReturnType<FunctionT>> & {
+    container: ReturnMemoize<Callback<FunctionT>>;
 };

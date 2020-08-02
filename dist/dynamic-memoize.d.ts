@@ -1,5 +1,5 @@
-import Functions from "./function";
+import Function from "./function";
 import DynamicMemoizeContainer from "./object/dynamic-memoize-container";
-export default function DynamicMemoize<Fn extends Functions>(callable: Fn, compareArguments?: Functions<[Parameters<Fn>, Parameters<Fn>], boolean>): Fn & {
-    container: DynamicMemoizeContainer<Fn>;
+export default function DynamicMemoize<FunctionT extends Function>(callable: FunctionT, compareArguments?: Function<[Parameters<FunctionT>, Parameters<FunctionT>], boolean>): FunctionT & {
+    container: DynamicMemoizeContainer<FunctionT>;
 };
