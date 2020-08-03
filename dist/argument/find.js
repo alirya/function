@@ -16,7 +16,7 @@
      * return {@param defaults} if no match found
      */
     function Find(list, argument, validation, defaults) {
-        for (let object of list) {
+        for (const object of list) {
             if (validation(object.argument, argument)) {
                 return object;
             }

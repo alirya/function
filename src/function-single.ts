@@ -1,6 +1,3 @@
-
-
-
 type FunctionSingle<
     Argument = unknown,
     Return = unknown,

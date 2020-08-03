@@ -8,7 +8,7 @@ import FunctionSingle from "../function-single";
  * This can be use to create type assertion
  */
 
-export default function Callback<Return  extends Value, Value, Extras extends unknown[] = unknown[]>(
+export default function Callback<Return extends Value, Value, Extras extends unknown[] = unknown[]>(
     value : Value,
     validation : FunctionSingle<Value, boolean, Extras>,
     error : FunctionSingle<Value, Error, Extras>,

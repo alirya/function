@@ -24,7 +24,6 @@ export default function DynamicMemoize<
             object = container.call(argument);
 
             container.memoized.push(object);
-
         }
 
         return object.return;

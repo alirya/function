@@ -7,4 +7,4 @@ import Function from "../function";
  *
  * return {@param defaults} if no match found
  */
-export default function Find<Object extends Argument, Default>(list: Iterable<Object>, argument: InferArgument<Object>, validation: Function<[InferArgument<Object>, InferArgument<Object>], boolean>, defaults: Default): Object | Default;
+export default function Find<ArgumentT extends Argument, Default>(list: Iterable<ArgumentT>, argument: InferArgument<ArgumentT>, validation: Function<[InferArgument<ArgumentT>, InferArgument<ArgumentT>], boolean>, defaults: Default): ArgumentT | Default;

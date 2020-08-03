@@ -14,21 +14,21 @@ import Guard from "../boolean/guard";
 export default function Callback<Asserted extends Value, Value, Extras extends unknown[] = unknown[]>(
     value : Value,
     validation : Guard<Value, Asserted, Extras>,
-    error : FunctionSingle<Value, Error>,
+    error : FunctionSingle<Value, Error, Extras>,
     ...extras : Extras
 ) : asserts value is Asserted;
 
 export default function Callback<Value, Extras extends unknown[] = unknown[]>(
     value : Value,
     validation : FunctionSingle<Value, boolean, Extras>,
-    error : FunctionSingle<Value, Error>,
+    error : FunctionSingle<Value, Error, Extras>,
     ...extras : Extras
 ) : void;
 
 export default function Callback<Asserted extends Value, Value, Extras extends unknown[] = unknown[]>(
     value : Value,
     validation : FunctionSingle<Value, boolean, Extras>,
-    error : FunctionSingle<Value, Error>,
+    error : FunctionSingle<Value, Error, Extras>,
     ...extras : Extras
 ) : asserts value is Asserted {
 

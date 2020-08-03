@@ -9,16 +9,16 @@ import Function from "../function";
  *
  * return {@param defaults} if no match found
  */
-export default function Find<Object extends Argument, Default>(
-    list : Iterable<Object>,
-    argument : InferArgument<Object>,
-    validation : Function<[InferArgument<Object>, InferArgument<Object>], boolean>,
+export default function Find<ArgumentT extends Argument, Default>(
+    list : Iterable<ArgumentT>,
+    argument : InferArgument<ArgumentT>,
+    validation : Function<[InferArgument<ArgumentT>, InferArgument<ArgumentT>], boolean>,
     defaults : Default
-) : Object|Default {
+) : ArgumentT|Default {
 
-    for(let object of list) {
+    for(const object of list) {
 
-        if(validation(<InferArgument<Object>>object.argument, argument)) {
+        if(validation(<InferArgument<ArgumentT>>object.argument, argument)) {
 
             return object;
         }
