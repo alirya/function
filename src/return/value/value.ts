@@ -1,5 +1,6 @@
-import ReturnInterface from "../return";
+import Value from "./infer";
 
-type Value<Type> = Type extends ReturnInterface<infer As> ? As : never;
-
+/**
+ * @deprecated use original instead
+ */
 export default Value;

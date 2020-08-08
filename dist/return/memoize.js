@@ -1,36 +1,42 @@
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);
         if (v !== undefined) module.exports = v;
     }
     else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../return/memoize"], factory);
+        define(["require", "exports"], factory);
     }
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    const memoize_1 = __importDefault(require("../return/memoize"));
     /**
      * Wrap {@link Return} and cache its value
      *
      * suitable to cached value from heave operation
      */
-    class MemoizeFromObject {
+    class Memoize {
         constructor(subject) {
             this.subject = subject;
-            this.memoize = new memoize_1.default({
-                get return() {
-                    return subject.return;
-                }
-            });
+            this.clear();
+        }
+        get memoized() {
+            return this.memoize !== undefined;
+        }
+        /**
+         * clear cached value
+         */
+        clear() {
+            this.memoize = undefined;
         }
         get return() {
+            if (!this.memoized) {
+                this.memoize = {
+                    return: this.subject.return
+                };
+            }
             return this.memoize.return;
         }
     }
-    exports.default = MemoizeFromObject;
+    exports.default = Memoize;
 });
-//# sourceMappingURL=memoize-from-object.js.map
+//# sourceMappingURL=memoize.js.map

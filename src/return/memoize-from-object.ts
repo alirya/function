@@ -1,7 +1,7 @@
 import Return from "./return";
 import Infer from "./value/value";
-import ValueMemoize from "@dikac/t-value/memoize";
-import Value from "@dikac/t-value/value";
+import ValueMemoize from "../return/memoize";
+
 
 /**
  * Wrap {@link Return} and cache its value
@@ -13,14 +13,14 @@ export default class MemoizeFromObject<
     > implements
     Readonly<Return<Infer<ReturnT>>>
 {
-    public memoize : ValueMemoize<Readonly<Value<Infer<ReturnT>>>>;
+    public memoize : ValueMemoize<Readonly<Return<Infer<ReturnT>>>>;
 
     constructor(
         public subject : ReturnT
     ) {
 
-        this.memoize = new ValueMemoize(<Value<Infer<ReturnT>>>{
-            get value()  {
+        this.memoize = new ValueMemoize(<Return<Infer<ReturnT>>>{
+            get return()  {
                 return subject.return;
             }
         });
@@ -28,7 +28,7 @@ export default class MemoizeFromObject<
 
     get return () : Infer<ReturnT> {
 
-        return <Infer<ReturnT>>this.memoize.value;
+        return <Infer<ReturnT>>this.memoize.return;
     }
 
 }
