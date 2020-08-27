@@ -1,10 +1,10 @@
-import AssertFunction from "../assert/assert";
 
 export default interface Assert<
     Argument,
     Return extends Argument,
     Extras extends unknown[] = unknown[],
-    Assert extends AssertFunction<Argument, Return, Extras> = AssertFunction<Argument, Return, Extras>
+    Assert extends (argument:Argument, ...args:Extras) => asserts argument is Return =
+        (argument:Argument, ...args:Extras) => asserts argument is Return
 > {
 
     callback : Assert

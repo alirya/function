@@ -1,11 +1,11 @@
 import IsFunction from "is-function"
-import FunctionType from "../function";
+import Callable from "../callable";
 
 /**
  * check if {@param value} type is function
  */
 export default function Function<
-    Assumption extends FunctionType
+    Assumption extends Callable
 >(
     value : unknown
 ) : value is Assumption {

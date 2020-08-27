@@ -1,9 +1,9 @@
-import Function from "./function";
 import ReturnMemoize from "./return/memoize-from-object";
 import ReturnCallback from "./return/callback";
 import Argument from "./argument/argument";
 import Callback from "./callback/callback";
-export declare type Container<FunctionT extends Function> = {
+import Callable from "./callable";
+export declare type Container<FunctionT extends Callable> = {
     container: ReturnMemoize<ReturnCallback<FunctionT>>;
 };
 /**
@@ -11,4 +11,4 @@ export declare type Container<FunctionT extends Function> = {
  *
  * {@param data} {@link Argument} is used if cached return is not exits
  */
-export default function MemoizeFromObject<FunctionT extends Function>(data: Argument<Parameters<FunctionT>> & Callback<FunctionT>): Function<[], ReturnType<FunctionT>> & Container<FunctionT>;
+export default function MemoizeFromObject<FunctionT extends Callable>(data: Argument<Parameters<FunctionT>> & Callback<FunctionT>): (() => ReturnType<FunctionT>) & Container<FunctionT>;

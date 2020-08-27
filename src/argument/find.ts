@@ -1,8 +1,5 @@
 import Argument from "./argument";
 import InferArgument from "./value/value";
-
-import Function from "../function";
-
 /**
  * Find match {@param argument} in {@param list} value according
  * to {@param validation}
@@ -12,13 +9,13 @@ import Function from "../function";
 export default function Find<ArgumentT extends Argument, Default>(
     list : Iterable<ArgumentT>,
     argument : InferArgument<ArgumentT>,
-    validation : Function<[InferArgument<ArgumentT>, InferArgument<ArgumentT>], boolean>,
+    validation : (argument : InferArgument<ArgumentT>, list : InferArgument<ArgumentT>) => boolean,
     defaults : Default
 ) : ArgumentT|Default {
 
     for(const object of list) {
 
-        if(validation(<InferArgument<ArgumentT>>object.argument, argument)) {
+        if(validation(argument, <InferArgument<ArgumentT>>object.argument)) {
 
             return object;
         }

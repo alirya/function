@@ -2,7 +2,6 @@ import Return from "./return";
 import Infer from "./value/value";
 import ValueMemoize from "../return/memoize";
 
-
 /**
  * Wrap {@link Return} and cache its value
  *

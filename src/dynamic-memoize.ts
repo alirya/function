@@ -1,13 +1,14 @@
 import Equal from "@dikac/t-array/boolean/equal";
-import Function from "./function";
 import DynamicMemoizeContainer from "./object/dynamic-memoize-container";
+import Callable from "./callable";
 
 
 export default function DynamicMemoize<
-    FunctionT extends Function,
+    FunctionT extends Callable,
 >(
     callable : FunctionT,
-    compareArguments : Function<[Parameters<FunctionT>, Parameters<FunctionT>], boolean> = Equal
+    compareArguments : (argument : Parameters<FunctionT>, list : Parameters<FunctionT>) => boolean= Equal
+
 ) : FunctionT & {container:DynamicMemoizeContainer<FunctionT>} {
 
     let container = new DynamicMemoizeContainer<FunctionT>(callable, compareArguments);

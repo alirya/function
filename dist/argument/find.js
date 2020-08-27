@@ -17,7 +17,7 @@
      */
     function Find(list, argument, validation, defaults) {
         for (const object of list) {
-            if (validation(object.argument, argument)) {
+            if (validation(argument, object.argument)) {
                 return object;
             }
         }

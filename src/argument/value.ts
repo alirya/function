@@ -1,5 +1,4 @@
 import Argument from "./argument";
-import Function from "../function";
 import Callback from "../callback/callback";
 
 /**
@@ -8,7 +7,7 @@ import Callback from "../callback/callback";
 export default class Value<
     Return, Arguments extends unknown[]
 > implements
-    Readonly<Callback<Function<Arguments, Return>>>,
+    Readonly<Callback<(...args:Arguments)=>Return>>,
     Argument<Arguments>
 {
     constructor(

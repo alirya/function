@@ -1,3 +1,11 @@
+/**
+ * Assert if {@param value} and {@param extras} valid according to
+ *
+ * Throw exception from {@param error} if given {@param value} is not valid according
+ * to {@param validation}
+ *
+ * This can be use to create type assertion
+ */
 (function (factory) {
     if (typeof module === "object" && typeof module.exports === "object") {
         var v = factory(require, exports);

@@ -18,6 +18,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
      * to {@param validation}
      *
      * This can be use to create type assertion
+     *
+     * @param value
+     * @param validation
+     * @param error
+     * @param extras
+     * extra argument for both {@param extras} & @param error
      */
     function Callback(value, validation, error, ...extras) {
         callback_1.default(value, validation, error, ...extras);

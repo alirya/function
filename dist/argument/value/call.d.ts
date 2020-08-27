@@ -1,7 +1,7 @@
 import Argument from "../argument";
-import Function from "../../function";
 import Callback from "../../callback/callback";
+import Callable from "../../callable";
 /**
  * Use {@link Argument} as argument to call function form {@link Callback}
  */
-export default function Call<FunctionT extends Function>(object: Argument<Parameters<FunctionT>> & Callback<FunctionT>): ReturnType<FunctionT>;
+export default function Call<FunctionT extends Callable>(object: Argument<Parameters<FunctionT>> & Callback<FunctionT>): ReturnType<FunctionT>;
