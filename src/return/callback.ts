@@ -5,29 +5,29 @@ import CallbackInterface from "../callback/callback";
 import Callable from "../callable";
 
 export default class Callback<
-    FunctionT extends Callable
+    FunctionType extends Callable
 > implements
-    Readonly<Argument<Parameters<FunctionT>>>,
-    Readonly<Return<ReturnType<FunctionT>>>
+    Readonly<Argument<Parameters<FunctionType>>>,
+    Readonly<Return<ReturnType<FunctionType>>>
 {
 
     constructor(
-        public subject : Argument<Parameters<FunctionT>> & CallbackInterface<FunctionT>
+        public subject : Argument<Parameters<FunctionType>> & CallbackInterface<FunctionType>
     ) {
     }
 
-    get return () : ReturnType<FunctionT> {
+    get return () : ReturnType<FunctionType> {
 
-        return <ReturnType<FunctionT>>Call(this);
+        return <ReturnType<FunctionType>>Call(this);
     }
 
-    get argument() : Parameters<FunctionT> {
+    get argument() : Parameters<FunctionType> {
 
         return this.subject.argument;
 
     }
 
-    get callback() : FunctionT  {
+    get callback() : FunctionType  {
 
         return this.subject.callback;
 

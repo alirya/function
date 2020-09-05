@@ -9,13 +9,13 @@ import Callable from "../callable";
  * and set return value to {@link Return}
  */
 export default function Call<
-    FunctionT extends Callable
+    FunctionType extends Callable
 >(
-    object : ArgumentInterface<Parameters<FunctionT>> & Callback<FunctionT> & ReturnInterface<ReturnType<FunctionT>>
-) : ArgumentInterface<Parameters<FunctionT>> & Callback<FunctionT> & ReturnInterface<ReturnType<FunctionT>> {
+    object : ArgumentInterface<Parameters<FunctionType>> & Callback<FunctionType> & ReturnInterface<ReturnType<FunctionType>>
+) : ArgumentInterface<Parameters<FunctionType>> & Callback<FunctionType> & ReturnInterface<ReturnType<FunctionType>> {
 
     object.return = FunctionCall(object);
 
-    return <ArgumentInterface<Parameters<FunctionT>> & Callback<FunctionT> & ReturnInterface<ReturnType<FunctionT>>> object;
+    return <ArgumentInterface<Parameters<FunctionType>> & Callback<FunctionType> & ReturnInterface<ReturnType<FunctionType>>> object;
 
 }

@@ -3,17 +3,17 @@ import DynamicMemoizeContainer from "./object/dynamic-memoize-container";
 import Callable from "./callable";
 
 export default function DynamicMemoize<
-    FunctionT extends Callable,
+    FunctionType extends Callable,
 >(
-    callable : FunctionT,
-    compareArguments : (argument : Parameters<FunctionT>, list : Parameters<FunctionT>) => boolean= Equal
-) : FunctionT & {container:DynamicMemoizeContainer<FunctionT>} {
+    callable : FunctionType,
+    compareArguments : (argument : Parameters<FunctionType>, list : Parameters<FunctionType>) => boolean= Equal
+) : FunctionType & {container:DynamicMemoizeContainer<FunctionType>} {
 
-    let container = new DynamicMemoizeContainer<FunctionT>(callable, compareArguments);
+    let container = new DynamicMemoizeContainer<FunctionType>(callable, compareArguments);
 
-    let merged : {container:DynamicMemoizeContainer<FunctionT>} & FunctionT ;
+    let merged : {container:DynamicMemoizeContainer<FunctionType>} & FunctionType ;
 
-    let fn : FunctionT = <FunctionT> function (... argument : Parameters<FunctionT>) : ReturnType<FunctionT> {
+    let fn : FunctionType = <FunctionType> function (... argument : Parameters<FunctionType>) : ReturnType<FunctionType> {
 
         let object = container.get(argument);
 
@@ -27,7 +27,7 @@ export default function DynamicMemoize<
         return object.return;
     };
 
-    merged = <{container:DynamicMemoizeContainer<FunctionT>} & FunctionT>fn;
+    merged = <{container:DynamicMemoizeContainer<FunctionType>} & FunctionType>fn;
     merged.container = container;
     return  merged;
 

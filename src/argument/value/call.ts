@@ -6,11 +6,11 @@ import Callable from "../../callable";
  * Use {@link Argument} as argument to call function form {@link Callback}
  */
 export default function Call<
-    FunctionT extends Callable
+    FunctionType extends Callable
 >(
-    object : Argument<Parameters<FunctionT>> & Callback<FunctionT>
-) : ReturnType<FunctionT> {
+    object : Argument<Parameters<FunctionType>> & Callback<FunctionType>
+) : ReturnType<FunctionType> {
 
-    return <ReturnType<FunctionT>> object.callback(...object.argument);
+    return <ReturnType<FunctionType>> object.callback(...object.argument);
 
 }

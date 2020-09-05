@@ -8,26 +8,26 @@ import ValueMemoize from "../return/memoize";
  * suitable to cached value from heave operation
  */
 export default class MemoizeFromObject<
-    ReturnT extends Return
+    ReturnType extends Return
 > implements
-    Readonly<Return<Infer<ReturnT>>>
+    Readonly<Return<Infer<ReturnType>>>
 {
-    public memoize : ValueMemoize<Readonly<Return<Infer<ReturnT>>>>;
+    public memoize : ValueMemoize<Readonly<Return<Infer<ReturnType>>>>;
 
     constructor(
-        public subject : ReturnT
+        public subject : ReturnType
     ) {
 
-        this.memoize = new ValueMemoize(<Return<Infer<ReturnT>>>{
+        this.memoize = new ValueMemoize(<Return<Infer<ReturnType>>>{
             get return()  {
                 return subject.return;
             }
         });
     }
 
-    get return () : Infer<ReturnT> {
+    get return () : Infer<ReturnType> {
 
-        return <Infer<ReturnT>>this.memoize.return;
+        return <Infer<ReturnType>>this.memoize.return;
     }
 
 }

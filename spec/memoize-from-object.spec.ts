@@ -1,8 +1,6 @@
 import Memoize from "../dist/memoize-from-object";
 
-
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
-
 
 describe("basic", function() {
 

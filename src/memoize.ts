@@ -14,11 +14,11 @@ import Callable from "./callable";
  * callback to be wrapped
  */
 export default function Memoize<
-    FunctionT extends Callable,
+    FunctionType extends Callable,
 >(
-    callback : FunctionT,
-    ...argument : Parameters<FunctionT>
-) : (()=>ReturnType<FunctionT>) & {container:ReturnMemoize<Callback<FunctionT>>} {
+    callback : FunctionType,
+    ...argument : Parameters<FunctionType>
+) : (()=>ReturnType<FunctionType>) & {container:ReturnMemoize<Callback<FunctionType>>} {
 
     return MemoizeFromObject({
         callback : callback,

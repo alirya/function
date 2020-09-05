@@ -11,6 +11,6 @@ import Callable from "./callable";
  * @callback
  * callback to be wrapped
  */
-export default function Memoize<FunctionT extends Callable>(callback: FunctionT, ...argument: Parameters<FunctionT>): (() => ReturnType<FunctionT>) & {
-    container: ReturnMemoize<Callback<FunctionT>>;
+export default function Memoize<FunctionType extends Callable>(callback: FunctionType, ...argument: Parameters<FunctionType>): (() => ReturnType<FunctionType>) & {
+    container: ReturnMemoize<Callback<FunctionType>>;
 };

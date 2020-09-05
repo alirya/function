@@ -1,6 +1,5 @@
 import DynamicMemoize from "../dist/dynamic-memoize";
 
-
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
 describe("memoize", function() {

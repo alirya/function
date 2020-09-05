@@ -4,7 +4,6 @@ it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
 describe("basic", function() {
 
-
     let called = 0;
     let memoize = MemoizeStatic(function (number : number) : number {
 

@@ -6,4 +6,4 @@ import InferArgument from "./value/value";
  *
  * return {@param defaults} if no match found
  */
-export default function Find<ArgumentT extends Argument, Default>(list: Iterable<ArgumentT>, argument: InferArgument<ArgumentT>, validation: (argument: InferArgument<ArgumentT>, list: InferArgument<ArgumentT>) => boolean, defaults: Default): ArgumentT | Default;
+export default function Find<Arguments extends Argument, Default>(list: Iterable<Arguments>, argument: InferArgument<Arguments>, validation: (argument: InferArgument<Arguments>, list: InferArgument<Arguments>) => boolean, defaults: Default): Arguments | Default;
