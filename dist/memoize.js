@@ -14,9 +14,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     Object.defineProperty(exports, "__esModule", { value: true });
     const memoize_from_object_1 = __importDefault(require("./memoize-from-object"));
     /**
-     * wrap given {@param callback} to new function and cache its return
+     * wrap given {@param callback} to new function and cache its return, with
+     * memoization control option but less performant than {@link ./memoize-static.ts}
      *
-     * {@param argument} is used if cached return is not exits
+     * @param argument
+     * used if cached return is not exits
+     *
+     * @callback
+     * callback to be wrapped
      */
     function Memoize(callback, ...argument) {
         return memoize_from_object_1.default({

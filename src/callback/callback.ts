@@ -1,4 +1,10 @@
-export default interface Callback<FunctionT extends Function> {
+import Callable from "../callable";
+import Guard from "../boolean/guard";
+import Assert from "../assert/assert";
 
-    callback : FunctionT
+export default interface Callback<
+    FunctionType extends Callable|Guard|Assert
+> {
+
+    callback : FunctionType
 }

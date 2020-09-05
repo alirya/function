@@ -9,7 +9,7 @@ import ValueMemoize from "../return/memoize";
  */
 export default class MemoizeFromObject<
     ReturnT extends Return
-    > implements
+> implements
     Readonly<Return<Infer<ReturnT>>>
 {
     public memoize : ValueMemoize<Readonly<Return<Infer<ReturnT>>>>;

@@ -1,8 +1,8 @@
 /**
  * transform class constructor to function
- * '
+ *
  * @param constructor
-  */
+ */
 export default function New<
     Class,
     Argument extends unknown[] = unknown[],

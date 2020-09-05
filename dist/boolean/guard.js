@@ -9,16 +9,5 @@
 })(function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    /**
-     * transform class constructor to function
-     *
-     * @param constructor
-     */
-    function New(constructor) {
-        return function (...argument) {
-            return new constructor(...argument);
-        };
-    }
-    exports.default = New;
 });
-//# sourceMappingURL=new.js.map
+//# sourceMappingURL=guard.js.map
