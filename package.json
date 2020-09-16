@@ -1,10 +1,10 @@
 {
   "name": "@dikac/t-function",
-  "version": "0.12.5",
+  "version": "0.12.6",
   "description": "Typescript function",
   "dependencies": {
     "@dikac/deployer": "^0.1.5",
-    "@dikac/t-array": "^0.24.0",
+    "@dikac/t-array": "^0.24.2",
     "@types/is-function": "^1.0.0",
     "is-function": "^1.0.2",
     "ts-toolbelt": "^6.15.5"
