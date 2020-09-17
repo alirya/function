@@ -1,32 +1,16 @@
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
+import Call from "../argument/value/call";
+export default class Callback {
+    constructor(subject) {
+        this.subject = subject;
     }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports", "../argument/value/call"], factory);
+    get return() {
+        return Call(this);
     }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    const call_1 = __importDefault(require("../argument/value/call"));
-    class Callback {
-        constructor(subject) {
-            this.subject = subject;
-        }
-        get return() {
-            return call_1.default(this);
-        }
-        get argument() {
-            return this.subject.argument;
-        }
-        get callback() {
-            return this.subject.callback;
-        }
+    get argument() {
+        return this.subject.argument;
     }
-    exports.default = Callback;
-});
+    get callback() {
+        return this.subject.callback;
+    }
+}
 //# sourceMappingURL=callback.js.map

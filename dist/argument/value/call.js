@@ -1,20 +1,7 @@
-(function (factory) {
-    if (typeof module === "object" && typeof module.exports === "object") {
-        var v = factory(require, exports);
-        if (v !== undefined) module.exports = v;
-    }
-    else if (typeof define === "function" && define.amd) {
-        define(["require", "exports"], factory);
-    }
-})(function (require, exports) {
-    "use strict";
-    Object.defineProperty(exports, "__esModule", { value: true });
-    /**
-     * Use {@link Argument} as argument to call function form {@link Callback}
-     */
-    function Call(object) {
-        return object.callback(...object.argument);
-    }
-    exports.default = Call;
-});
+/**
+ * Use {@link Argument} as argument to call function form {@link Callback}
+ */
+export default function Call(object) {
+    return object.callback(...object.argument);
+}
 //# sourceMappingURL=call.js.map

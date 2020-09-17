@@ -6,12 +6,15 @@
     "@dikac/deployer": "^0.1.5",
     "@dikac/t-array": "^0.24.2",
     "@types/is-function": "^1.0.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
     "is-function": "^1.0.2",
     "ts-toolbelt": "^6.15.5"
   },
   "devDependencies": {
     "@types/jasmine": "^3.5.14",
     "cpy-cli": "^3.1.1",
+    "esm": "^3.2.25",
     "jasmine": "^3.6.1",
     "jasmine-ts-console-reporter": "^3.1.1",
     "json-properties-remover": "^0.1.2",
@@ -22,8 +25,8 @@
     "typescript": "^3.9.7"
   },
   "scripts": {
-    "spec-run-js": "jasmine --config=./jasmine.json",
-    "spec-run": "jasmine --reporter=jasmine-ts-console-reporter --config=./jasmine.json",
+    "spec-run-js": "babel-node dist-spec/jasmine.js",
+    "spec-run": "babel-node dist-spec/jasmine-ts.js",
     "spec": "npm-run-all spec-compile spec-run",
     "spec-ensure-directory": "mkdirp dist-spec",
     "spec-compile": "npm-run-all spec-compile-script spec-cleanup",
