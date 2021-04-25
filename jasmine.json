@@ -5,5 +5,5 @@
     "!**/entity"
   ],
   "stopSpecOnExpectationFailure": false,
-  "random": false,
+  "random": false
 }
