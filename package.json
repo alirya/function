@@ -1,6 +1,6 @@
 {
   "name": "@dikac/t-function",
-  "version": "0.14.1",
+  "version": "0.14.2",
   "description": "Typescript function",
   "dependencies": {
     "@dikac/t-array": "^0.25.15",
