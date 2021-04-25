@@ -3,16 +3,16 @@
   "version": "0.14.1",
   "description": "Typescript function",
   "dependencies": {
-    "@dikac/t-array": "^0.25.1",
+    "@dikac/t-array": "^0.25.15",
     "@types/is-function": "^1.0.0",
     "is-function": "^1.0.2",
-    "ts-toolbelt": "^8.0.6"
+    "ts-toolbelt": "^9.6.0"
   },
   "devDependencies": {
-    "@types/jasmine": "^3.5.14",
+    "@types/jasmine": "^3.6.9",
     "cpy-cli": "^3.1.1",
     "esm": "^3.2.25",
-    "jasmine": "^3.6.1",
+    "jasmine": "^3.7.0",
     "jasmine-ts-console-reporter": "^3.1.1",
     "json-properties-remover": "^0.1.2",
     "mkdirp": "^1.0.4",
