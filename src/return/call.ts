@@ -17,5 +17,4 @@ export default function Call<
     object.return = FunctionCall(object);
 
     return <ArgumentInterface<Parameters<FunctionType>> & Callback<FunctionType> & ReturnInterface<ReturnType<FunctionType>>> object;
-
 }

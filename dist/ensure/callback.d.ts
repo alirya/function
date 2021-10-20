@@ -1,3 +1,5 @@
+import Validation from "@dikac/t-boolean/validation/validation";
+import Argument from "../argument/argument";
 /**
  * Throw exception from {@param error} if given {@param value} is not valid according
  * to {@param validation}
@@ -10,4 +12,9 @@
  * @param extras
  * extra argument for both {@param extras} & @param error
  */
-export default function Callback<Return extends Value, Value, Extras extends unknown[] = unknown[]>(value: Value, validation: (value: Value, ...args: Extras) => boolean, error: (value: Value, ...args: Extras) => Error, ...extras: Extras): Return;
+export default function Callback<Return extends Value, Value, ExtraArgument extends unknown[] = unknown[]>(value: Value, { validation, error }: Validation<[Value], boolean> & {
+    error: (value: Value) => Error;
+}): Return;
+export default function Callback<Return extends Value, Value, ExtraArgument extends unknown[] = unknown[]>(value: Value, { validation, error, argument }: Validation<[Value, ...ExtraArgument], boolean> & {
+    error: (value: Value, ...args: ExtraArgument) => Error;
+} & Argument<ExtraArgument>): Return;

@@ -1,4 +1,6 @@
 /**
+ * @deprecated use instead from iterable
+ *
  * Find match {@param argument} in {@param list} value according
  * to {@param validation}
  *

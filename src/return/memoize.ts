@@ -8,7 +8,7 @@ import Infer from "./value/infer";
  */
 export default class Memoize<
     Container extends Return = Return
-    > implements
+> implements
     Readonly<Return<Infer<Container>>>
 {
     protected memoize : Return<Infer<Container>>|undefined;

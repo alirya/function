@@ -1,16 +1,15 @@
-import ReturnMemoize from "./return/memoize-from-object";
-import Callback from "./return/callback";
 import Callable from "./callable";
+import Argument from "./argument/argument";
+import Callback from "./callback/callback";
 /**
- * wrap given {@param callback} to new function and cache its return, with
- * memoization control option but less performant than {@link ./memoize-static.ts}
+ * wrap given {@param callback} to new function and cache its return
+ *
+ * this more performant than {@link ./memoize.ts} but does not offer
  *
  * @param argument
  * used if cached return is not exits
  *
  * @callback
- * callback to be wrapped
+    * callback to be wrapped
  */
-export default function Memoize<FunctionType extends Callable>(callback: FunctionType, ...argument: Parameters<FunctionType>): (() => ReturnType<FunctionType>) & {
-    container: ReturnMemoize<Callback<FunctionType>>;
-};
+export default function Memoize<Function extends Callable>({ callback, argument }: Callback<Function> & Argument<Parameters<Function>>): () => ReturnType<Function>;

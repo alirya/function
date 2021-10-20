@@ -4,7 +4,7 @@ export default class Callback {
         this.subject = subject;
     }
     get return() {
-        return Call(this);
+        return Call(this.subject);
     }
     get argument() {
         return this.subject.argument;

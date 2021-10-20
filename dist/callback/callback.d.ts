@@ -1,6 +1,6 @@
 import Callable from "../callable";
 import Guard from "../boolean/guard";
 import Assert from "../assert/assert";
-export default interface Callback<FunctionType extends Callable | Guard | Assert> {
+export default interface Callback<FunctionType extends Callable | Guard<any, any, []> | Assert> {
     callback: FunctionType;
 }

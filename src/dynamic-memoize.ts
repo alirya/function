@@ -1,35 +1,44 @@
 import Equal from "@dikac/t-array/boolean/equal";
 import DynamicMemoizeContainer from "./object/dynamic-memoize-container";
 import Callable from "./callable";
+import Callback from "./callback/callback";
+import Validation from "@dikac/t-boolean/validation/validation";
 
-export default function DynamicMemoize<
-    FunctionType extends Callable,
->(
-    callable : FunctionType,
-    compareArguments : (argument : Parameters<FunctionType>, list : Parameters<FunctionType>) => boolean= Equal
-) : FunctionType & {container:DynamicMemoizeContainer<FunctionType>} {
+export default function DynamicMemoize<FunctionType extends Callable>({
+      callback,
+      validation,
+      container
+  } : Callback<FunctionType> &
+    Partial<Validation<[Parameters<FunctionType>, Parameters<FunctionType>]>> &
+    {container?:false}
+) : FunctionType
 
-    let container = new DynamicMemoizeContainer<FunctionType>(callable, compareArguments);
+export default function DynamicMemoize<FunctionType extends Callable>({
+      callback,
+      validation,
+      container
+  } : Callback<FunctionType> &
+    Partial<Validation<[Parameters<FunctionType>, Parameters<FunctionType>]>> &
+    {container:true}
+) : [FunctionType, DynamicMemoizeContainer<FunctionType>]
 
-    let merged : {container:DynamicMemoizeContainer<FunctionType>} & FunctionType ;
+export default function DynamicMemoize<FunctionType extends Callable>({
+    callback,
+    validation = Equal,
+    container = false
+} : Callback<FunctionType> &
+    Partial<Validation<[Parameters<FunctionType>, Parameters<FunctionType>]>> &
+    {container?:boolean}
+) : FunctionType|[FunctionType, DynamicMemoizeContainer<FunctionType>] {
 
-    let fn : FunctionType = <FunctionType> function (... argument : Parameters<FunctionType>) : ReturnType<FunctionType> {
+    const memoizeContainer = new DynamicMemoizeContainer<FunctionType>(callback, validation);
 
-        let object = container.get(argument);
+    const callable : FunctionType = <FunctionType> function (... argument : Parameters<FunctionType>) : ReturnType<FunctionType> {
 
-        if(!object) {
-
-            object = container.call(argument);
-
-            container.memoized.push(object);
-        }
-
-        return object.return;
+        return memoizeContainer.memoize(argument).return;
     };
 
-    merged = <{container:DynamicMemoizeContainer<FunctionType>} & FunctionType>fn;
-    merged.container = container;
-    return  merged;
+    return container ? [callable, memoizeContainer] : callable;
 
 }
 

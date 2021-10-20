@@ -10,7 +10,6 @@ export default class Callback<
     Readonly<Argument<Parameters<FunctionType>>>,
     Readonly<Return<ReturnType<FunctionType>>>
 {
-
     constructor(
         public subject : Argument<Parameters<FunctionType>> & CallbackInterface<FunctionType>
     ) {
@@ -18,18 +17,16 @@ export default class Callback<
 
     get return () : ReturnType<FunctionType> {
 
-        return <ReturnType<FunctionType>>Call(this);
+        return <ReturnType<FunctionType>>Call(this.subject);
     }
 
     get argument() : Parameters<FunctionType> {
 
         return this.subject.argument;
-
     }
 
     get callback() : FunctionType  {
 
         return this.subject.callback;
-
     }
 }

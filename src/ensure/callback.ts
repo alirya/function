@@ -1,4 +1,7 @@
 import AssertCallback from "../assert/callback";
+import Validation from "@dikac/t-boolean/validation/validation";
+import Parameter from "../parameter/parameter";
+import Argument from "../argument/argument";
 
 /**
  * Throw exception from {@param error} if given {@param value} is not valid according
@@ -15,15 +18,38 @@ import AssertCallback from "../assert/callback";
 export default function Callback<
     Return extends Value,
     Value,
-    Extras extends unknown[] = unknown[]
+    ExtraArgument extends unknown[] = unknown[]
 >(
     value : Value,
-    validation : (value : Value, ...args : Extras) => boolean,
-    error : (value : Value, ...args : Extras) => Error,
-    ...extras : Extras
+    {validation, error} :
+        Validation<[Value], boolean>
+        & {error:(value : Value) => Error}
+) : Return;
+
+export default function Callback<
+    Return extends Value,
+    Value,
+    ExtraArgument extends unknown[] = unknown[]
+>(
+    value : Value,
+    {validation, error, argument} :
+        Validation<[Value, ...ExtraArgument], boolean>
+        & {error:(value : Value, ...args : ExtraArgument) => Error}
+        & Argument<ExtraArgument>
 ) : Return
-{
-    AssertCallback(value, validation, error, ...extras);
+
+export default function Callback<
+    Return extends Value,
+    Value,
+    ExtraArgument extends unknown[] = unknown[]
+>(
+    value : Value,
+    {validation, error, argument = []} :
+        Validation<[Value, ...ExtraArgument], boolean>
+        & {error:(value : Value, ...args : ExtraArgument) => Error}
+        & Argument<ExtraArgument|[]>
+) : Return {
+    AssertCallback(value, {validation, error, argument});
 
     return <Return> value;
 }

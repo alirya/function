@@ -1,13 +1,15 @@
 import Argument from "../argument/argument";
 import Return from "../return/return";
-import Find from "../argument/find";
 import Callable from "../callable";
+import Find from "@dikac/t-iterable/value/find";
+
+type Memoized<Callback extends Callable> = Argument<Parameters<Callback>> & Return<ReturnType<Callback>>;
 
 export default class DynamicMemoizeContainer<
     Callback extends Callable,
 > {
 
-    readonly memoized : (Argument<Parameters<Callback>> & Return<ReturnType<Callback>>)[] = [];
+    readonly memoized : Memoized<Callback>[] = [];
 
     constructor(
         public functions : Callback,
@@ -23,8 +25,24 @@ export default class DynamicMemoizeContainer<
         };
     }
 
-    get(argument : Parameters<Callback>) : (Argument<Parameters<Callback>> & Return<ReturnType<Callback>>)|null {
+    memoize(argument : Parameters<Callback>) : Argument<Parameters<Callback>> & Return<ReturnType<Callback>> {
 
-        return Find(this.memoized, argument, this.compare, null);
+        let memoized = this.get(argument);
+
+        if(!memoized) {
+
+            memoized = this.call(argument);
+            this.memoized.push(memoized);
+        }
+
+        return memoized;
+    }
+
+    get(argument : Parameters<Callback>) : Memoized<Callback>|null {
+
+        return Find(
+            this.memoized,
+            (memoized)=> this.compare(argument, memoized.argument), null
+        );
     }
 }
