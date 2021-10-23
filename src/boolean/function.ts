@@ -12,3 +12,6 @@ export default function Function<
 
     return IsFunction(value);
 }
+
+
+Function.param = 1;

@@ -2,13 +2,36 @@ import ArgumentType from "../../argument/argument";
 import Message from "@dikac/t-message/message";
 import Validatable from "@dikac/t-validatable/validatable";
 
+
+export default function Callback<Arguments extends unknown[], ErrorType extends Error>(
+    argument : Arguments,
+    message : (valid:boolean, ...argument:Arguments) => string,
+    error : (message:string)=>ErrorType,
+) : ErrorType;
+
+export default function Callback<Arguments extends unknown[]>(
+    argument : Arguments,
+    message : (valid:boolean, ...argument:Arguments) => string,
+) : Error;
+
+export default function Callback<Arguments extends unknown[]>(
+    argument : Arguments,
+    message : (valid:boolean, ...argument:Arguments) => string,
+    error : (message:string)=>Error = (string : string) => new Error(string),
+) : Error {
+
+    return error(message(false, ...argument));
+}
+
+
+
 type Argument<Arguments extends unknown[], ErrorType extends Error> =
     ArgumentType<Arguments> &
     Message<(a : Validatable & ArgumentType<Arguments>) => string> &
     {error ?: (message:string)=>ErrorType}
-;
+    ;
 
-export default function Callback<Arguments extends unknown[], ErrorType extends Error>(
+function CallbackObject<Arguments extends unknown[], ErrorType extends Error>(
     {
         argument,
         message,
@@ -16,14 +39,14 @@ export default function Callback<Arguments extends unknown[], ErrorType extends 
     } : Argument<Arguments, Error>
 ) : ErrorType;
 
-export default function Callback<Arguments extends unknown[]>(
+function CallbackObject<Arguments extends unknown[]>(
     {
         argument,
         message,
     } : Argument<Arguments, Error>
 ) : Error;
 
-export default function Callback<Arguments extends unknown[], ErrorType extends Error>(
+function CallbackObject<Arguments extends unknown[], ErrorType extends Error>(
     {
         argument,
         message,
@@ -33,3 +56,5 @@ export default function Callback<Arguments extends unknown[], ErrorType extends 
 
     return error(message({valid:false, argument}));
 }
+
+Callback.object = CallbackObject;

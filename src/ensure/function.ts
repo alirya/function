@@ -11,10 +11,20 @@ import Value from "@dikac/t-value/value";
 export default function Function<
     Assumption extends Callable
 >(
-    {value, error = ThrowableType} : Value<unknown> & {error ?: (value:unknown)=>Error}
+    value : unknown,
+    error : (value:unknown)=>Error = ThrowableType
 ) : Assumption {
 
-    GuardFunction(value, {validation:TypeGuard, error})
-
+    GuardFunction(value, TypeGuard, error)
     return <Assumption>value;
+}
+
+/**
+ * object destructure version
+ *
+ * @param value
+ * @param error
+ */
+Function.object = function ({value, error} : Value<unknown> & {error ?: (value:unknown)=>Error}) {
+    return Function(value, error)
 }

@@ -5,6 +5,6 @@ import Callback from "./callback";
  * Throw exception from {@param error} if given {@param value} is no callable type
  */
 export default function Function(value, error = ThrowableType) {
-    Callback(value, { validation: GuardType, error });
+    Callback(value, GuardType, error);
 }
 //# sourceMappingURL=function.js.map

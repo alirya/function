@@ -1,4 +1,4 @@
-import Memoized from "../../dist/return/memoize-from-object";
+import Memoized from "../../../dist/return/memoize";
 
 it("enable console log", () => spyOn(console, 'log').and.callThrough());
 
@@ -24,7 +24,7 @@ describe("test", function() {
 
     it(`reset memoize`, () =>{
 
-        memoize.memoize.clear();
+        memoize.clear();
         expect(memoize.return).toBe(20)
     });
 });

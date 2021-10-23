@@ -1,8 +1,13 @@
 import Callable from "./callable";
+import IsFunction from "./boolean/function";
 import Return from "./return/return";
-import Argument from "./argument/argument";
+import ArgumentContainer from "./argument/argument";
 import Callback from "./callback/callback";
+import ReturnCallback from "./return/callback";
+import ReturnMemoize from "./return/memoize";
+import MemoizedReturnCallback from "@dikac/t-iterable/memoized-return-callback";
 
+export type Argument<Function extends Callable> = Callback<Function> & ArgumentContainer<Parameters<Function>>;
 /**
  * wrap given {@param callback} to new function and cache its return
  *
@@ -14,40 +19,33 @@ import Callback from "./callback/callback";
  * @callback
     * callback to be wrapped
  */
+
 export default function Memoize<Function extends Callable>(
-    {callback, argument} : Callback<Function> & Argument<Parameters<Function>>
-) : () => ReturnType<Function> {
+    callback : Function,
+    ... argument : Parameters<Function>
+) : (() => ReturnType<Function>) & {container : ReturnMemoize<ReturnCallback<Function>>} {
 
-    const called : boolean = false;
-    let data : ReturnType<Function>;
+    const container = new ReturnMemoize(new ReturnCallback(callback, argument))
 
-    return function () {
+    const func = function () {
 
-        if(!called) {
-
-            data = callback(...argument) as ReturnType<Function>
-        }
-
-        return data;
-
+        return container.return;
     }
 
-    // const fn = function () {
-    //
-    //     if(fn.callback) {
-    //
-    //         fn.return = fn.callback(... <Parameters<Function>>fn.argument) as ReturnType<Function>;
-    //         delete fn.callback;
-    //         delete fn.argument;
-    //     }
-    //
-    //     return fn.return;
-    //
-    // } as (()=> ReturnType<Function>) & Partial<Callback<Function>> & Return<undefined|ReturnType<Function>> & Argument<undefined|Parameters<Function>>;
-    //
-    // fn.callback = callback;
-    // fn.return = undefined;
-    // fn.argument = argument;
-    //
-    // return fn;
+    func.container = container;
+
+    return func as (() => ReturnType<Function>) & {container : ReturnMemoize<ReturnCallback<Function>>};
+}
+
+/**
+ * object destructure version
+ *
+ * @param callback
+ * @param argument
+ */
+Memoize.object = function <Function extends Callable>(
+    {callback, argument} : Argument<Function>
+) : (() => ReturnType<Function>) & {container : ReturnMemoize<ReturnCallback<Function>>} {
+
+    return Memoize(callback, ...argument);
 }

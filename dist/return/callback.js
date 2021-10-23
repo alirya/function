@@ -1,16 +1,16 @@
 import Call from "../argument/value/call";
 export default class Callback {
-    constructor(subject) {
-        this.subject = subject;
+    constructor(callback, argument) {
+        this.callback = callback;
+        this.argument = argument;
     }
     get return() {
-        return Call(this.subject);
-    }
-    get argument() {
-        return this.subject.argument;
-    }
-    get callback() {
-        return this.subject.callback;
+        return Call(this.callback, this.argument);
     }
 }
+Callback.object = class extends Callback {
+    constructor({ argument, callback }) {
+        super(callback, argument);
+    }
+};
 //# sourceMappingURL=callback.js.map

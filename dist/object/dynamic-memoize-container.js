@@ -1,14 +1,14 @@
 import Find from "@dikac/t-iterable/value/find";
 export default class DynamicMemoizeContainer {
-    constructor(functions, compare) {
-        this.functions = functions;
-        this.compare = compare;
+    constructor(callback, validation) {
+        this.callback = callback;
+        this.validation = validation;
         this.memoized = [];
     }
     call(argument) {
         return {
             argument: argument,
-            return: this.functions(...argument)
+            return: this.callback(...argument)
         };
     }
     memoize(argument) {
@@ -20,7 +20,13 @@ export default class DynamicMemoizeContainer {
         return memoized;
     }
     get(argument) {
-        return Find(this.memoized, (memoized) => this.compare(argument, memoized.argument), null);
+        return Find(this.memoized, (memoized) => this.validation(argument, memoized.argument), null);
     }
 }
+class DynamicMemoizeContainerObject extends DynamicMemoizeContainer {
+    constructor({ callback, validation }) {
+        super(callback, validation);
+    }
+}
+DynamicMemoizeContainer.object = DynamicMemoizeContainerObject;
 //# sourceMappingURL=dynamic-memoize-container.js.map

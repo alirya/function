@@ -1,31 +1,38 @@
-import Argument from "../argument/argument";
+import ArgumentContainer from "../argument/argument";
 import Return from "../return/return";
 import Callable from "../callable";
 import Find from "@dikac/t-iterable/value/find";
+import Callback from "../callback/callback";
+import Validation from "@dikac/t-boolean/validation/validation";
 
-type Memoized<Callback extends Callable> = Argument<Parameters<Callback>> & Return<ReturnType<Callback>>;
+type Memoized<CallbackType extends Callable> = ArgumentContainer<Parameters<CallbackType>> & Return<ReturnType<CallbackType>>;
+
+type Argument<CallbackType extends Callable> =
+    Callback<CallbackType> &
+    Validation<[Parameters<CallbackType>, Parameters<CallbackType>]>;
 
 export default class DynamicMemoizeContainer<
-    Callback extends Callable,
+    CallbackType extends Callable,
 > {
 
-    readonly memoized : Memoized<Callback>[] = [];
+    readonly memoized : Memoized<CallbackType>[] = [];
+
+    static object : typeof DynamicMemoizeContainerObject;
 
     constructor(
-        public functions : Callback,
-        public compare : (argument : Parameters<Callback>, list : Parameters<Callback>) => boolean
-    ) {
-    }
+        public callback : CallbackType,
+        public validation : Argument<CallbackType>['validation']
+    ){}
 
-    call(argument : Parameters<Callback>) : Argument<Parameters<Callback>> & Return<ReturnType<Callback>> {
+    call(argument : Parameters<CallbackType>) : ArgumentContainer<Parameters<CallbackType>> & Return<ReturnType<CallbackType>> {
 
         return {
             argument : argument,
-            return : <ReturnType<Callback>>this.functions(...argument)
+            return : <ReturnType<CallbackType>> this.callback(...argument)
         };
     }
 
-    memoize(argument : Parameters<Callback>) : Argument<Parameters<Callback>> & Return<ReturnType<Callback>> {
+    memoize(argument : Parameters<CallbackType>) : ArgumentContainer<Parameters<CallbackType>> & Return<ReturnType<CallbackType>> {
 
         let memoized = this.get(argument);
 
@@ -38,11 +45,23 @@ export default class DynamicMemoizeContainer<
         return memoized;
     }
 
-    get(argument : Parameters<Callback>) : Memoized<Callback>|null {
+    get(argument : Parameters<CallbackType>) : Memoized<CallbackType>|null {
 
         return Find(
             this.memoized,
-            (memoized)=> this.compare(argument, memoized.argument), null
+            (memoized)=> this.validation(argument, memoized.argument),
+            null
         );
     }
 }
+
+
+class DynamicMemoizeContainerObject<C extends Callable> extends DynamicMemoizeContainer<C> {
+
+    constructor({callback, validation} : Argument<C>) {
+        super(callback, validation);
+    }
+}
+
+
+DynamicMemoizeContainer.object = DynamicMemoizeContainerObject;

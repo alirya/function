@@ -8,9 +8,15 @@ import Callable from "../../callable";
 export default function Call<
     FunctionType extends Callable
 >(
-    object : Argument<Parameters<FunctionType>> & Callback<FunctionType>
+    callback : FunctionType,
+    argument : Parameters<FunctionType>,
 ) : ReturnType<FunctionType> {
 
-    return <ReturnType<FunctionType>> object.callback(...object.argument);
+    return <ReturnType<FunctionType>> callback(...argument);
+}
 
+Call.object = function<FunctionType extends Callable> (
+    {callback, argument} : Argument<Parameters<FunctionType>> & Callback<FunctionType>
+) {
+    return Call(callback, argument);
 }

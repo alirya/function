@@ -1,5 +1,6 @@
 import Validation from "@dikac/t-boolean/validation/validation";
-import Argument from "../argument/argument";
+import ArgumentContainer from "../argument/argument";
+import Value from "@dikac/t-value/value";
 /**
  * Throw exception from {@param error} if given {@param value} is not valid according
  * to {@param validation}
@@ -9,12 +10,14 @@ import Argument from "../argument/argument";
  * @param value
  * @param validation
  * @param error
- * @param extras
- * extra argument for both {@param extras} & @param error
+ * @param argument
+ * extra argument for both {@param argument} & {@param error}
  */
-export default function Callback<Return extends Value, Value, ExtraArgument extends unknown[] = unknown[]>(value: Value, { validation, error }: Validation<[Value], boolean> & {
-    error: (value: Value) => Error;
-}): Return;
-export default function Callback<Return extends Value, Value, ExtraArgument extends unknown[] = unknown[]>(value: Value, { validation, error, argument }: Validation<[Value, ...ExtraArgument], boolean> & {
-    error: (value: Value, ...args: ExtraArgument) => Error;
-} & Argument<ExtraArgument>): Return;
+declare function Callback<Return extends ValueType, ValueType, ExtraArgument extends unknown[] = unknown[]>(value: ValueType, validation: (value: ValueType, ...args: ExtraArgument) => boolean, error: (value: ValueType, ...args: ExtraArgument) => Error, ...argument: ExtraArgument): Return;
+declare namespace Callback {
+    var object: <Return extends Value_1, Value_1, ExtraArgument extends unknown[] = unknown[]>({ value, validation, error, argument }: ObjectArgument<Return, Value_1, ExtraArgument>) => Value_1;
+}
+export default Callback;
+export declare type ObjectArgument<Return extends ValueType, ValueType, ExtraArgument extends unknown[] = unknown[]> = Validation<[ValueType, ...ExtraArgument], boolean> & {
+    error: (value: ValueType, ...args: ExtraArgument) => Error;
+} & ArgumentContainer<ExtraArgument> & Value<ValueType>;

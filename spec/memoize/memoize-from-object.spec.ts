@@ -1,22 +1,25 @@
-import Memoize from "../dist/memoize-from-object";
+import Memoize from "../../dist/memoize";
 
 it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 
 describe("basic", function() {
 
     let called = 0;
-    let memoize = Memoize({callback:function (number : number) : number {
-
-        called++;
-        return number + number;
-    }, argument:[1]});
+    let memoize = Memoize.object({
+            callback:function (number : number) : number {
+                called++;
+                return number + number;
+            },
+            argument:[1]
+        }
+    );
 
 
     it("check initial data", () => {
 
         expect(called).toBe(0)
         expect(memoize.container.subject.argument).toEqual([1])
-        expect(memoize.container.memoize.memoized).toBeFalse();
+        expect(memoize.container.memoized).toBeFalse();
 
     });
 
@@ -26,7 +29,7 @@ describe("basic", function() {
         expect(memoize.container.return).toBe(2)
 
         expect(called).toBe(1)
-        expect(memoize.container.memoize.memoized).toBeTrue();
+        expect(memoize.container.memoized).toBeTrue();
     });
 
     it("2nd call", function() {
@@ -34,18 +37,18 @@ describe("basic", function() {
         expect(memoize()).toBe(2)
         expect(memoize.container.return).toBe(2)
         expect(called).toBe(1)
-        expect(memoize.container.memoize.memoized).toBeTrue();
+        expect(memoize.container.memoized).toBeTrue();
     });
 
     describe("modify", function() {
 
         it("change argument", () => {
-            memoize.container.subject.subject.argument = [2];
+            memoize.container.subject.argument = [2];
             expect(memoize()).toBe(2)
         });
 
         it("reset", () => {
-            memoize.container.memoize.clear();
+            memoize.container.clear();
 
             expect(called).toBe(1)
             expect(memoize()).toBe(4)

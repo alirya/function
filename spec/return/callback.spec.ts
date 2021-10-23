@@ -11,7 +11,7 @@ describe("basic", function() {
         return number + number;
     };
 
-    let callback = new Callback({callback:fn, argument:[1]});
+    let callback = new Callback(fn, [1]);
 
     it('validate initial data', function () {
 
@@ -28,7 +28,7 @@ describe("basic", function() {
 
     it('change argument', function () {
 
-        callback.subject.argument = [2];
+        callback.argument = [2];
         expect(callback.argument).toEqual([2]);
 
     })

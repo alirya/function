@@ -18,3 +18,5 @@ describe("invalid", function() {
     it("number", () => expect(Function(1)).toBe(false));
     it("string", () => expect(Function('a')).toBe(false));
 });
+
+

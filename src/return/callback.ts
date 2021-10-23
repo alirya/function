@@ -7,26 +7,26 @@ import Callable from "../callable";
 export default class Callback<
     FunctionType extends Callable
 > implements
-    Readonly<Argument<Parameters<FunctionType>>>,
-    Readonly<Return<ReturnType<FunctionType>>>
+    Argument<Parameters<FunctionType>>,
+    Return<ReturnType<FunctionType>>
 {
+
+    static object = class<FunctionType extends Callable> extends Callback<FunctionType> {
+
+        constructor({argument, callback} : Argument<Parameters<FunctionType>> & CallbackInterface<FunctionType>) {
+            super(callback, argument);
+        }
+    }
+
     constructor(
-        public subject : Argument<Parameters<FunctionType>> & CallbackInterface<FunctionType>
+        public callback  : FunctionType,
+        public argument : Parameters<FunctionType>,
     ) {
     }
 
     get return () : ReturnType<FunctionType> {
 
-        return <ReturnType<FunctionType>>Call(this.subject);
+        return <ReturnType<FunctionType>>Call(this.callback, this.argument);
     }
 
-    get argument() : Parameters<FunctionType> {
-
-        return this.subject.argument;
-    }
-
-    get callback() : FunctionType  {
-
-        return this.subject.callback;
-    }
 }
