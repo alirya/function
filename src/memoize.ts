@@ -1,11 +1,17 @@
 import Callable from "./callable";
-import IsFunction from "./boolean/function";
-import Return from "./return/return";
 import ArgumentContainer from "./argument/argument";
 import Callback from "./callback/callback";
-import ReturnCallback from "./return/callback";
+import {CallbackParameter} from "./return/callback";
 import ReturnMemoize from "./return/memoize";
-import MemoizedReturnCallback from "@dikac/t-iterable/memoized-return-callback";
+
+namespace Memoize {
+
+    export const Parameter = MemoizeParameter;
+    export const Object = MemoizeObject;
+}
+
+export default Memoize;
+
 
 export type Argument<Function extends Callable> = Callback<Function> & ArgumentContainer<Parameters<Function>>;
 /**
@@ -20,12 +26,12 @@ export type Argument<Function extends Callable> = Callback<Function> & ArgumentC
     * callback to be wrapped
  */
 
-export default function Memoize<Function extends Callable>(
+export function MemoizeParameter<Function extends Callable>(
     callback : Function,
     ... argument : Parameters<Function>
-) : (() => ReturnType<Function>) & {container : ReturnMemoize<ReturnCallback<Function>>} {
+) : (() => ReturnType<Function>) & {container : ReturnMemoize<CallbackParameter<Function>>} {
 
-    const container = new ReturnMemoize(new ReturnCallback(callback, argument))
+    const container = new ReturnMemoize(new CallbackParameter(callback, argument))
 
     const func = function () {
 
@@ -34,7 +40,7 @@ export default function Memoize<Function extends Callable>(
 
     func.container = container;
 
-    return func as (() => ReturnType<Function>) & {container : ReturnMemoize<ReturnCallback<Function>>};
+    return func as (() => ReturnType<Function>) & {container : ReturnMemoize<CallbackParameter<Function>>};
 }
 
 /**
@@ -43,9 +49,10 @@ export default function Memoize<Function extends Callable>(
  * @param callback
  * @param argument
  */
-Memoize.object = function <Function extends Callable>(
+export function MemoizeObject <Function extends Callable>(
     {callback, argument} : Argument<Function>
-) : (() => ReturnType<Function>) & {container : ReturnMemoize<ReturnCallback<Function>>} {
+) : (() => ReturnType<Function>) & {container : ReturnMemoize<CallbackParameter<Function>>} {
 
-    return Memoize(callback, ...argument);
+    return MemoizeParameter(callback, ...argument);
 }
+

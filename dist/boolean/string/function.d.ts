@@ -1,7 +1,9 @@
 import Validatable from "@dikac/t-validatable/validatable";
 import Value from "@dikac/t-value/value";
-declare function Function(valid: boolean, value: unknown): string;
+export declare function FunctionParameter(valid: boolean, value: unknown): string;
+export declare function FunctionObject({ valid, value }: Validatable & Value): string;
 declare namespace Function {
-    var object: ({ valid, value }: Validatable<boolean> & Value<unknown>) => string;
+    const Parameter: typeof FunctionParameter;
+    const Object: typeof FunctionObject;
 }
 export default Function;

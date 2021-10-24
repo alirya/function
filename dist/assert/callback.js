@@ -1,10 +1,15 @@
-export default function Callback(value, validation, error, ...argument) {
+export function CallbackParameter(value, validation, error, ...argument) {
     if (!validation(value, ...argument)) {
         throw error(value, ...argument);
     }
 }
-function CallbackObject(value, { argument = [], error, validation }) {
-    return Callback(value, validation, error, ...argument);
+export function CallbackObject(value, { argument = [], error, validation }) {
+    return CallbackParameter(value, validation, error, ...argument);
 }
-Callback.object = CallbackObject;
+var Callback;
+(function (Callback) {
+    Callback.Parameter = CallbackParameter;
+    Callback.Object = CallbackObject;
+})(Callback || (Callback = {}));
+export default Callback;
 //# sourceMappingURL=callback.js.map

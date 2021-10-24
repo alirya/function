@@ -1,8 +1,13 @@
-export default function Callback(argument, message, error = (string) => new Error(string)) {
+export function CallbackParameter(argument, message, error = (string) => new Error(string)) {
     return error(message(false, ...argument));
 }
-function CallbackObject({ argument, message, error = (string) => new Error(string) }) {
+export function CallbackObject({ argument, message, error = (string) => new Error(string) }) {
     return error(message({ valid: false, argument }));
 }
-Callback.object = CallbackObject;
+var Callback;
+(function (Callback) {
+    Callback.Parameter = CallbackParameter;
+    Callback.Object = CallbackObject;
+})(Callback || (Callback = {}));
+export default Callback;
 //# sourceMappingURL=callback.js.map

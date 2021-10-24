@@ -1,8 +1,6 @@
-import AssertCallback from "../assert/callback";
+import Assert from "../assert/callback";
 import Validation from "@dikac/t-boolean/validation/validation";
-import Parameter from "../parameter/parameter";
 import ArgumentContainer from "../argument/argument";
-import ValueOf from "@dikac/t-value/value-of/value-of";
 import Value from "@dikac/t-value/value";
 
 /**
@@ -17,7 +15,7 @@ import Value from "@dikac/t-value/value";
  * @param argument
  * extra argument for both {@param argument} & {@param error}
  */
-export default function Callback<
+export function CallbackParameter<
     Return extends ValueType,
     ValueType,
     ExtraArgument extends unknown[] = unknown[]
@@ -28,7 +26,7 @@ export default function Callback<
     ...argument : ExtraArgument
 ) : Return {
 
-    AssertCallback(value, validation, error, ...argument);
+    Assert.Parameter(value, validation, error, ...argument);
 
     return <Return> value;
 }
@@ -50,11 +48,19 @@ export type ObjectArgument<
  * @param error
  * @param argument
  */
-Callback.object = function<
+export function CallbackObject<
     Return extends Value,
     Value,
     ExtraArgument extends unknown[] = unknown[]
 > ({value, validation, error, argument} : ObjectArgument<Return, Value, ExtraArgument>) {
 
-    return Callback(value, validation, error, ...argument);
+    return CallbackParameter(value, validation, error, ...argument);
 }
+
+namespace Callback {
+
+    export const Parameter = CallbackParameter;
+    export const Object = CallbackObject;
+}
+
+export default Callback;

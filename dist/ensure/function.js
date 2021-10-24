@@ -1,12 +1,12 @@
 import TypeGuard from "../boolean/function";
 import ThrowableType from "../assert/throwable/function";
-import GuardFunction from "./callback";
+import Guard from "./callback";
 /**
  * return {@param value} if type is function or
  * throw error from {@param error}
  */
-export default function Function(value, error = ThrowableType) {
-    GuardFunction(value, TypeGuard, error);
+export function FunctionParameter(value, error = ThrowableType) {
+    Guard.Parameter(value, TypeGuard, error);
     return value;
 }
 /**
@@ -15,7 +15,13 @@ export default function Function(value, error = ThrowableType) {
  * @param value
  * @param error
  */
-Function.object = function ({ value, error }) {
-    return Function(value, error);
-};
+export function FunctionObject({ value, error }) {
+    return FunctionParameter(value, error);
+}
+var Function;
+(function (Function) {
+    Function.Parameter = FunctionParameter;
+    Function.Object = FunctionObject;
+})(Function || (Function = {}));
+export default Function;
 //# sourceMappingURL=function.js.map

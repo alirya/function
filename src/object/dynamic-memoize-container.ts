@@ -7,17 +7,15 @@ import Validation from "@dikac/t-boolean/validation/validation";
 
 type Memoized<CallbackType extends Callable> = ArgumentContainer<Parameters<CallbackType>> & Return<ReturnType<CallbackType>>;
 
-type Argument<CallbackType extends Callable> =
+export type Argument<CallbackType extends Callable> =
     Callback<CallbackType> &
     Validation<[Parameters<CallbackType>, Parameters<CallbackType>]>;
 
-export default class DynamicMemoizeContainer<
+export class DynamicMemoizeContainerParameter<
     CallbackType extends Callable,
 > {
 
     readonly memoized : Memoized<CallbackType>[] = [];
-
-    static object : typeof DynamicMemoizeContainerObject;
 
     constructor(
         public callback : CallbackType,
@@ -55,13 +53,17 @@ export default class DynamicMemoizeContainer<
     }
 }
 
-
-class DynamicMemoizeContainerObject<C extends Callable> extends DynamicMemoizeContainer<C> {
+export class DynamicMemoizeContainerObject<C extends Callable> extends DynamicMemoizeContainerParameter<C> {
 
     constructor({callback, validation} : Argument<C>) {
         super(callback, validation);
     }
 }
 
+namespace DynamicMemoizeContainer {
 
-DynamicMemoizeContainer.object = DynamicMemoizeContainerObject;
+    export const Parameter : typeof DynamicMemoizeContainerParameter = DynamicMemoizeContainerParameter;
+    export const Object : typeof DynamicMemoizeContainerObject = DynamicMemoizeContainerObject;
+}
+
+export default DynamicMemoizeContainer;

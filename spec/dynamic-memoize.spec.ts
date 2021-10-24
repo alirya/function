@@ -5,7 +5,7 @@ it("force console log", () => { spyOn(console, 'log').and.callThrough();});
 describe("memoize", function() {
 
     let called = 0;
-    let memoize = DynamicMemoize(function (number : number) {
+    let memoize = DynamicMemoize.Parameter(function (number : number) {
 
         called++;
         return number + number;

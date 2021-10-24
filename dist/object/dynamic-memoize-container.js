@@ -1,5 +1,5 @@
 import Find from "@dikac/t-iterable/value/find";
-export default class DynamicMemoizeContainer {
+export class DynamicMemoizeContainerParameter {
     constructor(callback, validation) {
         this.callback = callback;
         this.validation = validation;
@@ -23,10 +23,15 @@ export default class DynamicMemoizeContainer {
         return Find(this.memoized, (memoized) => this.validation(argument, memoized.argument), null);
     }
 }
-class DynamicMemoizeContainerObject extends DynamicMemoizeContainer {
+export class DynamicMemoizeContainerObject extends DynamicMemoizeContainerParameter {
     constructor({ callback, validation }) {
         super(callback, validation);
     }
 }
-DynamicMemoizeContainer.object = DynamicMemoizeContainerObject;
+var DynamicMemoizeContainer;
+(function (DynamicMemoizeContainer) {
+    DynamicMemoizeContainer.Parameter = DynamicMemoizeContainerParameter;
+    DynamicMemoizeContainer.Object = DynamicMemoizeContainerObject;
+})(DynamicMemoizeContainer || (DynamicMemoizeContainer = {}));
+export default DynamicMemoizeContainer;
 //# sourceMappingURL=dynamic-memoize-container.js.map

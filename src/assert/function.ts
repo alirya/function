@@ -14,5 +14,5 @@ export default function Function<
     error : (value:unknown)=>Error = ThrowableType
 ) : asserts value is Assumption {
 
-    Callback(value, GuardType, error);
+    Callback.Parameter(value, GuardType, error);
 }

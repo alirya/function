@@ -1,4 +1,4 @@
-import AssertCallback from "../assert/callback";
+import Assert from "../assert/callback";
 /**
  * Throw exception from {@param error} if given {@param value} is not valid according
  * to {@param validation}
@@ -11,8 +11,8 @@ import AssertCallback from "../assert/callback";
  * @param argument
  * extra argument for both {@param argument} & {@param error}
  */
-export default function Callback(value, validation, error, ...argument) {
-    AssertCallback(value, validation, error, ...argument);
+export function CallbackParameter(value, validation, error, ...argument) {
+    Assert.Parameter(value, validation, error, ...argument);
     return value;
 }
 /**
@@ -23,7 +23,13 @@ export default function Callback(value, validation, error, ...argument) {
  * @param error
  * @param argument
  */
-Callback.object = function ({ value, validation, error, argument }) {
-    return Callback(value, validation, error, ...argument);
-};
+export function CallbackObject({ value, validation, error, argument }) {
+    return CallbackParameter(value, validation, error, ...argument);
+}
+var Callback;
+(function (Callback) {
+    Callback.Parameter = CallbackParameter;
+    Callback.Object = CallbackObject;
+})(Callback || (Callback = {}));
+export default Callback;
 //# sourceMappingURL=callback.js.map

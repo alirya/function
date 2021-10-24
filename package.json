@@ -1,6 +1,6 @@
 {
   "name": "@dikac/t-function",
-  "version": "0.15.0-beta.2",
+  "version": "0.15.0-beta.3",
   "description": "Typescript function",
   "dependencies": {
     "@dikac/t-validatable": "^0.20.0-beta.1",

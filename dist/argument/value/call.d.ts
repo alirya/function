@@ -4,8 +4,10 @@ import Callable from "../../callable";
 /**
  * Use {@link Argument} as argument to call function form {@link Callback}
  */
-declare function Call<FunctionType extends Callable>(callback: FunctionType, argument: Parameters<FunctionType>): ReturnType<FunctionType>;
+export declare function CallParameter<FunctionType extends Callable>(callback: FunctionType, argument: Parameters<FunctionType>): ReturnType<FunctionType>;
+export declare function CallObject<FunctionType extends Callable>({ callback, argument }: Argument<Parameters<FunctionType>> & Callback<FunctionType>): ReturnType<FunctionType>;
 declare namespace Call {
-    var object: <FunctionType extends Callable>({ callback, argument }: Argument<Parameters<FunctionType>> & Callback<FunctionType>) => ReturnType<FunctionType>;
+    const Parameter: typeof CallParameter;
+    const Object: typeof CallObject;
 }
 export default Call;

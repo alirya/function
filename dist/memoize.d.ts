@@ -1,8 +1,13 @@
 import Callable from "./callable";
 import ArgumentContainer from "./argument/argument";
 import Callback from "./callback/callback";
-import ReturnCallback from "./return/callback";
+import { CallbackParameter } from "./return/callback";
 import ReturnMemoize from "./return/memoize";
+declare namespace Memoize {
+    const Parameter: typeof MemoizeParameter;
+    const Object: typeof MemoizeObject;
+}
+export default Memoize;
 export declare type Argument<Function extends Callable> = Callback<Function> & ArgumentContainer<Parameters<Function>>;
 /**
  * wrap given {@param callback} to new function and cache its return
@@ -15,12 +20,15 @@ export declare type Argument<Function extends Callable> = Callback<Function> & A
  * @callback
     * callback to be wrapped
  */
-declare function Memoize<Function extends Callable>(callback: Function, ...argument: Parameters<Function>): (() => ReturnType<Function>) & {
-    container: ReturnMemoize<ReturnCallback<Function>>;
+export declare function MemoizeParameter<Function extends Callable>(callback: Function, ...argument: Parameters<Function>): (() => ReturnType<Function>) & {
+    container: ReturnMemoize<CallbackParameter<Function>>;
 };
-declare namespace Memoize {
-    var object: <Function_1 extends Callable>({ callback, argument }: Argument<Function_1>) => (() => ReturnType<Function_1>) & {
-        container: ReturnMemoize<ReturnCallback<Function_1>>;
-    };
-}
-export default Memoize;
+/**
+ * object destructure version
+ *
+ * @param callback
+ * @param argument
+ */
+export declare function MemoizeObject<Function extends Callable>({ callback, argument }: Argument<Function>): (() => ReturnType<Function>) & {
+    container: ReturnMemoize<CallbackParameter<Function>>;
+};

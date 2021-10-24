@@ -1,5 +1,11 @@
-import ReturnCallback from "./return/callback";
+import { CallbackParameter } from "./return/callback";
 import ReturnMemoize from "./return/memoize";
+var Memoize;
+(function (Memoize) {
+    Memoize.Parameter = MemoizeParameter;
+    Memoize.Object = MemoizeObject;
+})(Memoize || (Memoize = {}));
+export default Memoize;
 /**
  * wrap given {@param callback} to new function and cache its return
  *
@@ -11,8 +17,8 @@ import ReturnMemoize from "./return/memoize";
  * @callback
     * callback to be wrapped
  */
-export default function Memoize(callback, ...argument) {
-    const container = new ReturnMemoize(new ReturnCallback(callback, argument));
+export function MemoizeParameter(callback, ...argument) {
+    const container = new ReturnMemoize(new CallbackParameter(callback, argument));
     const func = function () {
         return container.return;
     };
@@ -25,7 +31,7 @@ export default function Memoize(callback, ...argument) {
  * @param callback
  * @param argument
  */
-Memoize.object = function ({ callback, argument }) {
-    return Memoize(callback, ...argument);
-};
+export function MemoizeObject({ callback, argument }) {
+    return MemoizeParameter(callback, ...argument);
+}
 //# sourceMappingURL=memoize.js.map

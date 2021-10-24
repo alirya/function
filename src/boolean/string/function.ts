@@ -1,7 +1,7 @@
 import Validatable from "@dikac/t-validatable/validatable";
 import Value from "@dikac/t-value/value";
 
-export default function Function(
+export function FunctionParameter (
     valid : boolean,
     value : unknown,
 ) : string {
@@ -16,9 +16,17 @@ export default function Function(
     }
 }
 
-Function.object = function (
+export function FunctionObject (
     {valid, value} : Validatable & Value
 ) : string {
 
-    return Function(valid, value)
+    return FunctionParameter(valid, value)
 }
+
+namespace Function {
+
+    export const Parameter = FunctionParameter;
+    export const Object = FunctionObject;
+}
+
+export default Function;

@@ -1,4 +1,4 @@
-export default function Function(valid, value) {
+export function FunctionParameter(valid, value) {
     if (valid) {
         return `value is function`;
     }
@@ -6,7 +6,13 @@ export default function Function(valid, value) {
         return `value is not function`;
     }
 }
-Function.object = function ({ valid, value }) {
-    return Function(valid, value);
-};
+export function FunctionObject({ valid, value }) {
+    return FunctionParameter(valid, value);
+}
+var Function;
+(function (Function) {
+    Function.Parameter = FunctionParameter;
+    Function.Object = FunctionObject;
+})(Function || (Function = {}));
+export default Function;
 //# sourceMappingURL=function.js.map
