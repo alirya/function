@@ -1,22 +1,9 @@
-import { CallParameter } from "../argument/value/call";
-export class CallbackParameter {
-    constructor(callback, argument) {
-        this.callback = callback;
-        this.argument = argument;
-    }
-    get return() {
-        return CallParameter(this.callback, this.argument);
-    }
-}
-export class CallbackObject extends CallbackParameter {
-    constructor({ argument, callback }) {
-        super(callback, argument);
-    }
-}
+import CallbackParameter from "./callback-parameter";
+import CallbackParameters from "./callback-parameters";
 var Callback;
 (function (Callback) {
     Callback.Parameter = CallbackParameter;
-    Callback.Object = CallbackObject;
+    Callback.Parameters = CallbackParameters;
 })(Callback || (Callback = {}));
 export default Callback;
 //# sourceMappingURL=callback.js.map

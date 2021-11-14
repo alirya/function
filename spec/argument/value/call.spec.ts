@@ -18,7 +18,7 @@ describe("basic", function() {
 
     it("call", () => {
 
-        let returns = Call.Object(object);
+        let returns = Call.Parameter(object);
 
         expect(returns).toBe(2)
         expect(object.return).toBe(0)

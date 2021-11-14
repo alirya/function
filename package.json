@@ -1,9 +1,9 @@
 {
   "name": "@dikac/t-function",
-  "version": "0.15.0-beta.3",
+  "version": "0.15.0-beta.4",
   "description": "Typescript function",
   "dependencies": {
-    "@dikac/t-validatable": "^0.20.0-beta.1",
+    "@dikac/t-validatable": "^0.20.0-beta.4",
     "@dikac/t-iterable": "^0.4.4",
     "@dikac/t-boolean": "^0.11.0-beta.0",
     "@dikac/t-message": "^0.11.3",

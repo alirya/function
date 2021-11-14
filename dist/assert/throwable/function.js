@@ -1,6 +1,6 @@
 import Message from "../../boolean/string/function";
-import { CallbackParameter } from "./callback";
+import CallbackParameters from "./callback-parameters";
 export default function Function(value) {
-    return CallbackParameter([value], Message.Parameter);
+    return CallbackParameters([value], Message.Parameters);
 }
 //# sourceMappingURL=function.js.map

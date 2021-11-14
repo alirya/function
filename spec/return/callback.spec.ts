@@ -9,7 +9,7 @@ describe("basic", function() {
         return number + number;
     };
 
-    let callback = new Callback.Parameter(fn, [1]);
+    let callback = new Callback.Parameters(fn, [1]);
 
     it('validate initial data', function () {
 

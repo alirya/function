@@ -1,0 +1,1 @@
+{"version":3,"file":"callback-parameter.js","sourceRoot":"","sources":["../../src/assert/callback-parameter.ts"],"names":[],"mappings":"AAGA,OAAO,kBAAkB,MAAM,uBAAuB,CAAC;AAgBvD,MAAM,CAAC,OAAO,UAAU,iBAAiB,CACrC,KAAiB,EACjB,EAAC,QAAQ,GAAG,EAAE,EAAE,KAAK,EAAE,UAAU,EAA6E;IAG9G,OAAO,kBAAkB,CAAC,KAAK,EAAE,UAAU,EAAE,KAAK,EAAE,GAAG,QAAQ,CAAC,CAAC;AACrE,CAAC"}
