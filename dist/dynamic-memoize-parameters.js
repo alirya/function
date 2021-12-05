@@ -1,4 +1,4 @@
-import Equal from "@dikac/t-array/boolean/equal";
+import Equal from "@dikac/t-array/boolean/equal-parameters";
 import Container from "./object/dynamic-memoize-container-parameters";
 export default function DynamicMemoizeParameters(callback, 
 // validation : Callable<[Parameters<FunctionType>, Parameters<FunctionType>], boolean> = Equal,

@@ -1,4 +1,4 @@
-import Find from "@dikac/t-iterable/value/find";
+import Find from "@dikac/t-iterable/value/find-parameters";
 export default class DynamicMemoizeContainerParameters {
     constructor(callback, validation) {
         this.callback = callback;
