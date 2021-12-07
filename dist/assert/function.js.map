@@ -1,1 +1,0 @@
-{"version":3,"file":"function.js","sourceRoot":"","sources":["../../src/assert/function.ts"],"names":[],"mappings":"AAAA,OAAO,SAAS,MAAM,qBAAqB,CAAC;AAC5C,OAAO,aAAa,MAAM,8BAA8B,CAAC;AACzD,OAAO,kBAAkB,MAAM,uBAAuB,CAAC;AAGvD;;GAEG;AAEH,MAAM,CAAC,OAAO,UAAU,QAAQ,CAG5B,KAAe,EACf,QAAiC,aAAa;IAG9C,kBAAkB,CAAC,KAAK,EAAE,SAAS,EAAE,KAAK,CAAC,CAAC;AAChD,CAAC"}

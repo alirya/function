@@ -1,1 +1,0 @@
-{"version":3,"file":"callback-parameter.js","sourceRoot":"","sources":["../../src/return/callback-parameter.ts"],"names":[],"mappings":"AAGA,OAAO,kBAAkB,MAAM,uBAAuB,CAAC;AAEvD,MAAM,CAAC,OAAO,OAAO,iBAAiD,SAAQ,kBAAgC;IAE1G,YAAY,EAAC,QAAQ,EAAE,QAAQ,EAAwE;QACnG,KAAK,CAAC,QAAQ,EAAE,QAAQ,CAAC,CAAC;IAC9B,CAAC;CACJ"}
