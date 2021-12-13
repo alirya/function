@@ -16,12 +16,3 @@ export default function DynamicMemoizeParameter <FunctionType extends Callable>(
 
     return DynamicMemoizeParameters(callback, validation);
 }
-//
-//
-// namespace DynamicMemoize {
-//
-//     export const Parameter = DynamicMemoizeParameter;
-//     export const Object = DynamicMemoizeObject;
-// }
-//
-// export default DynamicMemoize;

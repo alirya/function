@@ -6,8 +6,6 @@ export default function DynamicMemoizeParameters<
     FunctionType extends Callable,
 >(
     callback : FunctionType,
-    // validation : Callable<[Parameters<FunctionType>, Parameters<FunctionType>], boolean> = Equal,
-    //validation : Callable<[Parameters<FunctionType>, Parameters<FunctionType>], boolean> = Equal,
     validation : Callable<[Parameters<FunctionType>, Parameters<FunctionType>], boolean> = Equal,
 ) : FunctionType & { container : Container<FunctionType> } {
 

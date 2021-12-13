@@ -1,6 +1,5 @@
 import ArgumentType from "../../argument/argument";
 import Message from "@dikac/t-message/message";
-import Validatable from "@dikac/t-validatable/validatable";
 import CallbackParameters from "./callback-parameters";
 
 
