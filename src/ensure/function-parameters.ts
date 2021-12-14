@@ -1,6 +1,6 @@
 import TypeGuard from "../boolean/function";
 import ThrowableType from "../assert/throwable/function";
-import Guard from "./callback";
+import Guard from "./callback-parameters";
 import Callable from "../callable";
 
 /**
@@ -14,7 +14,7 @@ export default function FunctionParameters<
     error : (value:unknown)=>Error = ThrowableType
 ) : Assumption {
 
-    Guard.Parameters(value, TypeGuard, error)
+    Guard(value, TypeGuard, error)
     return <Assumption>value;
 }
 

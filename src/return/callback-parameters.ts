@@ -1,6 +1,6 @@
 import Argument from "../argument/argument";
 import Return from "./return";
-import CallParameter from "../argument/value/call";
+import CallParameter from "../argument/value/call-parameters";
 import Callable from "../callable";
 
 export type CallbackParametersType<FunctionType extends Callable> =
@@ -8,9 +8,7 @@ export type CallbackParametersType<FunctionType extends Callable> =
 
 export default class CallbackParameters<
     FunctionType extends Callable
-> implements
-    Argument<Parameters<FunctionType>>,
-    Return<ReturnType<FunctionType>>
+> implements CallbackParametersType<FunctionType>
 {
     constructor(
         public callback  : FunctionType,
@@ -20,7 +18,7 @@ export default class CallbackParameters<
 
     get return () : ReturnType<FunctionType> {
 
-        return <ReturnType<FunctionType>>CallParameter.Parameters(this.callback, this.argument);
+        return <ReturnType<FunctionType>>CallParameter(this.callback, this.argument);
     }
 }
 

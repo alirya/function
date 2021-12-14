@@ -1,4 +1,4 @@
-import Assert from "../assert/callback";
+import Assert from "../assert/callback-parameters";
 
 /**
  * Throw exception from {@param error} if given {@param value} is not valid according
@@ -23,7 +23,7 @@ export default function CallbackParameters<
     ...argument : ExtraArgument
 ) : Return {
 
-    Assert.Parameters(value, validation, error, ...argument);
+    Assert(value, validation, error, ...argument);
 
     return <Return> value;
 }

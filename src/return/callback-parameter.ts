@@ -1,7 +1,9 @@
 import Argument from "../argument/argument";
 import CallbackInterface from "../callback/callback";
 import Callable from "../callable";
-import CallbackParameters from "./callback-parameters";
+import CallbackParameters, {CallbackParametersType} from "./callback-parameters";
+
+export {CallbackParametersType}
 
 export default class CallbackParameter<FunctionType extends Callable> extends CallbackParameters<FunctionType> {
 

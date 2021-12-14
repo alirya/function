@@ -1,7 +1,7 @@
 import Callable from "./callable";
 import ArgumentContainer from "./argument/argument";
 import Callback from "./callback/callback";
-import CallbackParameter from "./return/callback";
+import CallbackParameter, {CallbackParametersType} from "./return/callback-parameter";
 import ReturnMemoize from "./return/memoize";
 import MemoizeParameters from "./memoize-parameters";
 
@@ -26,7 +26,7 @@ export type MemoizeParameterArgument<Function extends Callable> = Callback<Funct
  */
 export default function MemoizeParameter <Function extends Callable>(
     {callback, argument} : MemoizeParameterArgument<Function>
-) : (() => ReturnType<Function>) & {container : ReturnMemoize<CallbackParameter.Type<Function>>} {
+) : (() => ReturnType<Function>) & {container : ReturnMemoize<CallbackParametersType<Function>>} {
 
     return MemoizeParameters(callback, ...argument);
 }
