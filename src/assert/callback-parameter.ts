@@ -1,6 +1,6 @@
 import ExtraArgument from '../argument/argument';
-import Guard from '@dikac/t-boolean/validation/guard';
-import Validation from '@dikac/t-boolean/validation/validation';
+import Guard from '@alirya/boolean/validation/guard';
+import Validation from '@alirya/boolean/validation/validation';
 import CallbackParameters from './callback-parameters';
 
 export type CallbackParameterArgument<ValueType, Arguments extends unknown[] = unknown[]> =

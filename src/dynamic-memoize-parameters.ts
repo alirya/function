@@ -1,4 +1,4 @@
-import Equal from '@dikac/t-array/boolean/equal-parameters';
+import Equal from '@alirya/array/boolean/equal-parameters';
 import Container from './object/dynamic-memoize-container-parameters';
 import Callable from './callable';
 

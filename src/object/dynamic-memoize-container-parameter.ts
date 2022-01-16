@@ -1,6 +1,6 @@
 import Callable from '../callable';
 import Callback from '../callback/callback';
-import Validation from '@dikac/t-boolean/validation/validation';
+import Validation from '@alirya/boolean/validation/validation';
 import DynamicMemoizeContainerParameters from './dynamic-memoize-container-parameters';
 
 

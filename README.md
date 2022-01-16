@@ -1,2 +1,2 @@
-# t-function
+# function
 typescipt function

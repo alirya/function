@@ -1,5 +1,5 @@
 import ArgumentType from '../../argument/argument';
-import Message from '@dikac/t-message/message';
+import Message from '@alirya/message/message';
 import CallbackParameters from './callback-parameters';
 
 
