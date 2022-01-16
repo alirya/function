@@ -57,7 +57,14 @@
   "publishConfig": {
     "directory": "dist"
   },
-  "author": "Andika Candra",
+  "author": {
+    "name": "Andika Candra"
+  },
   "private": true,
-  "license": "MIT"
+  "license": "MIT",
+  "homepage": "https://github.com/alirya/function",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alirya/function"
+  }
 }
