@@ -12,5 +12,10 @@
     "@types/is-function": "^1.0.1",
     "is-function": "^1.0.2",
     "ts-toolbelt": "^9.6.0"
+  },
+  "homepage": "https://github.com/alirya/function",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alirya/function"
   }
 }
