@@ -1,8 +1,8 @@
-import Memoized from "../../../dist/return/memoize";
+import Memoized from '../../../dist/return/memoize';
 
-it("enable console log", () => spyOn(console, 'log').and.callThrough());
+it('enable console log', () => spyOn(console, 'log').and.callThrough());
 
-describe("test", function() {
+describe('test', function() {
 
     let standard = {return:10};
     let memoize = new Memoized(standard);

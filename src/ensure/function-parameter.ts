@@ -1,5 +1,5 @@
-import Value from "@dikac/t-value/value";
-import FunctionParameters from "./function-parameters";
+import Value from '@dikac/t-value/value';
+import FunctionParameters from './function-parameters';
 
 
 /**

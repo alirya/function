@@ -1,7 +1,7 @@
-import Argument from "../argument/argument";
-import Return from "./return";
-import CallParameter from "../argument/value/call-parameters";
-import Callable from "../callable";
+import Argument from '../argument/argument';
+import Return from './return';
+import CallParameter from '../argument/value/call-parameters';
+import Callable from '../callable';
 
 export type CallbackParametersType<FunctionType extends Callable> =
     Argument<Parameters<FunctionType>> & Return<ReturnType<FunctionType>>

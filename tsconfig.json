@@ -5,7 +5,7 @@
     "moduleResolution": "node",
     "module": "es2015",
     "declaration": true,
-    "target": "es2016",
+    "target": "es2015",
     "outDir": "dist",
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,

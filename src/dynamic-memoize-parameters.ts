@@ -1,6 +1,6 @@
-import Equal from "@dikac/t-array/boolean/equal-parameters";
-import Container from "./object/dynamic-memoize-container-parameters";
-import Callable from "./callable";
+import Equal from '@dikac/t-array/boolean/equal-parameters';
+import Container from './object/dynamic-memoize-container-parameters';
+import Callable from './callable';
 
 export default function DynamicMemoizeParameters<
     FunctionType extends Callable,

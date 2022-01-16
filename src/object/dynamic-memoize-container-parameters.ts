@@ -1,7 +1,7 @@
-import ArgumentContainer from "../argument/argument";
-import Return from "../return/return";
-import Callable from "../callable";
-import Find from "@dikac/t-iterable/value/find-parameters";
+import ArgumentContainer from '../argument/argument';
+import Return from '../return/return';
+import Callable from '../callable';
+import Find from '@dikac/t-iterable/value/find-parameters';
 
 type Memoized<CallbackType extends Callable> = ArgumentContainer<Parameters<CallbackType>> & Return<ReturnType<CallbackType>>;
 

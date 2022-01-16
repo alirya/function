@@ -1,7 +1,7 @@
-import Argument from "../argument/argument";
-import CallbackInterface from "../callback/callback";
-import Callable from "../callable";
-import CallbackParameters, {CallbackParametersType} from "./callback-parameters";
+import Argument from '../argument/argument';
+import CallbackInterface from '../callback/callback';
+import Callable from '../callable';
+import CallbackParameters, {CallbackParametersType} from './callback-parameters';
 
 export {CallbackParametersType}
 

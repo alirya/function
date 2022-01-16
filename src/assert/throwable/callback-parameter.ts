@@ -1,6 +1,6 @@
-import ArgumentType from "../../argument/argument";
-import Message from "@dikac/t-message/message";
-import CallbackParameters from "./callback-parameters";
+import ArgumentType from '../../argument/argument';
+import Message from '@dikac/t-message/message';
+import CallbackParameters from './callback-parameters';
 
 
 export type CallbackParameterArgument<Arguments extends unknown[], ErrorType extends Error> =

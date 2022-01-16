@@ -1,7 +1,7 @@
-import ExtraArgument from "../argument/argument";
-import Guard from "@dikac/t-boolean/validation/guard";
-import Validation from "@dikac/t-boolean/validation/validation";
-import CallbackParameters from "./callback-parameters";
+import ExtraArgument from '../argument/argument';
+import Guard from '@dikac/t-boolean/validation/guard';
+import Validation from '@dikac/t-boolean/validation/validation';
+import CallbackParameters from './callback-parameters';
 
 export type CallbackParameterArgument<ValueType, Arguments extends unknown[] = unknown[]> =
     & {error:(value : ValueType, ...args:Arguments)=>Error}

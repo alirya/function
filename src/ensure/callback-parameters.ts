@@ -1,4 +1,4 @@
-import Assert from "../assert/callback-parameters";
+import Assert from '../assert/callback-parameters';
 
 /**
  * Throw exception from {@param error} if given {@param value} is not valid according

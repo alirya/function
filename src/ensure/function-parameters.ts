@@ -1,7 +1,7 @@
-import TypeGuard from "../boolean/function";
-import ThrowableType from "../assert/throwable/function";
-import Guard from "./callback-parameters";
-import Callable from "../callable";
+import TypeGuard from '../boolean/function';
+import ThrowableType from '../assert/throwable/function';
+import Guard from './callback-parameters';
+import Callable from '../callable';
 
 /**
  * return {@param value} if type is function or

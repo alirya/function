@@ -1,5 +1,5 @@
 {
-  "name": "@dikac/t-function",
+  "name": "@alirya/function",
   "version": "0.15.0-beta.9",
   "description": "Typescript function",
   "dependencies": {
@@ -24,7 +24,8 @@
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
     "ts-cleaner": "^1.0.5",
-    "typescript": "4.0.2"
+    "typescript": "^4.5.2",
+    "tslint": "^5.13.0"
   },
   "scripts": {
     "spec-run-js": "node -r esm node_modules/jasmine/bin/jasmine.js --config=./jasmine.json",
@@ -42,6 +43,8 @@
     "postrelease": "npm publish ./dist",
     "prerelease": "npm-run-all _release-remove-compile-cache compile _release_copy-meta-files",
     "postpublish": "rimraf package.json package-lock.json LICENSE Readme.md .npmignore",
+    "lint": "tslint --project ./tslint.json",
+    "lint-fix": "tslint --project ./tslint.json --fix",
     "_compile-script": "tsc",
     "_spec-ensure-directory": "mkdirp dist-spec",
     "_compile-script-watch": "tsc -w",
@@ -51,7 +54,10 @@
     "_release_copy-meta-files": "cpy package.json package-lock.json LICENSE Readme.md .npmignore dist",
     "_release-remove-compile-cache": "rimraf ./dist/compiler-cache"
   },
-  "author": "",
+  "publishConfig": {
+    "directory": "dist"
+  },
+  "author": "Andika Candra",
   "private": true,
   "license": "MIT"
 }

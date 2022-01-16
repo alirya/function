@@ -1,8 +1,8 @@
-import New from "../dist/new";
+import New from '../dist/new';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("array", function() {
+describe('array', function() {
 
     let fn = New<number[], number[]>(Array);
 
@@ -23,7 +23,7 @@ describe("array", function() {
 });
 
 
-describe("user defined", function() {
+describe('user defined', function() {
 
     class R {
 

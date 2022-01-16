@@ -1,8 +1,8 @@
-import Call from "../../../dist/argument/value/call";
+import Call from '../../../dist/argument/value/call-parameter';
 
-it("force console log", () => { spyOn(console, 'log').and.callThrough();});
+it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
-describe("basic", function() {
+describe('basic', function() {
 
     let object : {
         argument : [number],
@@ -16,9 +16,9 @@ describe("basic", function() {
         return : 0
     };
 
-    it("call", () => {
+    it('call', () => {
 
-        let returns = Call.Parameter(object);
+        let returns = Call(object);
 
         expect(returns).toBe(2)
         expect(object.return).toBe(0)

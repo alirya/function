@@ -1,7 +1,7 @@
-import Validation from "@dikac/t-boolean/validation/validation";
-import ArgumentContainer from "../argument/argument";
-import Value from "@dikac/t-value/value";
-import CallbackParameters from "./callback-parameters";
+import Validation from '@dikac/t-boolean/validation/validation';
+import ArgumentContainer from '../argument/argument';
+import Value from '@dikac/t-value/value';
+import CallbackParameters from './callback-parameters';
 
 export type CallbackParameterArgument<
     Return extends ValueType,

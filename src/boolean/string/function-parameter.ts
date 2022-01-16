@@ -1,6 +1,6 @@
-import Validatable from "@dikac/t-validatable/validatable";
-import Value from "@dikac/t-value/value";
-import FunctionParameters from "./function-parameters";
+import Validatable from '@dikac/t-validatable/validatable';
+import Value from '@dikac/t-value/value';
+import FunctionParameters from './function-parameters';
 
 
 export default function FunctionParameter (

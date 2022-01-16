@@ -1,4 +1,4 @@
-import Callable from "../../callable";
+import Callable from '../../callable';
 
 /**
  * Use {@link Argument} as argument to call function form {@link Callback}

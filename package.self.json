@@ -1,0 +1,16 @@
+{
+  "name": "@alirya/function",
+  "version": "0.15.0-beta.9",
+  "description": "Typescript function",
+  "dependencies": {
+    "@dikac/t-array": "^0.26.0-alpha.4",
+    "@dikac/t-boolean": "^0.11.0-beta.6",
+    "@dikac/t-iterable": "^0.5.0-alpha.1",
+    "@dikac/t-message": "^0.12.0-alpha.2",
+    "@dikac/t-validatable": "^0.20.0-beta.7",
+    "@dikac/t-value": "^0.15.0-beta.2",
+    "@types/is-function": "^1.0.1",
+    "is-function": "^1.0.2",
+    "ts-toolbelt": "^9.6.0"
+  }
+}

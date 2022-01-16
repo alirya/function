@@ -1,7 +1,7 @@
-import Callable from "../callable";
-import Callback from "../callback/callback";
-import Validation from "@dikac/t-boolean/validation/validation";
-import DynamicMemoizeContainerParameters from "./dynamic-memoize-container-parameters";
+import Callable from '../callable';
+import Callback from '../callback/callback';
+import Validation from '@dikac/t-boolean/validation/validation';
+import DynamicMemoizeContainerParameters from './dynamic-memoize-container-parameters';
 
 
 export type DynamicMemoizeContainerParameterArgument<CallbackType extends Callable> =
