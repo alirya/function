@@ -17,8 +17,8 @@
     // "no-unused-variable": false,
     // "no-var-requires": false,
     // "object-literal-key-quotes": [true, "as-needed"],
-    "quotemark": [true, "single", "jsx-double"]
-    // "semicolon": [true, "never"],
+    "quotemark": [true, "single"],
+    "semicolon": [true, "always"]
     // "trailing-comma": [true, { "multiline": "ignore", "singleline": "ignore" }]
   }
 }
