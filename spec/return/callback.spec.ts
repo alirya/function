@@ -29,7 +29,7 @@ describe('basic', function() {
         callback.argument = [2];
         expect(callback.argument).toEqual([2]);
 
-    })
+    });
 
     it('validate value', function () {
 

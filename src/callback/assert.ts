@@ -7,5 +7,5 @@ export default interface Assert<
         (argument:Argument, ...args:Extras) => asserts argument is Return
 > {
 
-    callback : Assert
+    callback : Assert;
 }

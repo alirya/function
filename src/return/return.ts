@@ -3,5 +3,5 @@
  */
 export default interface Return<Type = unknown> {
 
-    return : Type
+    return : Type;
 }

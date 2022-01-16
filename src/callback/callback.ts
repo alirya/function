@@ -6,5 +6,5 @@ export default interface Callback<
     FunctionType extends Callable|Guard<any, any, []>|Assert
 > {
 
-    callback : FunctionType
+    callback : FunctionType;
 }

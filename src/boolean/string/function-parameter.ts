@@ -7,6 +7,6 @@ export default function FunctionParameter (
     {valid, value} : Validatable & Value
 ) : string {
 
-    return FunctionParameters(valid, value)
+    return FunctionParameters(valid, value);
 }
 

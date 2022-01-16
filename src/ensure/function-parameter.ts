@@ -9,7 +9,7 @@ import FunctionParameters from './function-parameters';
  * @param error
  */
 export default function FunctionParameter ({value, error} : Value<unknown> & {error ?: (value:unknown)=>Error}) {
-    return FunctionParameters(value, error)
+    return FunctionParameters(value, error);
 }
 
 

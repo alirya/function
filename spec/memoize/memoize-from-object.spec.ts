@@ -17,26 +17,26 @@ describe('basic', function() {
 
     it('check initial data', () => {
 
-        expect(called).toBe(0)
-        expect(memoize.container.subject.argument).toEqual([1])
+        expect(called).toBe(0);
+        expect(memoize.container.subject.argument).toEqual([1]);
         expect(memoize.container.memoized).toBeFalse();
 
     });
 
     it('call', () => {
 
-        expect(memoize()).toBe(2)
-        expect(memoize.container.return).toBe(2)
+        expect(memoize()).toBe(2);
+        expect(memoize.container.return).toBe(2);
 
-        expect(called).toBe(1)
+        expect(called).toBe(1);
         expect(memoize.container.memoized).toBeTrue();
     });
 
     it('2nd call', function() {
 
-        expect(memoize()).toBe(2)
-        expect(memoize.container.return).toBe(2)
-        expect(called).toBe(1)
+        expect(memoize()).toBe(2);
+        expect(memoize.container.return).toBe(2);
+        expect(called).toBe(1);
         expect(memoize.container.memoized).toBeTrue();
     });
 
@@ -44,16 +44,16 @@ describe('basic', function() {
 
         it('change argument', () => {
             memoize.container.subject.argument = [2];
-            expect(memoize()).toBe(2)
+            expect(memoize()).toBe(2);
         });
 
         it('reset', () => {
             memoize.container.clear();
 
-            expect(called).toBe(1)
-            expect(memoize()).toBe(4)
-            expect(memoize.container.return).toBe(4)
-            expect(called).toBe(2)
+            expect(called).toBe(1);
+            expect(memoize()).toBe(4);
+            expect(memoize.container.return).toBe(4);
+            expect(called).toBe(2);
         });
 
     });

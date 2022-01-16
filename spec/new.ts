@@ -18,7 +18,7 @@ describe('array', function() {
     it('validate result', ()=>{
 
         expect(fn(1,2,3,4)).toEqual([1,2,3,4]);
-    })
+    });
 
 });
 
@@ -54,6 +54,6 @@ describe('user defined', function() {
         expect(result.a).toEqual('1');
         expect(result.b).toEqual(2);
         expect(result.c).toEqual(true);
-    })
+    });
 
 });

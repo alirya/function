@@ -14,7 +14,7 @@ export default function FunctionParameters<
     error : (value:unknown)=>Error = ThrowableType
 ) : Assumption {
 
-    Guard(value, TypeGuard, error)
+    Guard(value, TypeGuard, error);
     return <Assumption>value;
 }
 

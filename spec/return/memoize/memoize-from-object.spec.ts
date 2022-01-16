@@ -14,17 +14,17 @@ describe('test', function() {
 
     it(`change subject value`, () =>{
         standard.return = 20;
-        expect(standard.return).toBe(20)
+        expect(standard.return).toBe(20);
     });
 
     it(`recheck memoized value`, () => {
 
-        expect(memoize.return).toBe(10)
+        expect(memoize.return).toBe(10);
     });
 
     it(`reset memoize`, () =>{
 
         memoize.clear();
-        expect(memoize.return).toBe(20)
+        expect(memoize.return).toBe(20);
     });
 });

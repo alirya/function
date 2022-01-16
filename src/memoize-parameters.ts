@@ -8,12 +8,12 @@ export default function MemoizeParameters<Function extends Callable>(
     ... argument : Parameters<Function>
 ) : (() => ReturnType<Function>) & {container : ReturnMemoize<CallbackParametersType<Function>>} {
 
-    const container = new ReturnMemoize(new CallbackParameters(callback, argument))
+    const container = new ReturnMemoize(new CallbackParameters(callback, argument));
 
     const func = function () {
 
         return container.return;
-    }
+    };
 
     func.container = container;
 

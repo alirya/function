@@ -3,5 +3,5 @@ export default interface Guard<
     Return extends Value,
     Extras extends unknown[] = unknown[]
 > {
-    callback : (value : Value, ...args : Extras) => value is Return
+    callback : (value : Value, ...args : Extras) => value is Return;
 }

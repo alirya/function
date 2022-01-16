@@ -4,5 +4,5 @@
  */
 export default interface Argument<Arguments = unknown[]> {
 
-    argument : Arguments
+    argument : Arguments;
 }

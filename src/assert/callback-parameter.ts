@@ -10,12 +10,12 @@ export type CallbackParameterArgument<ValueType, Arguments extends unknown[] = u
 export default function CallbackParameter<ValueType, Arguments extends unknown[] = unknown[]>(
     value : ValueType,
     {argument, error, validation} : CallbackParameterArgument<ValueType> & Validation<[ValueType, ...Arguments]>,
-) : void
+) : void;
 
 export default function CallbackParameter<ValueType, Match extends ValueType, Arguments extends unknown[] = unknown[]>(
     value : ValueType,
     {argument, error, validation} : CallbackParameterArgument<ValueType> & Guard<ValueType, Match, Arguments>,
-) : asserts value is Match
+) : asserts value is Match;
 
 export default function CallbackParameter<ValueType, Match extends ValueType, Arguments extends unknown[] = unknown[]>(
     value : ValueType,

@@ -1,4 +1,4 @@
-import IsFunction from 'is-function'
+import IsFunction from 'is-function';
 import Callable from '../callable';
 
 /**

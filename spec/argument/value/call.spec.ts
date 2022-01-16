@@ -20,8 +20,8 @@ describe('basic', function() {
 
         let returns = Call(object);
 
-        expect(returns).toBe(2)
-        expect(object.return).toBe(0)
+        expect(returns).toBe(2);
+        expect(object.return).toBe(0);
     });
 
 });

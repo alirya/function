@@ -11,7 +11,7 @@ export type CallbackParameterArgument<
     Validation<[ValueType, ...ExtraArgument], boolean> &
     {error:(value : ValueType, ...args : ExtraArgument) => Error} &
     ArgumentContainer<ExtraArgument> &
-    Value<ValueType>
+    Value<ValueType>;
 /**
  * object destructure version
  *

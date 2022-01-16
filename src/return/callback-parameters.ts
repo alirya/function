@@ -4,7 +4,7 @@ import CallParameter from '../argument/value/call-parameters';
 import Callable from '../callable';
 
 export type CallbackParametersType<FunctionType extends Callable> =
-    Argument<Parameters<FunctionType>> & Return<ReturnType<FunctionType>>
+    Argument<Parameters<FunctionType>> & Return<ReturnType<FunctionType>>;
 
 export default class CallbackParameters<
     FunctionType extends Callable

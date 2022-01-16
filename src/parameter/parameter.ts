@@ -4,5 +4,5 @@
  */
 export default interface Parameter<Type = string> {
 
-    parameter : Type
+    parameter : Type;
 }
