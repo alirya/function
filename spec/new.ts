@@ -10,7 +10,7 @@ describe('array', function() {
 
         fn(1,2,3,4);
 
-        // @ts-expecerror
+        // @ts-expect-error
         fn('1','2','3','4');
 
     });
@@ -41,7 +41,7 @@ describe('user defined', function() {
 
         let result : R = fn('1', 2, true);
 
-        // @ts-expecerror
+        // @ts-expect-error
         fn('1','2','3','4');
 
     });
