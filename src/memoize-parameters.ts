@@ -1,5 +1,5 @@
 import Callable from './callable';
-import CallbackParameter, {CallbackParametersType} from './return/callback-parameter';
+import {CallbackParametersType} from './return/callback-parameter';
 import CallbackParameters from './return/callback-parameters';
 import ReturnMemoize from './return/memoize';
 

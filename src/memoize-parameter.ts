@@ -1,7 +1,7 @@
 import Callable from './callable';
 import ArgumentContainer from './argument/argument';
 import Callback from './callback/callback';
-import CallbackParameter, {CallbackParametersType} from './return/callback-parameter';
+import {CallbackParametersType} from './return/callback-parameter';
 import ReturnMemoize from './return/memoize';
 import MemoizeParameters from './memoize-parameters';
 
