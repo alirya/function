@@ -4,12 +4,12 @@
   "description": "Typescript function",
   "dependencies": {
     "tslib": "^2.3.1",
-    "@alirya/array": "0.26.0",
-    "@alirya/boolean": "0.11.0",
-    "@alirya/iterable": "0.5.0",
-    "@alirya/message": "0.12.0",
-    "@alirya/validatable": "0.20.0",
-    "@alirya/value": "0.15.0",
+    "@alirya/array": "^0.26.0",
+    "@alirya/boolean": "^0.11.0",
+    "@alirya/iterable": "^0.5.0",
+    "@alirya/message": "^0.12.0",
+    "@alirya/validatable": "^0.20.0",
+    "@alirya/value": "^0.15.0",
     "@types/is-function": "^1.0.1",
     "is-function": "^1.0.2",
     "ts-toolbelt": "^9.6.0"
