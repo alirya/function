@@ -9,7 +9,7 @@ export default function CurryParameters<
     Callback extends Callable,
     Arguments extends Parameters<Callback> = Parameters<Callback>,
     Position extends number = number
-    >(
+>(
     callback : Callback,
     argument : Arguments[Position],
     position : Position
@@ -17,7 +17,7 @@ export default function CurryParameters<
 
     return function (...args) {
 
-        return callback(...InsertArray(args, position)(argument));
+        return callback(...InsertArray(args, position)(argument as any[]));
 
     } as Callable<CurryTypeArgument<Arguments, Position>, ReturnType<Callback>> ;
 }
