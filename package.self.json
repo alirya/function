@@ -1,6 +1,6 @@
 {
   "name": "@alirya/function",
-  "version": "0.16.0",
+  "version": "0.16.1",
   "description": "Typescript function",
   "dependencies": {
     "@alirya/array": "^0.26.1",
