@@ -1,4 +1,4 @@
-import Curry from '../../dist/curry-parameters';
+import Curry from '../../dist/curry';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -22,7 +22,7 @@ describe('single', function() {
 
     let result : Return;
 
-    const callback = Curry(Struct, 'data', 1);
+    const callback = Curry.Parameters(Struct, 'data', 1);
 
     it('call callback', () => {
 
@@ -44,8 +44,8 @@ describe('multi', function() {
 
     let result : Return;
 
-    const preCallback = Curry(Struct, 'data 2', 1);
-    const callback = Curry(preCallback, new Set(), 2);
+    const preCallback = Curry.Parameters(Struct, 'data 2', 1);
+    const callback = Curry.Parameters(preCallback, new Set(), 2);
 
     it('call callback', () => {
 

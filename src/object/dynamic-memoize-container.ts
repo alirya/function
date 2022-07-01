@@ -1,11 +1,14 @@
 import ArgumentContainer from '../argument/argument';
 import Return from '../return/return';
 import Callable from '../callable';
-import Find from '@alirya/iterable/value/find-parameters';
+import Find from '@alirya/iterable/value/find';
+import Callback from '../callback/callback';
+import Validation from '@alirya/boolean/validation/validation';
+import DynamicMemoizeContainerParametersC from './dynamic-memoize-container';
 
 type Memoized<CallbackType extends Callable> = ArgumentContainer<Parameters<CallbackType>> & Return<ReturnType<CallbackType>>;
 
-export default class DynamicMemoizeContainerParameters<
+export class DynamicMemoizeContainerParameters<
     CallbackType extends Callable,
 > {
 
@@ -39,10 +42,31 @@ export default class DynamicMemoizeContainerParameters<
 
     get(argument : Parameters<CallbackType>) : Memoized<CallbackType>|null {
 
-        return Find(
+        return Find.Parameters(
             this.memoized,
             (memoized)=> this.validation(argument, memoized.argument),
             null
         );
     }
 }
+
+
+
+export type DynamicMemoizeContainerArgument<CallbackType extends Callable> =
+    Callback<CallbackType> &
+    Validation<[Parameters<CallbackType>, Parameters<CallbackType>]>;
+
+export class DynamicMemoizeContainerParameter<C extends Callable> extends DynamicMemoizeContainerParametersC.Parameters<C> {
+
+    constructor({callback, validation} : DynamicMemoizeContainerArgument<C>) {
+        super(callback, validation);
+    }
+}
+
+
+namespace DynamicMemoizeContainer {
+    export const Parameters = DynamicMemoizeContainerParameters;
+    export const Parameter = DynamicMemoizeContainerParameter;
+    export type Argument<CallbackType extends Callable> = DynamicMemoizeContainerArgument<CallbackType>;
+}
+export default DynamicMemoizeContainer;

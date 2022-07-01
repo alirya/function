@@ -1,4 +1,4 @@
-import Callback from '../../dist/return/callback-parameters';
+import Callback from '../../dist/return/callback';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -9,7 +9,7 @@ describe('basic', function() {
         return number + number;
     };
 
-    let callback = new Callback(fn, [1]);
+    let callback = new Callback.Parameters(fn, [1]);
 
     it('validate initial data', function () {
 
