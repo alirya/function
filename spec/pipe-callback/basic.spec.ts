@@ -1,4 +1,3 @@
-import Callback from "../../dist/return/callback-parameters";
 import PipeCallback from "../../dist/pipe-callback";
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
