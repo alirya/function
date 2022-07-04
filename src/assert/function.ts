@@ -1,6 +1,6 @@
 import GuardType from '../boolean/function';
 import ThrowableType from '../assert/throwable/function';
-import CallbackParameters from './callback-parameters';
+import {CallbackParameters} from './callback';
 import Callable from '../callable';
 
 /**

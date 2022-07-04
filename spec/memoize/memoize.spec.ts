@@ -1,11 +1,11 @@
-import Memoize from '../../dist/memoize-parameters';
+import Memoize from '../../dist/memoize';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe('basic', function() {
 
     let called = 0;
-    let memoize = Memoize(function (number : number) : number {
+    let memoize = Memoize.Parameters(function (number : number) : number {
 
         called++;
         return number + number;
@@ -63,7 +63,7 @@ describe('basic', function() {
 describe('with container', function() {
 
     let called = 0;
-    let memoize = Memoize(function (number : number) : number {
+    let memoize = Memoize.Parameters(function (number : number) : number {
 
         called++;
         return number + number;

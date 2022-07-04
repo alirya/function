@@ -1,7 +1,7 @@
-import Message from '../../boolean/string/function-parameters';
-import CallbackParameters from './callback-parameters';
+import Message from '../../boolean/string/function';
+import CallbackParameters from './callback';
 
 export default function Function(value : unknown) : Error {
 
-    return CallbackParameters([value], Message);
+    return CallbackParameters.Parameters([value], Message.Parameters);
 }

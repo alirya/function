@@ -1,19 +1,19 @@
-import ConditionalCallParameters from "../../dist/conditional-call-parameters";
-import PrefixParameters from "@alirya/string/prefix-parameters";
-import SuffixParameters from "@alirya/string/suffix-parameters";
+import ConditionalCallParameters from '../../dist/conditional-call';
+import {PrefixParameters} from '@alirya/string/prefix';
+import {SuffixParameters} from '@alirya/string/suffix';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 it('basic', function() {
 
     expect(
-        ConditionalCallParameters(true, PrefixParameters, SuffixParameters, 'base', '-')
+        ConditionalCallParameters.Parameters(true, PrefixParameters, SuffixParameters, 'base', '-')
     ).toBe(
         '-base'
     );
 
     expect(
-        ConditionalCallParameters(false, PrefixParameters, SuffixParameters, 'base', '-')
+        ConditionalCallParameters.Parameters(false, PrefixParameters, SuffixParameters, 'base', '-')
     ).toBe(
         'base-'
     );
