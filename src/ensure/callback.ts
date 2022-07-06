@@ -1,7 +1,7 @@
-import Assert from '../assert/callback';
-import Validation from '@alirya/boolean/validation/validation';
-import ArgumentContainer from '../argument/argument';
-import Value from '@alirya/value/value';
+import Assert from '../assert/callback.js';
+import Validation from '@alirya/boolean/validation/validation.js';
+import ArgumentContainer from '../argument/argument.js';
+import Value from '@alirya/value/value.js';
 
 /**
  * Throw exception from {@param error} if given {@param value} is not valid according

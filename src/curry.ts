@@ -1,8 +1,8 @@
-import Callable from './callable';
-import Heads from '@alirya/array/heads';
-import Tails from '@alirya/array/tails';
-import InsertArray from '@alirya/array/function/insert-parameters';
-import Callback from './callback/callback';
+import Callable from './callable.js';
+import Heads from '@alirya/array/heads.js';
+import Tails from '@alirya/array/tails.js';
+import InsertArray from '@alirya/array/function/insert-parameters.js';
+import Callback from './callback/callback.js';
 
 export function CurryParameters<
     Callback extends Callable,

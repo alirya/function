@@ -1,4 +1,4 @@
-import ArgumentInterface from '../argument';
+import ArgumentInterface from '../argument.js';
 
 type Value<Type> = Type extends ArgumentInterface<infer As> ? As : never;
 

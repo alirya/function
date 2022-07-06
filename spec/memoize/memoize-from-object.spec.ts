@@ -1,4 +1,4 @@
-import Memoize from '../../dist/memoize';
+import Memoize from '../../dist/memoize.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

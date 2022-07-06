@@ -1,5 +1,5 @@
-import {CurryParameters} from '../../dist/curry';
-import {CurryParameter, CurryArgument} from '../../dist/curry';
+import {CurryParameters} from '../../dist/curry.js';
+import {CurryParameter, CurryArgument} from '../../dist/curry.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

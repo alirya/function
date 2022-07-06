@@ -1,7 +1,7 @@
-import {ConditionalCallParameters} from '../../dist/conditional-call';
-import {ConditionalCallParameter} from '../../dist/conditional-call';
-import {PrefixParameters} from '@alirya/string/prefix';
-import {SuffixParameters} from '@alirya/string/suffix';
+import {ConditionalCallParameters} from '../../dist/conditional-call.js';
+import {ConditionalCallParameter} from '../../dist/conditional-call.js';
+import {PrefixParameters} from '@alirya/string/prefix.js';
+import {SuffixParameters} from '@alirya/string/suffix.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

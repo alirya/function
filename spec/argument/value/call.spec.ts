@@ -1,4 +1,4 @@
-import Call from '../../../dist/argument/value/call';
+import Call from '../../../dist/argument/value/call.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

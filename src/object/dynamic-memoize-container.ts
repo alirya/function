@@ -1,10 +1,10 @@
-import ArgumentContainer from '../argument/argument';
-import Return from '../return/return';
-import Callable from '../callable';
-import Find from '@alirya/iterable/value/find';
-import Callback from '../callback/callback';
-import Validation from '@alirya/boolean/validation/validation';
-import DynamicMemoizeContainerParametersC from './dynamic-memoize-container';
+import ArgumentContainer from '../argument/argument.js';
+import Return from '../return/return.js';
+import Callable from '../callable.js';
+import Find from '@alirya/iterable/value/find.js';
+import Callback from '../callback/callback.js';
+import Validation from '@alirya/boolean/validation/validation.js';
+import DynamicMemoizeContainerParametersC from './dynamic-memoize-container.js';
 
 type Memoized<CallbackType extends Callable> = ArgumentContainer<Parameters<CallbackType>> & Return<ReturnType<CallbackType>>;
 

@@ -1,6 +1,6 @@
-import Callable from '../../callable';
-import Argument from '../argument';
-import Callback from '../../callback/callback';
+import Callable from '../../callable.js';
+import Argument from '../argument.js';
+import Callback from '../../callback/callback.js';
 
 /**
  * Use {@link Argument} as argument to call function form {@link Callback}

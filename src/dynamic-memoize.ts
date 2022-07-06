@@ -1,6 +1,6 @@
-import Equal from '@alirya/array/boolean/equal-parameters';
-import Container from './object/dynamic-memoize-container';
-import Callable from './callable';
+import Equal from '@alirya/array/boolean/equal-parameters.js';
+import Container from './object/dynamic-memoize-container.js';
+import Callable from './callable.js';
 
 export function DynamicMemoizeParameters<
     FunctionType extends Callable,
@@ -22,8 +22,8 @@ export function DynamicMemoizeParameters<
 }
 
 
-import Callback from './callback/callback';
-import Validation from '@alirya/boolean/validation/validation';
+import Callback from './callback/callback.js';
+import Validation from '@alirya/boolean/validation/validation.js';
 
 export type DynamicMemoizeArgument<FunctionType extends Callable> =
     Callback<FunctionType> &

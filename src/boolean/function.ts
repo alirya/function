@@ -1,5 +1,5 @@
-import IsFunction from 'is-function';
-import Callable from '../callable';
+import IsFunction from 'is-function.js';
+import Callable from '../callable.js';
 
 /**
  * check if {@param value} type is function

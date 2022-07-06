@@ -1,4 +1,4 @@
-import Value from './infer';
+import Value from './infer.js';
 
 /**
  * @deprecated use original instead
