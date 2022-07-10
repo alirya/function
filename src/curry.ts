@@ -1,7 +1,7 @@
 import Callable from './callable';
 import Heads from '@alirya/array/heads';
 import Tails from '@alirya/array/tails';
-import InsertArray from '@alirya/array/function/insert-parameters';
+import { InsertParameters } from '@alirya/array/function/insert';
 import Callback from './callback/callback';
 
 export function CurryParameters<
@@ -16,7 +16,7 @@ export function CurryParameters<
 
     return function (...args) {
 
-        return callback(...InsertArray(args, position)(argument as any[]));
+        return callback(...InsertParameters(args, position)(argument as any[]));
 
     } as CurryType<Callback, Arguments, Position> ;
 }

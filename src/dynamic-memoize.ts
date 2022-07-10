@@ -1,12 +1,14 @@
-import Equal from '@alirya/array/boolean/equal-parameters';
+import Equal from '@alirya/array/boolean/equal';
 import Container from './object/dynamic-memoize-container';
 import Callable from './callable';
+import Callback from './callback/callback';
+import Validation from '@alirya/boolean/validation/validation';
 
 export function DynamicMemoizeParameters<
     FunctionType extends Callable,
 >(
     callback : FunctionType,
-    validation : Callable<[Parameters<FunctionType>, Parameters<FunctionType>], boolean> = Equal,
+    validation : Callable<[Parameters<FunctionType>, Parameters<FunctionType>], boolean> = Equal.Parameters,
 ) : FunctionType & { container : Container.Argument<FunctionType> } {
 
     const memoizeContainer = new Container.Parameters<FunctionType>(callback, validation);
@@ -21,21 +23,17 @@ export function DynamicMemoizeParameters<
     return callable as FunctionType & { container : Container.Argument<FunctionType> };
 }
 
-
-import Callback from './callback/callback';
-import Validation from '@alirya/boolean/validation/validation';
-
 export type DynamicMemoizeArgument<FunctionType extends Callable> =
     Callback<FunctionType> &
-    Partial<Validation<[Parameters<FunctionType>, Parameters<FunctionType>]>>;
+    Partial<Validation<[Equal.Argument<Parameters<FunctionType>>]>>;
 
 export function DynamicMemoizeParameter <FunctionType extends Callable>({
         callback,
-        validation,
+        validation = Equal.Parameter,
     } : DynamicMemoizeArgument<FunctionType>
 ) : FunctionType & { container : Container.Argument<FunctionType> } {
 
-    return DynamicMemoizeParameters(callback, validation);
+    return DynamicMemoizeParameters(callback, (value, compare) => validation({value, compare}));
 }
 
 
