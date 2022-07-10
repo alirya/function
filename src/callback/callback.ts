@@ -1,6 +1,6 @@
 import Callable from '../callable';
-import Guard from '../boolean/guard';
 import Assert from '../assert/assert';
+import Guard from '@alirya/boolean/function/guard';
 
 export default interface Callback<
     FunctionType extends Callable|Guard<any, any, []>|Assert
