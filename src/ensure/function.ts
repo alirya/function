@@ -1,8 +1,8 @@
-import TypeGuard from '../boolean/function';
-import ThrowableType from '../assert/throwable/function';
-import Guard from './callback';
-import Callable from '../callable';
-import Value from '@alirya/value/value';
+import TypeGuard from '../boolean/function.js';
+import ThrowableType from '../assert/throwable/function.js';
+import Guard from './callback.js';
+import Callable from '../callable.js';
+import Value from '@alirya/value/value.js';
 
 /**
  * return {@param value} if type is function or

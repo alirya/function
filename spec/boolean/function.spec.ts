@@ -1,4 +1,4 @@
-import Function from '../../dist/boolean/function';
+import Function from '../../dist/boolean/function.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

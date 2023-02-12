@@ -1,5 +1,5 @@
-import Argument from './argument';
-import Callback from '../callback/callback';
+import Argument from './argument.js';
+import Callback from '../callback/callback.js';
 
 /**
  * container for function argument & function

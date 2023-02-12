@@ -36,9 +36,9 @@ export function CallbackParameters<Asserted extends ValueType, ValueType, Argume
 
 
 
-import ExtraArgument from '../argument/argument';
-import Guard from '@alirya/boolean/validation/guard';
-import Validation from '@alirya/boolean/validation/validation';
+import ExtraArgument from '../argument/argument.js';
+import Guard from '@alirya/boolean/validation/guard.js';
+import Validation from '@alirya/boolean/validation/validation.js';
 
 export type CallbackArgument<ValueType, Arguments extends unknown[] = unknown[]> =
     & {error:(value : ValueType, ...args:Arguments)=>Error}

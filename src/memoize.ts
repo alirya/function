@@ -1,8 +1,8 @@
-import Callable from './callable';
-import {CallbackType, CallbackParameters} from './return/callback';
-import ReturnMemoize from './return/memoize';
-import ArgumentContainer from './argument/argument';
-import Callback from './callback/callback';
+import Callable from './callable.js';
+import {CallbackType, CallbackParameters} from './return/callback.js';
+import ReturnMemoize from './return/memoize.js';
+import ArgumentContainer from './argument/argument.js';
+import Callback from './callback/callback.js';
 
 export function MemoizeParameters<Function extends Callable>(
     callback : Function,

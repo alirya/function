@@ -1,5 +1,5 @@
-import Callable from "./callable";
-import OmitUndefined from "./omit-undefined";
+import Callable from './callable.js';
+import OmitUndefined from './omit-undefined.js';
 
 
 export default function Default<

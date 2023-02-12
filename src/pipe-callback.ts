@@ -1,4 +1,4 @@
-import Callable from "./callable";
+import Callable from './callable.js';
 
 
 export interface PipeCallbackReturn<Argument = undefined> {

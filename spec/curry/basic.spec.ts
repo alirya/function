@@ -1,4 +1,4 @@
-import Curry from '../../dist/curry';
+import Curry from '../../dist/curry.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

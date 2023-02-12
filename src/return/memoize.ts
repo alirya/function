@@ -1,5 +1,5 @@
-import Return from './return';
-import Infer from './value/infer';
+import Return from './return.js';
+import Infer from './value/infer.js';
 
 /**
  * Wrap {@link Return} and cache its value

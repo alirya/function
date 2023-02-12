@@ -1,15 +1,15 @@
-import Callback from '../../dist/return/callback';
+import Callback from '../../dist/return/callback.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe('basic', function() {
 
-    let fn = function (number : number) {
+    const fn = function (number : number) {
 
         return number + number;
     };
 
-    let callback = new Callback.Parameters(fn, [1]);
+    const callback = new Callback.Parameters(fn, [1]);
 
     it('validate initial data', function () {
 

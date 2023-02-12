@@ -27,11 +27,12 @@
     ]
   },
   "exclude": [
-    "node_modules",
+    "node_modules/**/*",
     "dist",
     "**/*.d.ts",
     "dist/**/*.d.ts",
-    "**/dist/**/*.d.ts"
+    "**/dist/**/*.d.ts",
+    "./dist/**/*"
   ],
   "include": [
     "src/**/*"

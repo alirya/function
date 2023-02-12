@@ -1,6 +1,6 @@
-import Callable from '../callable';
-import Assert from '../assert/assert';
-import Guard from '@alirya/boolean/function/guard';
+import Callable from '../callable.js';
+import Assert from '../assert/assert.js';
+import Guard from '@alirya/boolean/function/guard.js';
 
 export default interface Callback<
     FunctionType extends Callable|Guard<any, any, []>|Assert

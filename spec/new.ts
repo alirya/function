@@ -1,10 +1,10 @@
-import New from '../dist/new';
+import New from '../dist/new.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe('array', function() {
 
-    let fn = New<number[], number[]>(Array);
+    const fn = New<number[], number[]>(Array);
 
     it('compiler compatible', ()=>{
 
@@ -35,11 +35,11 @@ describe('user defined', function() {
         }
     }
 
-    let fn = New(R);
+    const fn = New(R);
 
     it('compiler compatible', ()=>{
 
-        let result : R = fn('1', 2, true);
+        const result : R = fn('1', 2, true);
 
         // @ts-expect-error
         fn('1','2','3','4');
@@ -49,7 +49,7 @@ describe('user defined', function() {
 
     it('validate result', ()=>{
 
-        let result : R = fn('1', 2, true);
+        const result : R = fn('1', 2, true);
 
         expect(result.a).toEqual('1');
         expect(result.b).toEqual(2);

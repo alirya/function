@@ -1,5 +1,5 @@
 import IsFunction from 'is-function';
-import Callable from '../callable';
+import Callable from '../callable.js';
 
 /**
  * check if {@param value} type is function
@@ -12,3 +12,5 @@ export default function Function<
 
     return IsFunction(value);
 }
+
+export {Function as IsFunction};

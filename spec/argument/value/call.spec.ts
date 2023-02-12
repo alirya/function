@@ -1,10 +1,10 @@
-import Call from '../../../dist/argument/value/call';
+import Call from '../../../dist/argument/value/call.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
 describe('basic', function() {
 
-    let object : {
+    const object : {
         argument : [number],
         callback : (number : number) => number,
         return : number
@@ -18,7 +18,7 @@ describe('basic', function() {
 
     it('call', () => {
 
-        let returns = Call.Parameter(object);
+        const returns = Call.Parameter(object);
 
         expect(returns).toBe(2);
         expect(object.return).toBe(0);

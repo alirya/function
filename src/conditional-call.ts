@@ -1,6 +1,6 @@
-import Callable from './callable';
-import Validatable from '@alirya/validatable/validatable';
-import Argument from './argument/argument';
+import Callable from './callable.js';
+import Validatable from '@alirya/validatable/validatable.js';
+import Argument from './argument/argument.js';
 
 export function ConditionalCallParameters<Callback extends Callable>(
     valid : boolean,

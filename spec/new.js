@@ -1,4 +1,4 @@
-import New from '../dist/new';
+import New from '../dist/new.js';
 it('force console log', () => { spyOn(console, 'log').and.callThrough(); });
 describe('array', function () {
     let fn = New(Array);

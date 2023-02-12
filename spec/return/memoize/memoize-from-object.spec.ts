@@ -1,11 +1,11 @@
-import Memoized from '../../../dist/return/memoize';
+import Memoized from '../../../dist/return/memoize.js';
 
 it('enable console log', () => spyOn(console, 'log').and.callThrough());
 
 describe('test', function() {
 
-    let standard = {return:10};
-    let memoize = new Memoized(standard);
+    const standard = {return:10};
+    const memoize = new Memoized(standard);
 
 
     it(`check value`, () =>

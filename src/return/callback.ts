@@ -1,8 +1,8 @@
-import Argument from '../argument/argument';
-import Return from './return';
-import CallParameter from '../argument/value/call';
-import Callable from '../callable';
-import CallbackInterface from '../callback/callback';
+import Argument from '../argument/argument.js';
+import Return from './return.js';
+import CallParameter from '../argument/value/call.js';
+import Callable from '../callable.js';
+import CallbackInterface from '../callback/callback.js';
 
 export type CallbackType<FunctionType extends Callable> =
     Argument<Parameters<FunctionType>> & Return<ReturnType<FunctionType>>;

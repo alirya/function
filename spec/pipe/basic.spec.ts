@@ -1,4 +1,4 @@
-import Pipe from "../../dist/pipe";
+import Pipe from '../../dist/pipe.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 

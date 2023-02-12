@@ -1,5 +1,5 @@
-import {CurryParameters} from '../../dist/curry';
-import {CurryParameter, CurryArgument} from '../../dist/curry';
+import {CurryParameters} from '../../dist/curry.js';
+import {CurryParameter, CurryArgument} from '../../dist/curry.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
@@ -21,7 +21,7 @@ function Struct (
 
 describe('single', function() {
 
-    let argument : CurryArgument<typeof Struct, 1> = {
+    const argument : CurryArgument<typeof Struct, 1> = {
         callback : Struct,
         argument : 'data',
         position : 1
