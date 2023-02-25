@@ -10,7 +10,25 @@ export default function Function<
     value : unknown
 ) : value is Assumption {
 
-    return IsFunction(value);
+    if(!value) {
+
+        return false;
+    }
+
+    if(value instanceof globalThis.Function) {
+
+        return true;
+    }
+    if(typeof value === 'function') {
+
+        return true;
+    }
+
+    return !!(
+        value.constructor &&
+        (value as globalThis.Function).call &&
+        (value as globalThis.Function).apply
+    );
 }
 
 export {Function as IsFunction};
