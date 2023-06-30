@@ -1,34 +1,35 @@
 import Callable from './callable.js';
-import Validatable from '@alirya/validatable/validatable.js';
-import Argument from './argument/argument.js';
 
-export function ConditionalCallParameters<Callback extends Callable>(
-    valid : boolean,
-    trueCallback : Callback,
-    falseCallback: Callback,
-    ...argument : Parameters<Callback>
-) : ReturnType<Callback> {
+export function ConditionalCallParameters<Arguments extends unknown[], Return> (
+    condition : Callable<Arguments, boolean>,
+    valid : Callable<Arguments, Return>,
+    invalid: Callable<Arguments, Return>,
+) : Callable<Arguments, Return> {
 
-    return (valid
-        ? trueCallback(...argument)
-        : falseCallback(...argument)
-    ) as ReturnType<Callback>;
+    return function (...argument : Arguments) : Return {
+
+            return condition(...argument)
+                ? valid(...argument)
+                : invalid(...argument);
+    };
+}
+
+export type ConditionalCallArgument<Arguments extends unknown[], Return> = {
+    condition : Callable<Arguments, boolean>,
+    valid : Callable<Arguments, Return>,
+    invalid: Callable<Arguments, Return>,
 }
 
 
-export function ConditionalCallParameter<Callback extends Callable>(
+export function ConditionalCallParameter<Arguments extends unknown[], Return>(
     {
+        condition,
         valid,
-        trueCallback,
-        falseCallback,
-        argument
-    } : Validatable & Argument<Parameters<Callback>> & {
-        trueCallback : Callback,
-        falseCallback: Callback,
-    }
-) : ReturnType<Callback> {
+        invalid,
+    } : ConditionalCallArgument<Arguments, Return>
+) : Callable<Arguments, Return> {
 
-    return ConditionalCallParameters(valid, trueCallback, falseCallback, ...argument);
+    return ConditionalCallParameters(condition, valid, invalid);
 }
 
 

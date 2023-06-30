@@ -8,25 +8,23 @@ it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 it('basic', function() {
 
     expect(
-        ConditionalCallParameters(true, PrefixParameters, SuffixParameters, 'base', '-')
+        ConditionalCallParameters((a: string, b: string) => true, PrefixParameters, SuffixParameters)('base', '-')
     ).toBe(
         ConditionalCallParameter({
-            valid : true,
-            trueCallback : PrefixParameters,
-            falseCallback : SuffixParameters,
-            argument : ['base', '-']
-        })
+            condition : (a: string, b: string) => true,
+            valid : PrefixParameters,
+            invalid : SuffixParameters,
+        })('base', '-')
     );
 
     expect(
-        ConditionalCallParameters(false, PrefixParameters, SuffixParameters, 'base', '-')
+        ConditionalCallParameters((a: string, b: string) => false, PrefixParameters, SuffixParameters)('base', '-')
     ).toBe(
         ConditionalCallParameter({
-            valid : false,
-            trueCallback : PrefixParameters,
-            falseCallback : SuffixParameters,
-            argument : ['base', '-']
-        })
+            condition : (a: string, b: string) => false,
+            valid : PrefixParameters,
+            invalid : SuffixParameters,
+        })('base', '-')
     );
 });
 
