@@ -1,5 +1,5 @@
 {
-  "name": "@alirya/function",
+  "name": "@axiona/function",
   "version": "0.17.1",
   "description": "Typescript function",
   "publishConfig": {
@@ -12,19 +12,19 @@
     "cache": false
   },
   "license": "Apache-2.0",
-  "homepage": "https://github.com/alirya/function",
+  "homepage": "https://github.com/axiona/function",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alirya/function"
+    "url": "https://github.com/axiona/function"
   },
   "dependencies": {
     "tslib": "^2.5.0",
-    "@alirya/array": "^0.27.1",
-    "@alirya/boolean": "^0.12.1",
-    "@alirya/iterable": "^0.6.1",
-    "@alirya/message": "^0.13.1",
-    "@alirya/validatable": "^0.21.1",
-    "@alirya/value": "^0.16.1",
+    "@axiona/array": "^0.27.1",
+    "@axiona/boolean": "^0.12.1",
+    "@axiona/iterable": "^0.6.1",
+    "@axiona/message": "^0.13.1",
+    "@axiona/validatable": "^0.21.1",
+    "@axiona/value": "^0.16.1",
     "@types/is-function": "^1.0.1",
     "ts-toolbelt": "^9.6.0"
   },
@@ -46,7 +46,7 @@
     "ts-toolbelt": "^9.6.0",
     "utility-types": "^3.10.0",
     "package-version-git-tag": "^3.0.0",
-    "@alirya/string": "^0.17.1",
+    "@axiona/string": "^0.17.1",
     "cpx2": "^4.2.0",
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "eslint-plugin-require-extensions": "^0.1.2",

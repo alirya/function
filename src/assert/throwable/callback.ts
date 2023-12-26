@@ -1,5 +1,5 @@
 import ArgumentType from '../../argument/argument.js';
-import Message from '@alirya/message/message.js';
+import Message from '@axiona/message/message.js';
 export function CallbackParameters<Arguments extends unknown[], ErrorType extends Error>(
     argument : Arguments,
     message : (...argument:Arguments) => string,

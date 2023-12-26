@@ -1,7 +1,7 @@
 import Callable from './callable.js';
-import Heads from '@alirya/array/heads.js';
-import Tails from '@alirya/array/tails.js';
-import { InsertParameters } from '@alirya/array/function/insert.js';
+import Heads from '@axiona/array/heads.js';
+import Tails from '@axiona/array/tails.js';
+import { InsertParameters } from '@axiona/array/function/insert.js';
 import Callback from './callback/callback.js';
 
 export function CurryParameters<

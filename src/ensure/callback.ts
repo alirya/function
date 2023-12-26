@@ -1,7 +1,7 @@
 import Assert from '../assert/callback.js';
-import Validation from '@alirya/boolean/validation/validation.js';
+import Validation from '@axiona/boolean/validation/validation.js';
 import ArgumentContainer from '../argument/argument.js';
-import Value from '@alirya/value/value.js';
+import Value from '@axiona/value/value.js';
 
 /**
  * Throw exception from {@param error} if given {@param value} is not valid according

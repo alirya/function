@@ -2,7 +2,7 @@ import TypeGuard from '../boolean/function.js';
 import ThrowableType from '../assert/throwable/function.js';
 import Guard from './callback.js';
 import Callable from '../callable.js';
-import Value from '@alirya/value/value.js';
+import Value from '@axiona/value/value.js';
 
 /**
  * return {@param value} if type is function or

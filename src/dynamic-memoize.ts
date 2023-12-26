@@ -1,8 +1,8 @@
-import Equal from '@alirya/array/boolean/equal.js';
+import Equal from '@axiona/array/boolean/equal.js';
 import Container from './object/dynamic-memoize-container.js';
 import Callable from './callable.js';
 import Callback from './callback/callback.js';
-import Validation from '@alirya/boolean/validation/validation.js';
+import Validation from '@axiona/boolean/validation/validation.js';
 
 export function DynamicMemoizeParameters<
     FunctionType extends Callable,

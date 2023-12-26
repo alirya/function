@@ -1,6 +1,6 @@
 import ConditionalCallParameters from '../../dist/conditional-call.js';
-import {PrefixParameters} from '@alirya/string/prefix.js';
-import {SuffixParameters} from '@alirya/string/suffix.js';
+import {PrefixParameters} from '@axiona/string/prefix.js';
+import {SuffixParameters} from '@axiona/string/suffix.js';
 
 it('force console log', () => { spyOn(console, 'log').and.callThrough();});
 
